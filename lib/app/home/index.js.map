@@ -1,1 +1,0 @@
-{"version":3,"sources":["/var/snap-ci/repo/src/app/home/index.js"],"names":[],"mappings":";;;MAAa,KAAK;;;;AAAL,WAAK,YAAL,KAAK;;uBAAL,KAAK","file":"/var/snap-ci/repo/src/app/home/index.js","sourcesContent":["export class Index {\n  \n}"]}
