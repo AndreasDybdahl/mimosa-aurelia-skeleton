@@ -740,15 +740,16 @@
       if (!isNative(Symbol)) {
         Symbol = function(description) {
           assert(!(this instanceof Symbol), SYMBOL + ' is not a ' + CONSTRUCTOR);
-          var tag = uid(description);
-          AllSymbols[tag] = true;
+          var tag = uid(description),
+              sym = set(create(Symbol[PROTOTYPE]), TAG, tag);
+          AllSymbols[tag] = sym;
           DESC && setter && defineProperty(ObjectProto, tag, {
             configurable: true,
             set: function(value) {
               hidden(this, tag, value);
             }
           });
-          return set(create(Symbol[PROTOTYPE]), TAG, tag);
+          return sym;
         };
         hidden(Symbol[PROTOTYPE], TO_STRING, function() {
           return this[TAG];
@@ -794,7 +795,7 @@
               key,
               i = 0;
           while (names.length > i)
-            has(AllSymbols, key = names[i++]) && result.push(key);
+            has(AllSymbols, key = names[i++]) && result.push(AllSymbols[key]);
           return result;
         }
       });
@@ -2262,5 +2263,5 @@
       } catch (e) {}
       $define(GLOBAL + FORCED, {console: _console});
     }(global.console || {}, true);
-  }(typeof self != 'undefined' && self.Math === Math ? self : Function('return this')(), true);
+  }(typeof self != 'undefined' && self.Math === Math ? self : Function('return this')(), false);
 })(require("process"));

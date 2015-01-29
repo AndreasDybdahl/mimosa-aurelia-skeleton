@@ -1,7 +1,7 @@
 {
   "name": "core-js",
   "description": "Standard library",
-  "version": "0.4.9",
+  "version": "0.4.10",
   "repository": {
     "type": "git",
     "url": "https://github.com/zloirock/core-js.git"
@@ -43,37 +43,5 @@
     "abstract references",
     "partial application",
     "Date formatting"
-  ],
-  "gitHead": "d87ce9b8bb35eb9b7fa3f86d3fbb1884bf51e843",
-  "bugs": {
-    "url": "https://github.com/zloirock/core-js/issues"
-  },
-  "homepage": "https://github.com/zloirock/core-js",
-  "_id": "core-js@0.4.9",
-  "_shasum": "e1721aa812e5d64f29fa7a5ad3cdea7de6d93f2e",
-  "_from": ".",
-  "_npmVersion": "1.4.28",
-  "_npmUser": {
-    "name": "zloirock",
-    "email": "zloirock@zloirock.ru"
-  },
-  "maintainers": [
-    {
-      "name": "zloirock",
-      "email": "zloirock@zloirock.ru"
-    }
-  ],
-  "dist": {
-    "shasum": "e1721aa812e5d64f29fa7a5ad3cdea7de6d93f2e",
-    "tarball": "http://registry.npmjs.org/core-js/-/core-js-0.4.9.tgz"
-  },
-  "jspm": {},
-  "registry": "npm",
-  "format": "cjs",
-  "ignore": [
-    "node_modules"
-  ],
-  "dependencies": {
-    "process": "github:jspm/nodelibs-process@^0.1.0"
-  }
+  ]
 }

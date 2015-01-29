@@ -547,208 +547,21 @@
       };
       global.core = core;
     }
-    !function(IS_ENUMERABLE, Empty, _classof, $PROTO) {
-      if (!DESC) {
-        getOwnDescriptor = function(O, P) {
-          if (has(O, P))
-            return descriptor(!ObjectProto[IS_ENUMERABLE].call(O, P), O[P]);
-        };
-        defineProperty = function(O, P, Attributes) {
-          if ('value' in Attributes)
-            assertObject(O)[P] = Attributes.value;
-          return O;
-        };
-        defineProperties = function(O, Properties) {
-          assertObject(O);
-          var keys = getKeys(Properties),
-              length = keys.length,
-              i = 0,
-              P,
-              Attributes;
-          while (length > i) {
-            P = keys[i++];
-            Attributes = Properties[P];
-            if ('value' in Attributes)
-              O[P] = Attributes.value;
-          }
-          return O;
-        };
-      }
-      $define(STATIC + FORCED * !DESC, OBJECT, {
-        getOwnPropertyDescriptor: getOwnDescriptor,
-        defineProperty: defineProperty,
-        defineProperties: defineProperties
-      });
-      var keys1 = [CONSTRUCTOR, HAS_OWN, 'isPrototypeOf', IS_ENUMERABLE, TO_LOCALE, TO_STRING, 'valueOf'],
-          keys2 = keys1.concat('length', PROTOTYPE),
-          keysLen1 = keys1.length;
-      function createDict() {
-        var iframe = document[CREATE_ELEMENT]('iframe'),
-            i = keysLen1,
-            iframeDocument;
-        iframe.style.display = 'none';
-        html.appendChild(iframe);
-        iframe.src = 'javascript:';
-        iframeDocument = iframe.contentWindow.document;
-        iframeDocument.open();
-        iframeDocument.write('<script>document.F=Object</script>');
-        iframeDocument.close();
-        createDict = iframeDocument.F;
-        while (i--)
-          delete createDict[PROTOTYPE][keys1[i]];
-        return createDict();
-      }
-      function createGetKeys(names, length, isNames) {
-        return function(object) {
-          var O = toObject(object),
-              i = 0,
-              result = [],
-              key;
-          for (key in O)
-            if (key != $PROTO)
-              has(O, key) && result.push(key);
-          while (length > i)
-            if (has(O, key = names[i++])) {
-              ~indexOf.call(result, key) || result.push(key);
-            }
-          return result;
-        };
-      }
-      function isPrimitive(it) {
-        return !isObject(it);
-      }
-      $define(STATIC, OBJECT, {
-        getPrototypeOf: getPrototypeOf = getPrototypeOf || function(O) {
-          O = Object(assertDefined(O));
-          if (has(O, $PROTO))
-            return O[$PROTO];
-          if (isFunction(O[CONSTRUCTOR]) && O instanceof O[CONSTRUCTOR]) {
-            return O[CONSTRUCTOR][PROTOTYPE];
-          }
-          return O instanceof Object ? ObjectProto : null;
-        },
-        getOwnPropertyNames: getNames = getNames || createGetKeys(keys2, keys2.length, true),
-        create: create = create || function(O, Properties) {
-          var result;
-          if (O !== null) {
-            Empty[PROTOTYPE] = assertObject(O);
-            result = new Empty();
-            Empty[PROTOTYPE] = null;
-            if (result[CONSTRUCTOR][PROTOTYPE] !== O)
-              result[$PROTO] = O;
-          } else
-            result = createDict();
-          return Properties === undefined ? result : defineProperties(result, Properties);
-        },
-        keys: getKeys = getKeys || createGetKeys(keys1, keysLen1, false),
-        seal: returnIt,
-        freeze: returnIt,
-        preventExtensions: returnIt,
-        isSealed: isPrimitive,
-        isFrozen: isFrozen = isFrozen || isPrimitive,
-        isExtensible: isObject
-      });
-      $define(PROTO, FUNCTION, {bind: function(that) {
-          var fn = assertFunction(this),
-              partArgs = slice.call(arguments, 1);
-          function bound() {
-            var args = partArgs.concat(slice.call(arguments));
-            return this instanceof bound ? construct(fn, args) : invoke(fn, args, that);
-          }
-          return bound;
-        }});
-      function arrayMethodFix(fn) {
-        return function() {
-          return fn.apply(ES5Object(this), arguments);
-        };
-      }
-      if (!(0 in Object(DOT) && DOT[0] == DOT)) {
-        ES5Object = function(it) {
-          return cof(it) == STRING ? it.split('') : Object(it);
-        };
-        slice = arrayMethodFix(slice);
-      }
-      $define(PROTO + FORCED * (ES5Object != Object), ARRAY, {
-        slice: slice,
-        join: arrayMethodFix(ArrayProto.join)
-      });
-      $define(STATIC, ARRAY, {isArray: function(arg) {
-          return cof(arg) == ARRAY;
-        }});
-      function createArrayReduce(isRight) {
-        return function(callbackfn, memo) {
-          assertFunction(callbackfn);
-          var O = toObject(this),
-              length = toLength(O.length),
-              index = isRight ? length - 1 : 0,
-              i = isRight ? -1 : 1;
-          if (2 > arguments.length)
-            for (; ; ) {
-              if (index in O) {
-                memo = O[index];
-                index += i;
-                break;
-              }
-              index += i;
-              assert(isRight ? index >= 0 : length > index, REDUCE_ERROR);
-            }
-          for (; isRight ? index >= 0 : length > index; index += i)
-            if (index in O) {
-              memo = callbackfn(memo, O[index], index, this);
-            }
-          return memo;
-        };
-      }
-      $define(PROTO, ARRAY, {
-        forEach: forEach = forEach || createArrayMethod(0),
-        map: createArrayMethod(1),
-        filter: createArrayMethod(2),
-        some: createArrayMethod(3),
-        every: createArrayMethod(4),
-        reduce: createArrayReduce(false),
-        reduceRight: createArrayReduce(true),
-        indexOf: indexOf = indexOf || createArrayContains(false),
-        lastIndexOf: function(el, fromIndex) {
-          var O = toObject(this),
-              length = toLength(O.length),
-              index = length - 1;
-          if (arguments.length > 1)
-            index = min(index, toInteger(fromIndex));
-          if (index < 0)
-            index = toLength(length + index);
-          for (; index >= 0; index--)
-            if (index in O)
-              if (O[index] === el)
-                return index;
-          return -1;
-        }
-      });
-      $define(PROTO, STRING, {trim: createReplacer(/^\s*([\s\S]*\S)?\s*$/, '$1')});
-      $define(STATIC, DATE, {now: function() {
-          return +new Date;
-        }});
-      if (_classof(function() {
-        return arguments;
-      }()) == OBJECT)
-        classof = function(it) {
-          var cof = _classof(it);
-          return cof == OBJECT && isFunction(it.callee) ? ARGUMENTS : cof;
-        };
-    }('propertyIsEnumerable', function() {}, classof, safeSymbol(PROTOTYPE));
     $define(GLOBAL + FORCED, {global: global});
     !function(TAG, SymbolRegistry, AllSymbols, setter) {
       if (!isNative(Symbol)) {
         Symbol = function(description) {
           assert(!(this instanceof Symbol), SYMBOL + ' is not a ' + CONSTRUCTOR);
-          var tag = uid(description);
-          AllSymbols[tag] = true;
+          var tag = uid(description),
+              sym = set(create(Symbol[PROTOTYPE]), TAG, tag);
+          AllSymbols[tag] = sym;
           DESC && setter && defineProperty(ObjectProto, tag, {
             configurable: true,
             set: function(value) {
               hidden(this, tag, value);
             }
           });
-          return set(create(Symbol[PROTOTYPE]), TAG, tag);
+          return sym;
         };
         hidden(Symbol[PROTOTYPE], TO_STRING, function() {
           return this[TAG];
@@ -794,7 +607,7 @@
               key,
               i = 0;
           while (names.length > i)
-            has(AllSymbols, key = names[i++]) && result.push(key);
+            has(AllSymbols, key = names[i++]) && result.push(AllSymbols[key]);
           return result;
         }
       });
@@ -1815,17 +1628,6 @@
       }
       Iterators.NodeList = Iterators[ARRAY];
     }(global.NodeList);
-    !function(MSIE) {
-      function wrap(set) {
-        return MSIE ? function(fn, time) {
-          return set(invoke(part, slice.call(arguments, 2), isFunction(fn) ? fn : Function(fn)), time);
-        } : set;
-      }
-      $define(GLOBAL + BIND + FORCED * MSIE, {
-        setTimeout: setTimeout = wrap(setTimeout),
-        setInterval: wrap(setInterval)
-      });
-    }(!!navigator && /MSIE .\./.test(navigator.userAgent));
     !function(arrayStatics) {
       function setArrayStatics(keys, length) {
         forEach.call(array(keys), function(key) {
@@ -1838,26 +1640,5 @@
       setArrayStatics('join,slice,concat,push,splice,unshift,sort,lastIndexOf,' + 'reduce,reduceRight,copyWithin,fill,turn');
       $define(STATIC, ARRAY, arrayStatics);
     }({});
-    !function(console, enabled) {
-      var _console = {
-        enable: function() {
-          enabled = true;
-        },
-        disable: function() {
-          enabled = false;
-        }
-      };
-      forEach.call(array('assert,clear,count,debug,dir,dirxml,error,exception,group,' + 'groupCollapsed,groupEnd,info,isIndependentlyComposed,log,markTimeline,profile,' + 'profileEnd,table,time,timeEnd,timeline,timelineEnd,timeStamp,trace,warn'), function(key) {
-        var fn = console[key];
-        _console[key] = function() {
-          if (enabled && fn)
-            return apply.call(fn, console, arguments);
-        };
-      });
-      try {
-        framework && delete global.console;
-      } catch (e) {}
-      $define(GLOBAL + FORCED, {console: _console});
-    }(global.console || {}, true);
   }(typeof self != 'undefined' && self.Math === Math ? self : Function('return this')(), true);
 })(require("process"));

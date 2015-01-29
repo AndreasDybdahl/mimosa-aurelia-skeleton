@@ -547,20 +547,209 @@
       };
       global.core = core;
     }
+    !function(IS_ENUMERABLE, Empty, _classof, $PROTO) {
+      if (!DESC) {
+        getOwnDescriptor = function(O, P) {
+          if (has(O, P))
+            return descriptor(!ObjectProto[IS_ENUMERABLE].call(O, P), O[P]);
+        };
+        defineProperty = function(O, P, Attributes) {
+          if ('value' in Attributes)
+            assertObject(O)[P] = Attributes.value;
+          return O;
+        };
+        defineProperties = function(O, Properties) {
+          assertObject(O);
+          var keys = getKeys(Properties),
+              length = keys.length,
+              i = 0,
+              P,
+              Attributes;
+          while (length > i) {
+            P = keys[i++];
+            Attributes = Properties[P];
+            if ('value' in Attributes)
+              O[P] = Attributes.value;
+          }
+          return O;
+        };
+      }
+      $define(STATIC + FORCED * !DESC, OBJECT, {
+        getOwnPropertyDescriptor: getOwnDescriptor,
+        defineProperty: defineProperty,
+        defineProperties: defineProperties
+      });
+      var keys1 = [CONSTRUCTOR, HAS_OWN, 'isPrototypeOf', IS_ENUMERABLE, TO_LOCALE, TO_STRING, 'valueOf'],
+          keys2 = keys1.concat('length', PROTOTYPE),
+          keysLen1 = keys1.length;
+      function createDict() {
+        var iframe = document[CREATE_ELEMENT]('iframe'),
+            i = keysLen1,
+            iframeDocument;
+        iframe.style.display = 'none';
+        html.appendChild(iframe);
+        iframe.src = 'javascript:';
+        iframeDocument = iframe.contentWindow.document;
+        iframeDocument.open();
+        iframeDocument.write('<script>document.F=Object</script>');
+        iframeDocument.close();
+        createDict = iframeDocument.F;
+        while (i--)
+          delete createDict[PROTOTYPE][keys1[i]];
+        return createDict();
+      }
+      function createGetKeys(names, length, isNames) {
+        return function(object) {
+          var O = toObject(object),
+              i = 0,
+              result = [],
+              key;
+          for (key in O)
+            if (key != $PROTO)
+              has(O, key) && result.push(key);
+          while (length > i)
+            if (has(O, key = names[i++])) {
+              ~indexOf.call(result, key) || result.push(key);
+            }
+          return result;
+        };
+      }
+      function isPrimitive(it) {
+        return !isObject(it);
+      }
+      $define(STATIC, OBJECT, {
+        getPrototypeOf: getPrototypeOf = getPrototypeOf || function(O) {
+          O = Object(assertDefined(O));
+          if (has(O, $PROTO))
+            return O[$PROTO];
+          if (isFunction(O[CONSTRUCTOR]) && O instanceof O[CONSTRUCTOR]) {
+            return O[CONSTRUCTOR][PROTOTYPE];
+          }
+          return O instanceof Object ? ObjectProto : null;
+        },
+        getOwnPropertyNames: getNames = getNames || createGetKeys(keys2, keys2.length, true),
+        create: create = create || function(O, Properties) {
+          var result;
+          if (O !== null) {
+            Empty[PROTOTYPE] = assertObject(O);
+            result = new Empty();
+            Empty[PROTOTYPE] = null;
+            if (result[CONSTRUCTOR][PROTOTYPE] !== O)
+              result[$PROTO] = O;
+          } else
+            result = createDict();
+          return Properties === undefined ? result : defineProperties(result, Properties);
+        },
+        keys: getKeys = getKeys || createGetKeys(keys1, keysLen1, false),
+        seal: returnIt,
+        freeze: returnIt,
+        preventExtensions: returnIt,
+        isSealed: isPrimitive,
+        isFrozen: isFrozen = isFrozen || isPrimitive,
+        isExtensible: isObject
+      });
+      $define(PROTO, FUNCTION, {bind: function(that) {
+          var fn = assertFunction(this),
+              partArgs = slice.call(arguments, 1);
+          function bound() {
+            var args = partArgs.concat(slice.call(arguments));
+            return this instanceof bound ? construct(fn, args) : invoke(fn, args, that);
+          }
+          return bound;
+        }});
+      function arrayMethodFix(fn) {
+        return function() {
+          return fn.apply(ES5Object(this), arguments);
+        };
+      }
+      if (!(0 in Object(DOT) && DOT[0] == DOT)) {
+        ES5Object = function(it) {
+          return cof(it) == STRING ? it.split('') : Object(it);
+        };
+        slice = arrayMethodFix(slice);
+      }
+      $define(PROTO + FORCED * (ES5Object != Object), ARRAY, {
+        slice: slice,
+        join: arrayMethodFix(ArrayProto.join)
+      });
+      $define(STATIC, ARRAY, {isArray: function(arg) {
+          return cof(arg) == ARRAY;
+        }});
+      function createArrayReduce(isRight) {
+        return function(callbackfn, memo) {
+          assertFunction(callbackfn);
+          var O = toObject(this),
+              length = toLength(O.length),
+              index = isRight ? length - 1 : 0,
+              i = isRight ? -1 : 1;
+          if (2 > arguments.length)
+            for (; ; ) {
+              if (index in O) {
+                memo = O[index];
+                index += i;
+                break;
+              }
+              index += i;
+              assert(isRight ? index >= 0 : length > index, REDUCE_ERROR);
+            }
+          for (; isRight ? index >= 0 : length > index; index += i)
+            if (index in O) {
+              memo = callbackfn(memo, O[index], index, this);
+            }
+          return memo;
+        };
+      }
+      $define(PROTO, ARRAY, {
+        forEach: forEach = forEach || createArrayMethod(0),
+        map: createArrayMethod(1),
+        filter: createArrayMethod(2),
+        some: createArrayMethod(3),
+        every: createArrayMethod(4),
+        reduce: createArrayReduce(false),
+        reduceRight: createArrayReduce(true),
+        indexOf: indexOf = indexOf || createArrayContains(false),
+        lastIndexOf: function(el, fromIndex) {
+          var O = toObject(this),
+              length = toLength(O.length),
+              index = length - 1;
+          if (arguments.length > 1)
+            index = min(index, toInteger(fromIndex));
+          if (index < 0)
+            index = toLength(length + index);
+          for (; index >= 0; index--)
+            if (index in O)
+              if (O[index] === el)
+                return index;
+          return -1;
+        }
+      });
+      $define(PROTO, STRING, {trim: createReplacer(/^\s*([\s\S]*\S)?\s*$/, '$1')});
+      $define(STATIC, DATE, {now: function() {
+          return +new Date;
+        }});
+      if (_classof(function() {
+        return arguments;
+      }()) == OBJECT)
+        classof = function(it) {
+          var cof = _classof(it);
+          return cof == OBJECT && isFunction(it.callee) ? ARGUMENTS : cof;
+        };
+    }('propertyIsEnumerable', function() {}, classof, safeSymbol(PROTOTYPE));
     $define(GLOBAL + FORCED, {global: global});
     !function(TAG, SymbolRegistry, AllSymbols, setter) {
       if (!isNative(Symbol)) {
         Symbol = function(description) {
           assert(!(this instanceof Symbol), SYMBOL + ' is not a ' + CONSTRUCTOR);
-          var tag = uid(description);
-          AllSymbols[tag] = true;
+          var tag = uid(description),
+              sym = set(create(Symbol[PROTOTYPE]), TAG, tag);
+          AllSymbols[tag] = sym;
           DESC && setter && defineProperty(ObjectProto, tag, {
             configurable: true,
             set: function(value) {
               hidden(this, tag, value);
             }
           });
-          return set(create(Symbol[PROTOTYPE]), TAG, tag);
+          return sym;
         };
         hidden(Symbol[PROTOTYPE], TO_STRING, function() {
           return this[TAG];
@@ -606,7 +795,7 @@
               key,
               i = 0;
           while (names.length > i)
-            has(AllSymbols, key = names[i++]) && result.push(key);
+            has(AllSymbols, key = names[i++]) && result.push(AllSymbols[key]);
           return result;
         }
       });
@@ -1627,282 +1816,17 @@
       }
       Iterators.NodeList = Iterators[ARRAY];
     }(global.NodeList);
-    !function(DICT) {
-      Dict = function(iterable) {
-        var dict = create(null);
-        if (iterable != undefined) {
-          if (isIterable(iterable)) {
-            for (var iter = getIterator(iterable),
-                step,
-                value; !(step = iter.next()).done; ) {
-              value = step.value;
-              dict[value[0]] = value[1];
-            }
-          } else
-            assign(dict, iterable);
-        }
-        return dict;
-      };
-      Dict[PROTOTYPE] = null;
-      function DictIterator(iterated, kind) {
-        set(this, ITER, {
-          o: toObject(iterated),
-          a: getKeys(iterated),
-          i: 0,
-          k: kind
-        });
+    !function(MSIE) {
+      function wrap(set) {
+        return MSIE ? function(fn, time) {
+          return set(invoke(part, slice.call(arguments, 2), isFunction(fn) ? fn : Function(fn)), time);
+        } : set;
       }
-      createIterator(DictIterator, DICT, function() {
-        var iter = this[ITER],
-            O = iter.o,
-            keys = iter.a,
-            kind = iter.k,
-            key;
-        do {
-          if (iter.i >= keys.length)
-            return iterResult(1);
-        } while (!has(O, key = keys[iter.i++]));
-        if (kind == KEY)
-          return iterResult(0, key);
-        if (kind == VALUE)
-          return iterResult(0, O[key]);
-        return iterResult(0, [key, O[key]]);
+      $define(GLOBAL + BIND + FORCED * MSIE, {
+        setTimeout: setTimeout = wrap(setTimeout),
+        setInterval: wrap(setInterval)
       });
-      function createDictIter(kind) {
-        return function(it) {
-          return new DictIterator(it, kind);
-        };
-      }
-      function createDictMethod(type) {
-        var isMap = type == 1,
-            isEvery = type == 4;
-        return function(object, callbackfn, that) {
-          var f = ctx(callbackfn, that, 3),
-              O = toObject(object),
-              result = isMap || type == 7 || type == 2 ? new (generic(this, Dict)) : undefined,
-              key,
-              val,
-              res;
-          for (key in O)
-            if (has(O, key)) {
-              val = O[key];
-              res = f(val, key, object);
-              if (type) {
-                if (isMap)
-                  result[key] = res;
-                else if (res)
-                  switch (type) {
-                    case 2:
-                      result[key] = val;
-                      break;
-                    case 3:
-                      return true;
-                    case 5:
-                      return val;
-                    case 6:
-                      return key;
-                    case 7:
-                      result[res[0]] = res[1];
-                  }
-                else if (isEvery)
-                  return false;
-              }
-            }
-          return type == 3 || isEvery ? isEvery : result;
-        };
-      }
-      function createDictReduce(isTurn) {
-        return function(object, mapfn, init) {
-          assertFunction(mapfn);
-          var O = toObject(object),
-              keys = getKeys(O),
-              length = keys.length,
-              i = 0,
-              memo,
-              key,
-              result;
-          if (isTurn)
-            memo = init == undefined ? new (generic(this, Dict)) : Object(init);
-          else if (arguments.length < 3) {
-            assert(length, REDUCE_ERROR);
-            memo = O[keys[i++]];
-          } else
-            memo = Object(init);
-          while (length > i)
-            if (has(O, key = keys[i++])) {
-              result = mapfn(memo, O[key], key, object);
-              if (isTurn) {
-                if (result === false)
-                  break;
-              } else
-                memo = result;
-            }
-          return memo;
-        };
-      }
-      var findKey = createDictMethod(6);
-      function includes(object, el) {
-        return (el == el ? keyOf(object, el) : findKey(object, sameNaN)) !== undefined;
-      }
-      var dictMethods = {
-        keys: createDictIter(KEY),
-        values: createDictIter(VALUE),
-        entries: createDictIter(KEY + VALUE),
-        forEach: createDictMethod(0),
-        map: createDictMethod(1),
-        filter: createDictMethod(2),
-        some: createDictMethod(3),
-        every: createDictMethod(4),
-        find: createDictMethod(5),
-        findKey: findKey,
-        mapPairs: createDictMethod(7),
-        reduce: createDictReduce(false),
-        turn: createDictReduce(true),
-        keyOf: keyOf,
-        includes: includes,
-        has: has,
-        get: get,
-        set: createDefiner(0),
-        isDict: function(it) {
-          return isObject(it) && getPrototypeOf(it) === Dict[PROTOTYPE];
-        }
-      };
-      if (REFERENCE_GET)
-        for (var key in dictMethods)
-          !function(fn) {
-            function method() {
-              for (var args = [this],
-                  i = 0; i < arguments.length; )
-                args.push(arguments[i++]);
-              return invoke(fn, args);
-            }
-            fn[REFERENCE_GET] = function() {
-              return method;
-            };
-          }(dictMethods[key]);
-      $define(GLOBAL + FORCED, {Dict: assignHidden(Dict, dictMethods)});
-    }('Dict');
-    !function(ENTRIES, FN) {
-      function $for(iterable, entries) {
-        if (!(this instanceof $for))
-          return new $for(iterable, entries);
-        this[ITER] = getIterator(iterable);
-        this[ENTRIES] = !!entries;
-      }
-      createIterator($for, 'Wrapper', function() {
-        return this[ITER].next();
-      });
-      var $forProto = $for[PROTOTYPE];
-      setIterator($forProto, function() {
-        return this[ITER];
-      });
-      function createChainIterator(next) {
-        function Iter(I, fn, that) {
-          this[ITER] = getIterator(I);
-          this[ENTRIES] = I[ENTRIES];
-          this[FN] = ctx(fn, that, I[ENTRIES] ? 2 : 1);
-        }
-        createIterator(Iter, 'Chain', next, $forProto);
-        setIterator(Iter[PROTOTYPE], returnThis);
-        return Iter;
-      }
-      var MapIter = createChainIterator(function() {
-        var step = this[ITER].next();
-        return step.done ? step : iterResult(0, stepCall(this[FN], step.value, this[ENTRIES]));
-      });
-      var FilterIter = createChainIterator(function() {
-        for (; ; ) {
-          var step = this[ITER].next();
-          if (step.done || stepCall(this[FN], step.value, this[ENTRIES]))
-            return step;
-        }
-      });
-      assignHidden($forProto, {
-        of: function(fn, that) {
-          forOf(this, this[ENTRIES], fn, that);
-        },
-        array: function(fn, that) {
-          var result = [];
-          forOf(fn != undefined ? this.map(fn, that) : this, false, push, result);
-          return result;
-        },
-        filter: function(fn, that) {
-          return new FilterIter(this, fn, that);
-        },
-        map: function(fn, that) {
-          return new MapIter(this, fn, that);
-        }
-      });
-      $for.isIterable = isIterable;
-      $for.getIterator = getIterator;
-      $define(GLOBAL + FORCED, {$for: $for});
-    }('entries', safeSymbol('fn'));
-    !function(_, toLocaleString) {
-      core._ = path._ = path._ || {};
-      $define(PROTO + FORCED, FUNCTION, {
-        part: part,
-        only: function(numberArguments, that) {
-          var fn = assertFunction(this),
-              n = toLength(numberArguments),
-              isThat = arguments.length > 1;
-          return function() {
-            var length = min(n, arguments.length),
-                args = Array(length),
-                i = 0;
-            while (length > i)
-              args[i] = arguments[i++];
-            return invoke(fn, args, isThat ? that : this);
-          };
-        }
-      });
-      function tie(key) {
-        var that = this,
-            bound = {};
-        return hidden(that, _, function(key) {
-          if (key === undefined || !(key in that))
-            return toLocaleString.call(that);
-          return has(bound, key) ? bound[key] : (bound[key] = ctx(that[key], that, -1));
-        })[_](key);
-      }
-      hidden(path._, TO_STRING, function() {
-        return _;
-      });
-      hidden(ObjectProto, _, tie);
-      DESC || hidden(ArrayProto, _, tie);
-    }(DESC ? uid('tie') : TO_LOCALE, ObjectProto[TO_LOCALE]);
-    !function() {
-      function define(target, mixin) {
-        var keys = ownKeys(toObject(mixin)),
-            length = keys.length,
-            i = 0,
-            key;
-        while (length > i)
-          defineProperty(target, key = keys[i++], getOwnDescriptor(mixin, key));
-        return target;
-      }
-      ;
-      $define(STATIC + FORCED, OBJECT, {
-        isObject: isObject,
-        classof: classof,
-        define: define,
-        make: function(proto, mixin) {
-          return define(create(proto), mixin);
-        }
-      });
-    }();
-    $define(PROTO + FORCED, ARRAY, {turn: function(fn, target) {
-        assertFunction(fn);
-        var memo = target == undefined ? [] : Object(target),
-            O = ES5Object(this),
-            length = toLength(O.length),
-            index = 0;
-        while (length > index)
-          if (fn(memo, O[index], index++, this) === false)
-            break;
-        return memo;
-      }});
-    if (framework)
-      ArrayUnscopables.turn = true;
+    }(!!navigator && /MSIE .\./.test(navigator.userAgent));
     !function(arrayStatics) {
       function setArrayStatics(keys, length) {
         forEach.call(array(keys), function(key) {
@@ -1915,132 +1839,26 @@
       setArrayStatics('join,slice,concat,push,splice,unshift,sort,lastIndexOf,' + 'reduce,reduceRight,copyWithin,fill,turn');
       $define(STATIC, ARRAY, arrayStatics);
     }({});
-    !function(numberMethods) {
-      function NumberIterator(iterated) {
-        set(this, ITER, {
-          l: toLength(iterated),
-          i: 0
-        });
-      }
-      createIterator(NumberIterator, NUMBER, function() {
-        var iter = this[ITER],
-            i = iter.i++;
-        return i < iter.l ? iterResult(0, i) : iterResult(1);
-      });
-      defineIterator(Number, NUMBER, function() {
-        return new NumberIterator(this);
-      });
-      numberMethods.random = function(lim) {
-        var a = +this,
-            b = lim == undefined ? 0 : +lim,
-            m = min(a, b);
-        return random() * (max(a, b) - m) + m;
-      };
-      forEach.call(array('round,floor,ceil,abs,sin,asin,cos,acos,tan,atan,exp,sqrt,max,min,pow,atan2,' + 'acosh,asinh,atanh,cbrt,clz32,cosh,expm1,hypot,imul,log1p,log10,log2,sign,sinh,tanh,trunc'), function(key) {
-        var fn = Math[key];
-        if (fn)
-          numberMethods[key] = function() {
-            var args = [+this],
-                i = 0;
-            while (arguments.length > i)
-              args.push(arguments[i++]);
-            return invoke(fn, args);
-          };
-      });
-      $define(PROTO + FORCED, NUMBER, numberMethods);
-    }({});
-    !function() {
-      var escapeHTMLDict = {
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&apos;'
-      },
-          unescapeHTMLDict = {},
-          key;
-      for (key in escapeHTMLDict)
-        unescapeHTMLDict[escapeHTMLDict[key]] = key;
-      $define(PROTO + FORCED, STRING, {
-        escapeHTML: createReplacer(/[&<>"']/g, escapeHTMLDict),
-        unescapeHTML: createReplacer(/&(?:amp|lt|gt|quot|apos);/g, unescapeHTMLDict)
-      });
-    }();
-    !function(formatRegExp, flexioRegExp, locales, current, SECONDS, MINUTES, HOURS, MONTH, YEAR) {
-      function createFormat(prefix) {
-        return function(template, locale) {
-          var that = this,
-              dict = locales[has(locales, locale) ? locale : current];
-          function get(unit) {
-            return that[prefix + unit]();
-          }
-          return String(template).replace(formatRegExp, function(part) {
-            switch (part) {
-              case 's':
-                return get(SECONDS);
-              case 'ss':
-                return lz(get(SECONDS));
-              case 'm':
-                return get(MINUTES);
-              case 'mm':
-                return lz(get(MINUTES));
-              case 'h':
-                return get(HOURS);
-              case 'hh':
-                return lz(get(HOURS));
-              case 'D':
-                return get(DATE);
-              case 'DD':
-                return lz(get(DATE));
-              case 'W':
-                return dict[0][get('Day')];
-              case 'N':
-                return get(MONTH) + 1;
-              case 'NN':
-                return lz(get(MONTH) + 1);
-              case 'M':
-                return dict[2][get(MONTH)];
-              case 'MM':
-                return dict[1][get(MONTH)];
-              case 'Y':
-                return get(YEAR);
-              case 'YY':
-                return lz(get(YEAR) % 100);
-            }
-            return part;
-          });
-        };
-      }
-      function lz(num) {
-        return num > 9 ? num : '0' + num;
-      }
-      function addLocale(lang, locale) {
-        function split(index) {
-          var result = [];
-          forEach.call(array(locale.months), function(it) {
-            result.push(it.replace(flexioRegExp, '$' + index));
-          });
-          return result;
+    !function(console, enabled) {
+      var _console = {
+        enable: function() {
+          enabled = true;
+        },
+        disable: function() {
+          enabled = false;
         }
-        locales[lang] = [array(locale.weekdays), split(1), split(2)];
-        return core;
-      }
-      $define(PROTO + FORCED, DATE, {
-        format: createFormat('get'),
-        formatUTC: createFormat('getUTC')
-      });
-      addLocale(current, {
-        weekdays: 'Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday',
-        months: 'January,February,March,April,May,June,July,August,September,October,November,December'
-      });
-      addLocale('ru', {
-        weekdays: 'Воскресенье,Понедельник,Вторник,Среда,Четверг,Пятница,Суббота',
-        months: 'Январ:я|ь,Феврал:я|ь,Март:а|,Апрел:я|ь,Ма:я|й,Июн:я|ь,' + 'Июл:я|ь,Август:а|,Сентябр:я|ь,Октябр:я|ь,Ноябр:я|ь,Декабр:я|ь'
-      });
-      core.locale = function(locale) {
-        return has(locales, locale) ? current = locale : current;
       };
-      core.addLocale = addLocale;
-    }(/\b\w\w?\b/g, /:(.*)\|(.*)$/, {}, 'en', 'Seconds', 'Minutes', 'Hours', 'Month', 'FullYear');
-  }(typeof self != 'undefined' && self.Math === Math ? self : Function('return this')(), false);
+      forEach.call(array('assert,clear,count,debug,dir,dirxml,error,exception,group,' + 'groupCollapsed,groupEnd,info,isIndependentlyComposed,log,markTimeline,profile,' + 'profileEnd,table,time,timeEnd,timeline,timelineEnd,timeStamp,trace,warn'), function(key) {
+        var fn = console[key];
+        _console[key] = function() {
+          if (enabled && fn)
+            return apply.call(fn, console, arguments);
+        };
+      });
+      try {
+        framework && delete global.console;
+      } catch (e) {}
+      $define(GLOBAL + FORCED, {console: _console});
+    }(global.console || {}, true);
+  }(typeof self != 'undefined' && self.Math === Math ? self : Function('return this')(), true);
 })(require("process"));
