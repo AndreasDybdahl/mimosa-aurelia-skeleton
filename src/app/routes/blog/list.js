@@ -19,7 +19,7 @@ export class Index {
 
   url(post) {
     let date = moment(post.date);
-    return `#/${date.format('YYYY/MM/DD')}/${post.slug}/`
+    return `#/blog/${date.format('YYYY/MM/DD')}/${post.slug}/`
   }
 
   date(post) {
