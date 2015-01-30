@@ -76,6 +76,7 @@ System.config({
       "lib/app/routes/blog/index",
       "lib/app/routes/blog/list",
       "lib/app/routes/blog/post",
+      "lib/app/routes/blog/tag",
       "github:systemjs/plugin-css@0.1.0",
       "github:aurelia/metadata@0.3.1/system/index",
       "github:aurelia/loader@0.3.3",

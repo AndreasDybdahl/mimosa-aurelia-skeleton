@@ -2,7 +2,7 @@ import {BlogService} from '../../services/blog';
 
 import moment from 'moment';
 
-export class Index {
+export class List {
   static inject() { return [BlogService]; }
   constructor(blogService) {
     this.blogService = blogService;
@@ -10,16 +10,20 @@ export class Index {
 
   activate() {
     return this.blogService.getLatest()
-      .then(result => {
-        this.posts = result.posts;
-        this.total = result.total;
-        this.page = result.page;
+      .then(({posts, total, page}) => {
+        this.posts = posts;
+        this.total = total;
+        this.page = page;
       });
   }
 
   url(post) {
     let date = moment(post.date);
     return `#/blog/${date.format('YYYY/MM/DD')}/${post.slug}/`
+  }
+
+  tagUrl(tag) {
+    return `#/blog/tags/${tag}/`;
   }
 
   date(post) {
