@@ -72,16 +72,13 @@
   "jspm": {
     "files": [
       "moment.js",
-      "lang"
+      "locale"
     ],
     "map": {
       "moment": "./moment"
     },
     "buildConfig": {
       "uglify": true
-    },
-    "dependencyMap": {
-      "moment": "./moment"
     }
   },
   "spm": {
@@ -92,15 +89,12 @@
   },
   "files": [
     "moment.js",
-    "lang"
+    "locale"
   ],
   "map": {
     "moment": "./moment"
   },
   "buildConfig": {
     "uglify": true
-  },
-  "dependencyMap": {
-    "moment": "./moment"
   }
 }
