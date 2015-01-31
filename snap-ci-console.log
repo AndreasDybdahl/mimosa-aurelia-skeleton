@@ -1,0 +1,2256 @@
+Created secure file [32m$HOME/.jspm/config[0m with permissions [32m0400[0m
+
+$ [32mgit clone git@localhost:YoloDev/mimosa-aurelia-skeleton .[0m
+Cloning into '.'...
+Warning: Permanently added 'localhost' (RSA) to the list of known hosts.
+Command [32mgit clone git@localhost:YoloDev/mimosa-aurelia-skeleton .[0m exited successfully with status 0.
+
+$ [32mgit checkout master[0m
+Already on 'master'
+Your branch is up-to-date with 'origin/master'.
+Command [32mgit checkout master[0m exited successfully with status 0.
+
+$ [32mgit reset --hard 49fb7068f4c54d7b027b9f8639037f921b1a999f[0m
+HEAD is now at 49fb706 Modify makefile
+Command [32mgit reset --hard 49fb7068f4c54d7b027b9f8639037f921b1a999f[0m exited successfully with status 0.
+
+$ [32mgit submodule update --init[0m
+Command [32mgit submodule update --init[0m exited successfully with status 0.
+
+$ export SNAP_CI=true
+$ export CI=true
+$ export SNAP_CACHE_DIR=/var/go
+$ export LANG=en_US.UTF-8
+$ export LC_ALL=en_US.UTF-8
+$ export SNAP_WORKING_DIR=/var/snap-ci/repo
+$ export SNAP_PIPELINE_COUNTER=52
+$ export SNAP_STAGE_NAME=Test
+$ export SNAP_BRANCH=master
+$ export SNAP_COMMIT=49fb7068f4c54d7b027b9f8639037f921b1a999f
+$ export SNAP_COMMIT_SHORT=49fb706
+$ export TRACKING_PIPELINE=true
+$ export SNAP_TRACKING_PIPELINE=true
+$ export INTEGRATION_PIPELINE=false
+$ export SNAP_INTEGRATION_PIPELINE=false
+
+$ [32mif [ ! -d ${SNAP_CACHE_DIR}/node_modules ]; then mkdir ${SNAP_CACHE_DIR}/node_modules; fi;[0m
+Command [32mif [ ! -d ${SNAP_CACHE_DIR}/node_modules ]; then mkdir ${SNAP_CACHE_DIR}/node_modules; fi;[0m exited successfully with status 0. Took 0.00176 seconds.
+
+$ [32mln -s ${SNAP_CACHE_DIR}/node_modules node_modules[0m
+Command [32mln -s ${SNAP_CACHE_DIR}/node_modules node_modules[0m exited successfully with status 0. Took 0.00564 seconds.
+
+$ [32mpwd[0m
+/var/snap-ci/repo
+Command [32mpwd[0m exited successfully with status 0. Took 0.00048 seconds.
+
+$ [32mchmod +wrx $HOME/.jspm/config[0m
+Command [32mchmod +wrx $HOME/.jspm/config[0m exited successfully with status 0. Took 0.00243 seconds.
+
+$ [32msudo npm install -g jspm[0m
+npm http GET https://registry.npmjs.org/jspm
+npm http 200 https://registry.npmjs.org/jspm
+npm http GET https://registry.npmjs.org/jspm/-/jspm-0.11.0.tgz
+npm http 200 https://registry.npmjs.org/jspm/-/jspm-0.11.0.tgz
+npm http GET https://registry.npmjs.org/jspm-github
+npm http GET https://registry.npmjs.org/glob
+npm http GET https://registry.npmjs.org/graceful-fs
+npm http GET https://registry.npmjs.org/jspm-npm
+npm http GET https://registry.npmjs.org/jspm-registry
+npm http GET https://registry.npmjs.org/liftoff
+npm http GET https://registry.npmjs.org/minimatch
+npm http GET https://registry.npmjs.org/mkdirp
+npm http GET https://registry.npmjs.org/ncp
+npm http GET https://registry.npmjs.org/request
+npm http GET https://registry.npmjs.org/rimraf
+npm http GET https://registry.npmjs.org/rsvp
+npm http GET https://registry.npmjs.org/semver
+npm http GET https://registry.npmjs.org/systemjs-builder
+npm http GET https://registry.npmjs.org/systemjs
+npm http GET https://registry.npmjs.org/traceur
+npm http GET https://registry.npmjs.org/uglify-js
+npm http 200 https://registry.npmjs.org/graceful-fs
+npm http GET https://registry.npmjs.org/graceful-fs/-/graceful-fs-3.0.5.tgz
+npm http 200 https://registry.npmjs.org/glob
+npm http 200 https://registry.npmjs.org/liftoff
+npm http 200 https://registry.npmjs.org/jspm-npm
+npm http GET https://registry.npmjs.org/glob/-/glob-4.3.5.tgz
+npm http 200 https://registry.npmjs.org/minimatch
+npm http 200 https://registry.npmjs.org/mkdirp
+npm http 200 https://registry.npmjs.org/graceful-fs/-/graceful-fs-3.0.5.tgz
+npm http GET https://registry.npmjs.org/liftoff/-/liftoff-0.13.6.tgz
+npm http 200 https://registry.npmjs.org/ncp
+npm http GET https://registry.npmjs.org/jspm-npm/-/jspm-npm-0.17.0.tgz
+npm http GET https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.0.tgz
+npm http GET https://registry.npmjs.org/minimatch/-/minimatch-0.2.14.tgz
+npm http 200 https://registry.npmjs.org/rimraf
+npm http GET https://registry.npmjs.org/ncp/-/ncp-0.6.0.tgz
+npm http GET https://registry.npmjs.org/rimraf/-/rimraf-2.2.8.tgz
+npm http 200 https://registry.npmjs.org/glob/-/glob-4.3.5.tgz
+npm http 200 https://registry.npmjs.org/jspm-registry
+npm http 200 https://registry.npmjs.org/request
+npm http 200 https://registry.npmjs.org/ncp/-/ncp-0.6.0.tgz
+npm http 200 https://registry.npmjs.org/liftoff/-/liftoff-0.13.6.tgz
+npm http 200 https://registry.npmjs.org/semver
+npm http 200 https://registry.npmjs.org/jspm-github
+npm http 200 https://registry.npmjs.org/jspm-npm/-/jspm-npm-0.17.0.tgz
+npm http 200 https://registry.npmjs.org/rimraf/-/rimraf-2.2.8.tgz
+npm http 200 https://registry.npmjs.org/minimatch/-/minimatch-0.2.14.tgz
+npm http 200 https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.0.tgz
+npm http GET https://registry.npmjs.org/jspm-registry/-/jspm-registry-0.3.2.tgz
+npm http GET https://registry.npmjs.org/request/-/request-2.51.0.tgz
+npm http GET https://registry.npmjs.org/semver/-/semver-4.0.3.tgz
+npm http 200 https://registry.npmjs.org/systemjs
+npm http GET https://registry.npmjs.org/jspm-github/-/jspm-github-0.10.0.tgz
+npm http GET https://registry.npmjs.org/systemjs/-/systemjs-0.12.1.tgz
+npm http 200 https://registry.npmjs.org/rsvp
+npm http 200 https://registry.npmjs.org/uglify-js
+npm http GET https://registry.npmjs.org/rsvp/-/rsvp-3.0.16.tgz
+npm http GET https://registry.npmjs.org/uglify-js/-/uglify-js-2.4.16.tgz
+npm http 200 https://registry.npmjs.org/jspm-registry/-/jspm-registry-0.3.2.tgz
+npm http 200 https://registry.npmjs.org/request/-/request-2.51.0.tgz
+npm http 200 https://registry.npmjs.org/semver/-/semver-4.0.3.tgz
+npm http 200 https://registry.npmjs.org/jspm-github/-/jspm-github-0.10.0.tgz
+npm http 200 https://registry.npmjs.org/rsvp/-/rsvp-3.0.16.tgz
+npm http 200 https://registry.npmjs.org/systemjs-builder
+npm http 200 https://registry.npmjs.org/systemjs/-/systemjs-0.12.1.tgz
+npm http 200 https://registry.npmjs.org/uglify-js/-/uglify-js-2.4.16.tgz
+npm http GET https://registry.npmjs.org/systemjs-builder/-/systemjs-builder-0.6.0.tgz
+npm http 200 https://registry.npmjs.org/systemjs-builder/-/systemjs-builder-0.6.0.tgz
+npm http 200 https://registry.npmjs.org/traceur
+npm http GET https://registry.npmjs.org/traceur/-/traceur-0.0.82.tgz
+npm http 200 https://registry.npmjs.org/traceur/-/traceur-0.0.82.tgz
+npm http GET https://registry.npmjs.org/decompress-zip
+npm http GET https://registry.npmjs.org/tar
+npm http GET https://registry.npmjs.org/which
+npm http GET https://registry.npmjs.org/once
+npm http GET https://registry.npmjs.org/inflight
+npm http GET https://registry.npmjs.org/inherits
+npm http 200 https://registry.npmjs.org/which
+npm http 200 https://registry.npmjs.org/tar
+npm http 200 https://registry.npmjs.org/inherits
+npm http GET https://registry.npmjs.org/minimatch/-/minimatch-2.0.1.tgz
+npm http GET https://registry.npmjs.org/which/-/which-1.0.8.tgz
+npm http GET https://registry.npmjs.org/resolve
+npm http GET https://registry.npmjs.org/rmdir
+npm http GET https://registry.npmjs.org/tar/-/tar-0.1.20.tgz
+npm http GET https://registry.npmjs.org/inherits/-/inherits-2.0.1.tgz
+npm http GET https://registry.npmjs.org/minimist
+npm http GET https://registry.npmjs.org/extend
+npm http GET https://registry.npmjs.org/flagged-respawn
+npm http GET https://registry.npmjs.org/findup-sync
+npm http GET https://registry.npmjs.org/resolve
+npm http 200 https://registry.npmjs.org/once
+npm http 200 https://registry.npmjs.org/inflight
+npm http GET https://registry.npmjs.org/once/-/once-1.3.1.tgz
+npm http 200 https://registry.npmjs.org/extend
+npm http GET https://registry.npmjs.org/lru-cache
+npm http GET https://registry.npmjs.org/sigmund
+npm http 200 https://registry.npmjs.org/minimist
+npm http 200 https://registry.npmjs.org/flagged-respawn
+npm http GET https://registry.npmjs.org/inflight/-/inflight-1.0.4.tgz
+npm http 200 https://registry.npmjs.org/minimatch/-/minimatch-2.0.1.tgz
+npm http GET https://registry.npmjs.org/extend/-/extend-1.3.0.tgz
+npm http 200 https://registry.npmjs.org/findup-sync
+npm http 200 https://registry.npmjs.org/which/-/which-1.0.8.tgz
+npm http 200 https://registry.npmjs.org/inherits/-/inherits-2.0.1.tgz
+npm http 200 https://registry.npmjs.org/tar/-/tar-0.1.20.tgz
+npm http GET https://registry.npmjs.org/minimist/-/minimist-1.1.0.tgz
+npm http GET https://registry.npmjs.org/flagged-respawn/-/flagged-respawn-0.3.1.tgz
+npm http 200 https://registry.npmjs.org/inflight/-/inflight-1.0.4.tgz
+npm http 200 https://registry.npmjs.org/extend/-/extend-1.3.0.tgz
+npm http 200 https://registry.npmjs.org/decompress-zip
+npm http GET https://registry.npmjs.org/findup-sync/-/findup-sync-0.1.3.tgz
+npm http 200 https://registry.npmjs.org/resolve
+npm http 200 https://registry.npmjs.org/lru-cache
+npm http 200 https://registry.npmjs.org/flagged-respawn/-/flagged-respawn-0.3.1.tgz
+npm http 200 https://registry.npmjs.org/once/-/once-1.3.1.tgz
+npm http 200 https://registry.npmjs.org/resolve
+npm http GET https://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz
+npm http 200 https://registry.npmjs.org/sigmund
+npm http 200 https://registry.npmjs.org/rmdir
+npm http GET https://registry.npmjs.org/decompress-zip/-/decompress-zip-0.1.0.tgz
+npm http GET https://registry.npmjs.org/resolve/-/resolve-1.1.0.tgz
+npm http GET https://registry.npmjs.org/lru-cache/-/lru-cache-2.5.0.tgz
+npm http GET https://registry.npmjs.org/resolve/-/resolve-1.0.0.tgz
+npm http GET https://registry.npmjs.org/sigmund/-/sigmund-1.0.0.tgz
+npm http GET https://registry.npmjs.org/rmdir/-/rmdir-1.0.4.tgz
+npm http 200 https://registry.npmjs.org/minimist/-/minimist-1.1.0.tgz
+npm http 200 https://registry.npmjs.org/findup-sync/-/findup-sync-0.1.3.tgz
+npm http 200 https://registry.npmjs.org/lru-cache/-/lru-cache-2.5.0.tgz
+npm http 200 https://registry.npmjs.org/resolve/-/resolve-1.0.0.tgz
+npm http 200 https://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz
+npm http 200 https://registry.npmjs.org/sigmund/-/sigmund-1.0.0.tgz
+npm http 200 https://registry.npmjs.org/rmdir/-/rmdir-1.0.4.tgz
+npm http 200 https://registry.npmjs.org/decompress-zip/-/decompress-zip-0.1.0.tgz
+npm http 200 https://registry.npmjs.org/resolve/-/resolve-1.1.0.tgz
+npm http GET https://registry.npmjs.org/forever-agent
+npm http GET https://registry.npmjs.org/json-stringify-safe
+npm http GET https://registry.npmjs.org/form-data
+npm http GET https://registry.npmjs.org/mime-types
+npm http GET https://registry.npmjs.org/node-uuid
+npm http GET https://registry.npmjs.org/qs
+npm http GET https://registry.npmjs.org/tunnel-agent
+npm http GET https://registry.npmjs.org/tough-cookie
+npm http GET https://registry.npmjs.org/http-signature
+npm http GET https://registry.npmjs.org/oauth-sign
+npm http GET https://registry.npmjs.org/hawk
+npm http GET https://registry.npmjs.org/aws-sign2
+npm http GET https://registry.npmjs.org/stringstream
+npm http GET https://registry.npmjs.org/combined-stream
+npm http GET https://registry.npmjs.org/bl
+npm http GET https://registry.npmjs.org/caseless
+npm http 200 https://registry.npmjs.org/forever-agent
+npm http 200 https://registry.npmjs.org/json-stringify-safe
+npm http GET https://registry.npmjs.org/forever-agent/-/forever-agent-0.5.2.tgz
+npm http GET https://registry.npmjs.org/json-stringify-safe/-/json-stringify-safe-5.0.0.tgz
+npm http 200 https://registry.npmjs.org/mime-types
+npm http 200 https://registry.npmjs.org/tunnel-agent
+npm http 200 https://registry.npmjs.org/form-data
+npm http 200 https://registry.npmjs.org/node-uuid
+npm http GET https://registry.npmjs.org/mime-types/-/mime-types-1.0.2.tgz
+npm http GET https://registry.npmjs.org/tunnel-agent/-/tunnel-agent-0.4.0.tgz
+npm http GET https://registry.npmjs.org/form-data/-/form-data-0.2.0.tgz
+npm http 200 https://registry.npmjs.org/oauth-sign
+npm http GET https://registry.npmjs.org/node-uuid/-/node-uuid-1.4.2.tgz
+npm http 200 https://registry.npmjs.org/qs
+npm http 200 https://registry.npmjs.org/http-signature
+npm http GET https://registry.npmjs.org/oauth-sign/-/oauth-sign-0.5.0.tgz
+npm http 200 https://registry.npmjs.org/aws-sign2
+npm http GET https://registry.npmjs.org/source-map
+npm http GET https://registry.npmjs.org/6to5
+npm http 200 https://registry.npmjs.org/stringstream
+npm http 200 https://registry.npmjs.org/combined-stream
+npm http GET https://registry.npmjs.org/qs/-/qs-2.3.3.tgz
+npm http GET https://registry.npmjs.org/http-signature/-/http-signature-0.10.1.tgz
+npm http 200 https://registry.npmjs.org/forever-agent/-/forever-agent-0.5.2.tgz
+npm http GET https://registry.npmjs.org/aws-sign2/-/aws-sign2-0.5.0.tgz
+npm http 200 https://registry.npmjs.org/caseless
+npm http 200 https://registry.npmjs.org/bl
+npm http 200 https://registry.npmjs.org/json-stringify-safe/-/json-stringify-safe-5.0.0.tgz
+npm http GET https://registry.npmjs.org/stringstream/-/stringstream-0.0.4.tgz
+npm http GET https://registry.npmjs.org/combined-stream/-/combined-stream-0.0.7.tgz
+npm http 200 https://registry.npmjs.org/node-uuid/-/node-uuid-1.4.2.tgz
+npm http GET https://registry.npmjs.org/wrappy
+npm http 200 https://registry.npmjs.org/tunnel-agent/-/tunnel-agent-0.4.0.tgz
+npm http GET https://registry.npmjs.org/caseless/-/caseless-0.8.0.tgz
+npm http GET https://registry.npmjs.org/bl/-/bl-0.9.4.tgz
+npm http 200 https://registry.npmjs.org/oauth-sign/-/oauth-sign-0.5.0.tgz
+npm http 200 https://registry.npmjs.org/mime-types/-/mime-types-1.0.2.tgz
+npm http 200 https://registry.npmjs.org/form-data/-/form-data-0.2.0.tgz
+npm http 200 https://registry.npmjs.org/hawk
+npm http 200 https://registry.npmjs.org/qs/-/qs-2.3.3.tgz
+npm http 200 https://registry.npmjs.org/http-signature/-/http-signature-0.10.1.tgz
+npm http GET https://registry.npmjs.org/hawk/-/hawk-1.1.1.tgz
+npm http 200 https://registry.npmjs.org/aws-sign2/-/aws-sign2-0.5.0.tgz
+npm http 200 https://registry.npmjs.org/stringstream/-/stringstream-0.0.4.tgz
+npm http 200 https://registry.npmjs.org/tough-cookie
+npm http 200 https://registry.npmjs.org/combined-stream/-/combined-stream-0.0.7.tgz
+npm http 200 https://registry.npmjs.org/caseless/-/caseless-0.8.0.tgz
+npm http 200 https://registry.npmjs.org/bl/-/bl-0.9.4.tgz
+npm http 200 https://registry.npmjs.org/hawk/-/hawk-1.1.1.tgz
+npm http 200 https://registry.npmjs.org/source-map
+npm http GET https://registry.npmjs.org/tough-cookie/-/tough-cookie-0.12.1.tgz
+npm http 200 https://registry.npmjs.org/wrappy
+npm http GET https://registry.npmjs.org/source-map/-/source-map-0.2.0.tgz
+npm http GET https://registry.npmjs.org/wrappy/-/wrappy-1.0.1.tgz
+npm http 200 https://registry.npmjs.org/tough-cookie/-/tough-cookie-0.12.1.tgz
+npm http 200 https://registry.npmjs.org/6to5
+npm http 200 https://registry.npmjs.org/source-map/-/source-map-0.2.0.tgz
+npm http 200 https://registry.npmjs.org/wrappy/-/wrappy-1.0.1.tgz
+npm http GET https://registry.npmjs.org/6to5/-/6to5-3.2.0.tgz
+npm http GET https://registry.npmjs.org/brace-expansion
+npm http 200 https://registry.npmjs.org/6to5/-/6to5-3.2.0.tgz
+npm http 200 https://registry.npmjs.org/brace-expansion
+npm http GET https://registry.npmjs.org/brace-expansion/-/brace-expansion-1.1.0.tgz
+npm http GET https://registry.npmjs.org/binary
+npm http GET https://registry.npmjs.org/mkpath
+npm http GET https://registry.npmjs.org/q
+npm http GET https://registry.npmjs.org/nopt
+npm http GET https://registry.npmjs.org/readable-stream
+npm http GET https://registry.npmjs.org/touch
+npm http 200 https://registry.npmjs.org/brace-expansion/-/brace-expansion-1.1.0.tgz
+npm http GET https://registry.npmjs.org/lodash
+npm http GET https://registry.npmjs.org/node.flow
+npm http GET https://registry.npmjs.org/optimist
+npm http GET https://registry.npmjs.org/uglify-to-browserify
+npm http GET https://registry.npmjs.org/async
+npm http GET https://registry.npmjs.org/glob/-/glob-3.2.11.tgz
+npm http GET https://registry.npmjs.org/source-map/-/source-map-0.1.34.tgz
+npm http 200 https://registry.npmjs.org/binary
+npm http 200 https://registry.npmjs.org/mkpath
+npm http 200 https://registry.npmjs.org/nopt
+npm http GET https://registry.npmjs.org/binary/-/binary-0.3.0.tgz
+npm http GET https://registry.npmjs.org/mkpath/-/mkpath-0.1.0.tgz
+npm http 200 https://registry.npmjs.org/readable-stream
+npm http GET https://registry.npmjs.org/nopt/-/nopt-3.0.1.tgz
+npm http 200 https://registry.npmjs.org/touch
+npm http GET https://registry.npmjs.org/touch/-/touch-0.0.3.tgz
+npm http GET https://registry.npmjs.org/readable-stream/-/readable-stream-1.1.13.tgz
+npm http 200 https://registry.npmjs.org/glob/-/glob-3.2.11.tgz
+npm http 200 https://registry.npmjs.org/q
+npm http 200 https://registry.npmjs.org/optimist
+npm http 200 https://registry.npmjs.org/source-map/-/source-map-0.1.34.tgz
+npm http 200 https://registry.npmjs.org/uglify-to-browserify
+npm http GET https://registry.npmjs.org/q/-/q-1.1.2.tgz
+npm http GET https://registry.npmjs.org/optimist/-/optimist-0.3.7.tgz
+npm http 200 https://registry.npmjs.org/lodash
+npm http GET https://registry.npmjs.org/uglify-to-browserify/-/uglify-to-browserify-1.0.2.tgz
+npm http 200 https://registry.npmjs.org/binary/-/binary-0.3.0.tgz
+npm http 200 https://registry.npmjs.org/touch/-/touch-0.0.3.tgz
+npm http GET https://registry.npmjs.org/lodash/-/lodash-2.4.1.tgz
+npm http 200 https://registry.npmjs.org/mkpath/-/mkpath-0.1.0.tgz
+npm http 200 https://registry.npmjs.org/nopt/-/nopt-3.0.1.tgz
+npm http 200 https://registry.npmjs.org/readable-stream/-/readable-stream-1.1.13.tgz
+npm http 200 https://registry.npmjs.org/q/-/q-1.1.2.tgz
+npm http 200 https://registry.npmjs.org/optimist/-/optimist-0.3.7.tgz
+npm http 200 https://registry.npmjs.org/uglify-to-browserify/-/uglify-to-browserify-1.0.2.tgz
+npm http 200 https://registry.npmjs.org/async
+npm http 200 https://registry.npmjs.org/lodash/-/lodash-2.4.1.tgz
+npm http GET https://registry.npmjs.org/async/-/async-0.2.10.tgz
+npm http GET https://registry.npmjs.org/block-stream
+npm http GET https://registry.npmjs.org/fstream
+npm http 200 https://registry.npmjs.org/async/-/async-0.2.10.tgz
+npm http 200 https://registry.npmjs.org/node.flow
+npm http GET https://registry.npmjs.org/node.flow/-/node.flow-1.2.3.tgz
+npm http 200 https://registry.npmjs.org/block-stream
+npm http GET https://registry.npmjs.org/block-stream/-/block-stream-0.0.7.tgz
+npm http 200 https://registry.npmjs.org/fstream
+npm http GET https://registry.npmjs.org/fstream/-/fstream-0.1.31.tgz
+npm http 200 https://registry.npmjs.org/node.flow/-/node.flow-1.2.3.tgz
+npm http 200 https://registry.npmjs.org/block-stream/-/block-stream-0.0.7.tgz
+npm http 200 https://registry.npmjs.org/fstream/-/fstream-0.1.31.tgz
+npm http GET https://registry.npmjs.org/balanced-match
+npm http GET https://registry.npmjs.org/concat-map
+npm http GET https://registry.npmjs.org/delayed-stream
+npm http 200 https://registry.npmjs.org/balanced-match
+npm http 200 https://registry.npmjs.org/concat-map
+npm http GET https://registry.npmjs.org/async/-/async-0.9.0.tgz
+npm http GET https://registry.npmjs.org/mime-types/-/mime-types-2.0.8.tgz
+npm http GET https://registry.npmjs.org/concat-map/-/concat-map-0.0.1.tgz
+npm http GET https://registry.npmjs.org/balanced-match/-/balanced-match-0.2.0.tgz
+npm http 200 https://registry.npmjs.org/delayed-stream
+npm http GET https://registry.npmjs.org/delayed-stream/-/delayed-stream-0.0.5.tgz
+npm http GET https://registry.npmjs.org/readable-stream/-/readable-stream-1.0.33.tgz
+npm http 200 https://registry.npmjs.org/mime-types/-/mime-types-2.0.8.tgz
+npm http 200 https://registry.npmjs.org/async/-/async-0.9.0.tgz
+npm http 200 https://registry.npmjs.org/concat-map/-/concat-map-0.0.1.tgz
+npm http 200 https://registry.npmjs.org/balanced-match/-/balanced-match-0.2.0.tgz
+npm http GET https://registry.npmjs.org/ctype
+npm http GET https://registry.npmjs.org/assert-plus
+npm http GET https://registry.npmjs.org/asn1
+npm http 200 https://registry.npmjs.org/readable-stream/-/readable-stream-1.0.33.tgz
+npm http 200 https://registry.npmjs.org/delayed-stream/-/delayed-stream-0.0.5.tgz
+npm http GET https://registry.npmjs.org/node.extend
+npm http GET https://registry.npmjs.org/nopt/-/nopt-1.0.10.tgz
+npm http 200 https://registry.npmjs.org/assert-plus
+npm http 200 https://registry.npmjs.org/ctype
+npm http 200 https://registry.npmjs.org/asn1
+npm http GET https://registry.npmjs.org/assert-plus/-/assert-plus-0.1.5.tgz
+npm http GET https://registry.npmjs.org/ctype/-/ctype-0.5.3.tgz
+npm http GET https://registry.npmjs.org/asn1/-/asn1-0.1.11.tgz
+npm http GET https://registry.npmjs.org/abbrev
+npm http 200 https://registry.npmjs.org/nopt/-/nopt-1.0.10.tgz
+npm http 200 https://registry.npmjs.org/assert-plus/-/assert-plus-0.1.5.tgz
+npm http 200 https://registry.npmjs.org/node.extend
+npm http 200 https://registry.npmjs.org/ctype/-/ctype-0.5.3.tgz
+npm http GET https://registry.npmjs.org/node.extend/-/node.extend-1.0.8.tgz
+npm http 200 https://registry.npmjs.org/asn1/-/asn1-0.1.11.tgz
+npm http 200 https://registry.npmjs.org/abbrev
+npm http GET https://registry.npmjs.org/abbrev/-/abbrev-1.0.5.tgz
+npm http 200 https://registry.npmjs.org/node.extend/-/node.extend-1.0.8.tgz
+npm http GET https://registry.npmjs.org/string_decoder
+npm http GET https://registry.npmjs.org/core-util-is
+npm http GET https://registry.npmjs.org/isarray
+npm http 200 https://registry.npmjs.org/abbrev/-/abbrev-1.0.5.tgz
+npm http 200 https://registry.npmjs.org/core-util-is
+npm http 200 https://registry.npmjs.org/string_decoder
+npm http 200 https://registry.npmjs.org/isarray
+npm http GET https://registry.npmjs.org/mime-db
+npm http GET https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.1.tgz
+npm http GET https://registry.npmjs.org/isarray/-/isarray-0.0.1.tgz
+npm http GET https://registry.npmjs.org/string_decoder/-/string_decoder-0.10.31.tgz
+npm http GET https://registry.npmjs.org/chainsaw
+npm http GET https://registry.npmjs.org/buffers
+npm http 200 https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.1.tgz
+npm http 200 https://registry.npmjs.org/isarray/-/isarray-0.0.1.tgz
+npm http 200 https://registry.npmjs.org/string_decoder/-/string_decoder-0.10.31.tgz
+npm http GET https://registry.npmjs.org/is
+npm http GET https://registry.npmjs.org/object-keys
+npm http 200 https://registry.npmjs.org/chainsaw
+npm http 200 https://registry.npmjs.org/buffers
+npm http 200 https://registry.npmjs.org/mime-db
+npm http GET https://registry.npmjs.org/es6-module-loader
+npm http GET https://registry.npmjs.org/chainsaw/-/chainsaw-0.1.0.tgz
+npm http GET https://registry.npmjs.org/buffers/-/buffers-0.1.1.tgz
+npm http GET https://registry.npmjs.org/punycode
+npm http GET https://registry.npmjs.org/mime-db/-/mime-db-1.6.0.tgz
+npm http GET https://registry.npmjs.org/wordwrap
+npm http 200 https://registry.npmjs.org/chainsaw/-/chainsaw-0.1.0.tgz
+npm http 200 https://registry.npmjs.org/object-keys
+npm http 200 https://registry.npmjs.org/buffers/-/buffers-0.1.1.tgz
+npm http 200 https://registry.npmjs.org/mime-db/-/mime-db-1.6.0.tgz
+npm http 200 https://registry.npmjs.org/is
+npm http GET https://registry.npmjs.org/object-keys/-/object-keys-0.4.0.tgz
+npm http GET https://registry.npmjs.org/is/-/is-0.2.7.tgz
+npm http 200 https://registry.npmjs.org/punycode
+npm http GET https://registry.npmjs.org/cryptiles
+npm http GET https://registry.npmjs.org/sntp
+npm http GET https://registry.npmjs.org/hoek
+npm http GET https://registry.npmjs.org/boom
+npm http GET https://registry.npmjs.org/punycode/-/punycode-1.3.2.tgz
+npm http 200 https://registry.npmjs.org/wordwrap
+npm http GET https://registry.npmjs.org/wordwrap/-/wordwrap-0.0.2.tgz
+npm http 200 https://registry.npmjs.org/es6-module-loader
+npm http GET https://registry.npmjs.org/es6-module-loader/-/es6-module-loader-0.12.0.tgz
+npm http 200 https://registry.npmjs.org/object-keys/-/object-keys-0.4.0.tgz
+npm http 200 https://registry.npmjs.org/is/-/is-0.2.7.tgz
+npm http 200 https://registry.npmjs.org/boom
+npm http 200 https://registry.npmjs.org/punycode/-/punycode-1.3.2.tgz
+npm http 200 https://registry.npmjs.org/sntp
+npm http 200 https://registry.npmjs.org/cryptiles
+npm http GET https://registry.npmjs.org/boom/-/boom-0.4.2.tgz
+npm http 200 https://registry.npmjs.org/wordwrap/-/wordwrap-0.0.2.tgz
+npm http GET https://registry.npmjs.org/sntp/-/sntp-0.2.4.tgz
+npm http GET https://registry.npmjs.org/cryptiles/-/cryptiles-0.2.2.tgz
+npm http 200 https://registry.npmjs.org/es6-module-loader/-/es6-module-loader-0.12.0.tgz
+npm http 200 https://registry.npmjs.org/hoek
+npm http GET https://registry.npmjs.org/hoek/-/hoek-0.9.1.tgz
+npm http 200 https://registry.npmjs.org/boom/-/boom-0.4.2.tgz
+npm http GET https://registry.npmjs.org/traverse
+npm http 200 https://registry.npmjs.org/sntp/-/sntp-0.2.4.tgz
+npm http 200 https://registry.npmjs.org/cryptiles/-/cryptiles-0.2.2.tgz
+npm http GET https://registry.npmjs.org/amdefine
+npm http 200 https://registry.npmjs.org/hoek/-/hoek-0.9.1.tgz
+npm http 200 https://registry.npmjs.org/traverse
+npm http GET https://registry.npmjs.org/source-map-support
+npm http GET https://registry.npmjs.org/commander
+npm http GET https://registry.npmjs.org/traverse/-/traverse-0.3.9.tgz
+npm http 200 https://registry.npmjs.org/amdefine
+npm http GET https://registry.npmjs.org/semver/-/semver-2.3.2.tgz
+npm http GET https://registry.npmjs.org/amdefine/-/amdefine-0.1.0.tgz
+npm http 200 https://registry.npmjs.org/traverse/-/traverse-0.3.9.tgz
+npm http 200 https://registry.npmjs.org/semver/-/semver-2.3.2.tgz
+npm http 200 https://registry.npmjs.org/source-map-support
+npm http 200 https://registry.npmjs.org/amdefine/-/amdefine-0.1.0.tgz
+npm http GET https://registry.npmjs.org/source-map-support/-/source-map-support-0.2.9.tgz
+npm http 200 https://registry.npmjs.org/commander
+npm http GET https://registry.npmjs.org/commander/-/commander-2.6.0.tgz
+npm http 200 https://registry.npmjs.org/source-map-support/-/source-map-support-0.2.9.tgz
+npm http 200 https://registry.npmjs.org/commander/-/commander-2.6.0.tgz
+npm http GET https://registry.npmjs.org/minimatch/-/minimatch-0.3.0.tgz
+npm http 200 https://registry.npmjs.org/minimatch/-/minimatch-0.3.0.tgz
+npm http GET https://registry.npmjs.org/source-map/-/source-map-0.1.32.tgz
+npm http 200 https://registry.npmjs.org/source-map/-/source-map-0.1.32.tgz
+npm http GET https://registry.npmjs.org/grunt-contrib-uglify
+npm http GET https://registry.npmjs.org/when
+npm http 200 https://registry.npmjs.org/grunt-contrib-uglify
+npm http GET https://registry.npmjs.org/grunt-contrib-uglify/-/grunt-contrib-uglify-0.6.0.tgz
+npm http 200 https://registry.npmjs.org/when
+npm http GET https://registry.npmjs.org/when/-/when-3.7.2.tgz
+npm http GET https://registry.npmjs.org/acorn-6to5
+npm http GET https://registry.npmjs.org/ast-types
+npm http 200 https://registry.npmjs.org/grunt-contrib-uglify/-/grunt-contrib-uglify-0.6.0.tgz
+npm http GET https://registry.npmjs.org/chalk
+npm http GET https://registry.npmjs.org/chokidar
+npm http GET https://registry.npmjs.org/core-js
+npm http GET https://registry.npmjs.org/debug
+npm http GET https://registry.npmjs.org/detect-indent
+npm http GET https://registry.npmjs.org/estraverse
+npm http GET https://registry.npmjs.org/esutils
+npm http GET https://registry.npmjs.org/fs-readdir-recursive
+npm http GET https://registry.npmjs.org/globals
+npm http GET https://registry.npmjs.org/js-tokenizer
+npm http GET https://registry.npmjs.org/output-file-sync
+npm http GET https://registry.npmjs.org/private
+npm http GET https://registry.npmjs.org/regenerator-6to5
+npm http GET https://registry.npmjs.org/regexpu
+npm http GET https://registry.npmjs.org/roadrunner
+npm http GET https://registry.npmjs.org/supports-color
+npm http GET https://registry.npmjs.org/useragent
+npm http GET https://registry.npmjs.org/kexec
+npm http 200 https://registry.npmjs.org/when/-/when-3.7.2.tgz
+npm http GET https://registry.npmjs.org/lodash/-/lodash-3.0.0.tgz
+npm http GET https://registry.npmjs.org/source-map/-/source-map-0.1.43.tgz
+npm http 200 https://registry.npmjs.org/chalk
+npm http 200 https://registry.npmjs.org/source-map/-/source-map-0.1.43.tgz
+npm http 200 https://registry.npmjs.org/lodash/-/lodash-3.0.0.tgz
+npm http GET https://registry.npmjs.org/chalk/-/chalk-0.5.1.tgz
+npm http 200 https://registry.npmjs.org/acorn-6to5
+npm http 200 https://registry.npmjs.org/debug
+npm http 200 https://registry.npmjs.org/chokidar
+npm http GET https://registry.npmjs.org/acorn-6to5/-/acorn-6to5-0.11.1-25.tgz
+npm http 200 https://registry.npmjs.org/core-js
+npm http 200 https://registry.npmjs.org/ast-types
+npm http GET https://registry.npmjs.org/chokidar/-/chokidar-0.12.6.tgz
+npm http GET https://registry.npmjs.org/debug/-/debug-2.1.1.tgz
+npm http 200 https://registry.npmjs.org/fs-readdir-recursive
+npm http 200 https://registry.npmjs.org/estraverse
+npm http GET https://registry.npmjs.org/core-js/-/core-js-0.4.10.tgz
+npm http GET https://registry.npmjs.org/ast-types/-/ast-types-0.6.10.tgz
+npm http GET https://registry.npmjs.org/fs-readdir-recursive/-/fs-readdir-recursive-0.1.0.tgz
+npm http GET https://registry.npmjs.org/estraverse/-/estraverse-1.9.1.tgz
+npm http 200 https://registry.npmjs.org/output-file-sync
+npm http 200 https://registry.npmjs.org/chalk/-/chalk-0.5.1.tgz
+npm http 200 https://registry.npmjs.org/core-js/-/core-js-0.4.10.tgz
+npm http GET https://registry.npmjs.org/output-file-sync/-/output-file-sync-1.1.0.tgz
+npm http 200 https://registry.npmjs.org/ast-types/-/ast-types-0.6.10.tgz
+npm http 200 https://registry.npmjs.org/private
+npm http 200 https://registry.npmjs.org/acorn-6to5/-/acorn-6to5-0.11.1-25.tgz
+npm http GET https://registry.npmjs.org/private/-/private-0.1.6.tgz
+npm http GET https://registry.npmjs.org/maxmin
+npm http GET https://registry.npmjs.org/uri-path
+npm http 200 https://registry.npmjs.org/chokidar/-/chokidar-0.12.6.tgz
+npm http 200 https://registry.npmjs.org/debug/-/debug-2.1.1.tgz
+npm http 200 https://registry.npmjs.org/esutils
+npm http 200 https://registry.npmjs.org/fs-readdir-recursive/-/fs-readdir-recursive-0.1.0.tgz
+npm http 200 https://registry.npmjs.org/regenerator-6to5
+npm http 200 https://registry.npmjs.org/estraverse/-/estraverse-1.9.1.tgz
+npm http 200 https://registry.npmjs.org/output-file-sync/-/output-file-sync-1.1.0.tgz
+npm http GET https://registry.npmjs.org/esutils/-/esutils-1.1.6.tgz
+npm http GET https://registry.npmjs.org/regenerator-6to5/-/regenerator-6to5-0.8.9-7.tgz
+npm http 200 https://registry.npmjs.org/private/-/private-0.1.6.tgz
+npm http 200 https://registry.npmjs.org/roadrunner
+npm http 200 https://registry.npmjs.org/regexpu
+npm http GET https://registry.npmjs.org/roadrunner/-/roadrunner-1.0.4.tgz
+npm http 200 https://registry.npmjs.org/supports-color
+npm http 200 https://registry.npmjs.org/detect-indent
+npm http GET https://registry.npmjs.org/regexpu/-/regexpu-1.1.0.tgz
+npm http GET https://registry.npmjs.org/supports-color/-/supports-color-1.2.0.tgz
+npm http 200 https://registry.npmjs.org/useragent
+npm http 200 https://registry.npmjs.org/maxmin
+npm http GET https://registry.npmjs.org/detect-indent/-/detect-indent-3.0.0.tgz
+npm http 200 https://registry.npmjs.org/globals
+npm http 200 https://registry.npmjs.org/js-tokenizer
+npm http GET https://registry.npmjs.org/useragent/-/useragent-2.1.5.tgz
+npm http 200 https://registry.npmjs.org/regenerator-6to5/-/regenerator-6to5-0.8.9-7.tgz
+npm http GET https://registry.npmjs.org/maxmin/-/maxmin-1.0.0.tgz
+npm http 200 https://registry.npmjs.org/esutils/-/esutils-1.1.6.tgz
+npm http GET https://registry.npmjs.org/globals/-/globals-5.1.0.tgz
+npm http GET https://registry.npmjs.org/js-tokenizer/-/js-tokenizer-1.3.3.tgz
+npm http 200 https://registry.npmjs.org/roadrunner/-/roadrunner-1.0.4.tgz
+npm http 200 https://registry.npmjs.org/detect-indent/-/detect-indent-3.0.0.tgz
+npm http 200 https://registry.npmjs.org/uri-path
+npm http 200 https://registry.npmjs.org/regexpu/-/regexpu-1.1.0.tgz
+npm http 200 https://registry.npmjs.org/useragent/-/useragent-2.1.5.tgz
+npm http 200 https://registry.npmjs.org/maxmin/-/maxmin-1.0.0.tgz
+npm http 200 https://registry.npmjs.org/globals/-/globals-5.1.0.tgz
+npm http GET https://registry.npmjs.org/uri-path/-/uri-path-0.0.2.tgz
+npm http 200 https://registry.npmjs.org/supports-color/-/supports-color-1.2.0.tgz
+npm http 200 https://registry.npmjs.org/js-tokenizer/-/js-tokenizer-1.3.3.tgz
+npm http 200 https://registry.npmjs.org/kexec
+npm http GET https://registry.npmjs.org/kexec/-/kexec-1.0.0.tgz
+npm http 200 https://registry.npmjs.org/uri-path/-/uri-path-0.0.2.tgz
+npm http 200 https://registry.npmjs.org/kexec/-/kexec-1.0.0.tgz
+npm http GET https://registry.npmjs.org/pretty-bytes
+npm http GET https://registry.npmjs.org/figures
+npm http GET https://registry.npmjs.org/gzip-size
+npm http GET https://registry.npmjs.org/ansi-styles
+npm http GET https://registry.npmjs.org/escape-string-regexp
+npm http GET https://registry.npmjs.org/has-ansi
+npm http GET https://registry.npmjs.org/strip-ansi
+npm http GET https://registry.npmjs.org/supports-color/-/supports-color-0.2.0.tgz
+npm http 200 https://registry.npmjs.org/gzip-size
+npm http 200 https://registry.npmjs.org/pretty-bytes
+npm http GET https://registry.npmjs.org/gzip-size/-/gzip-size-1.0.0.tgz
+npm http 200 https://registry.npmjs.org/ansi-styles
+npm http 200 https://registry.npmjs.org/escape-string-regexp
+npm http GET https://registry.npmjs.org/pretty-bytes/-/pretty-bytes-1.0.2.tgz
+npm http 200 https://registry.npmjs.org/supports-color/-/supports-color-0.2.0.tgz
+npm http GET https://registry.npmjs.org/ansi-styles/-/ansi-styles-1.1.0.tgz
+npm http GET https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-1.0.2.tgz
+npm http 200 https://registry.npmjs.org/has-ansi
+npm http 200 https://registry.npmjs.org/figures
+npm http 200 https://registry.npmjs.org/strip-ansi
+npm http GET https://registry.npmjs.org/has-ansi/-/has-ansi-0.1.0.tgz
+npm http GET https://registry.npmjs.org/figures/-/figures-1.3.5.tgz
+npm http GET https://registry.npmjs.org/strip-ansi/-/strip-ansi-0.3.0.tgz
+npm http 200 https://registry.npmjs.org/gzip-size/-/gzip-size-1.0.0.tgz
+npm http 200 https://registry.npmjs.org/pretty-bytes/-/pretty-bytes-1.0.2.tgz
+npm http 200 https://registry.npmjs.org/ansi-styles/-/ansi-styles-1.1.0.tgz
+npm http 200 https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-1.0.2.tgz
+npm http 200 https://registry.npmjs.org/figures/-/figures-1.3.5.tgz
+npm http 200 https://registry.npmjs.org/has-ansi/-/has-ansi-0.1.0.tgz
+npm http 200 https://registry.npmjs.org/strip-ansi/-/strip-ansi-0.3.0.tgz
+npm http GET https://registry.npmjs.org/get-stdin
+npm http GET https://registry.npmjs.org/concat-stream
+npm http GET https://registry.npmjs.org/browserify-zlib
+npm http GET https://registry.npmjs.org/ansi-regex
+npm http GET https://registry.npmjs.org/ansi-regex
+npm http 200 https://registry.npmjs.org/get-stdin
+npm http 200 https://registry.npmjs.org/browserify-zlib
+npm http GET https://registry.npmjs.org/get-stdin/-/get-stdin-1.0.0.tgz
+npm http GET https://registry.npmjs.org/browserify-zlib/-/browserify-zlib-0.1.4.tgz
+npm http 200 https://registry.npmjs.org/ansi-regex
+npm http 200 https://registry.npmjs.org/ansi-regex
+npm http GET https://registry.npmjs.org/ansi-regex/-/ansi-regex-0.2.1.tgz
+npm http 200 https://registry.npmjs.org/concat-stream
+npm http GET https://registry.npmjs.org/concat-stream/-/concat-stream-1.4.7.tgz
+npm http 200 https://registry.npmjs.org/get-stdin/-/get-stdin-1.0.0.tgz
+npm http 200 https://registry.npmjs.org/browserify-zlib/-/browserify-zlib-0.1.4.tgz
+npm http 200 https://registry.npmjs.org/ansi-regex/-/ansi-regex-0.2.1.tgz
+npm http 200 https://registry.npmjs.org/concat-stream/-/concat-stream-1.4.7.tgz
+npm http GET https://registry.npmjs.org/typedarray
+npm http GET https://registry.npmjs.org/pako
+npm http 200 https://registry.npmjs.org/typedarray
+npm http GET https://registry.npmjs.org/typedarray/-/typedarray-0.0.6.tgz
+npm http 200 https://registry.npmjs.org/pako
+npm http GET https://registry.npmjs.org/pako/-/pako-0.2.5.tgz
+npm http 200 https://registry.npmjs.org/typedarray/-/typedarray-0.0.6.tgz
+npm http 200 https://registry.npmjs.org/pako/-/pako-0.2.5.tgz
+npm http GET https://registry.npmjs.org/repeating
+npm http GET https://registry.npmjs.org/xtend
+npm http GET https://registry.npmjs.org/minimist
+npm http GET https://registry.npmjs.org/get-stdin/-/get-stdin-3.0.2.tgz
+npm http 200 https://registry.npmjs.org/repeating
+npm http 304 https://registry.npmjs.org/minimist
+npm http 200 https://registry.npmjs.org/get-stdin/-/get-stdin-3.0.2.tgz
+npm http GET https://registry.npmjs.org/repeating/-/repeating-1.1.1.tgz
+npm http 200 https://registry.npmjs.org/xtend
+npm http GET https://registry.npmjs.org/readdirp
+npm http GET https://registry.npmjs.org/async-each
+npm http 200 https://registry.npmjs.org/repeating/-/repeating-1.1.1.tgz
+npm http GET https://registry.npmjs.org/fsevents
+npm http GET https://registry.npmjs.org/ms
+npm http GET https://registry.npmjs.org/xtend/-/xtend-4.0.0.tgz
+npm http GET https://registry.npmjs.org/recast
+npm http GET https://registry.npmjs.org/regenerate
+npm http GET https://registry.npmjs.org/regjsgen
+npm http GET https://registry.npmjs.org/regjsparser
+
+> kexec@1.0.0 install /opt/local/nodejs/0.10.28/lib/node_modules/jspm/node_modules/systemjs-builder/node_modules/6to5/node_modules/kexec
+> node-gyp configure build
+
+gyp WARN EACCES user "root" does not have permission to access the dev dir "/root/.node-gyp/0.10.28"
+gyp WARN EACCES attempting to reinstall using temporary dev dir "/opt/local/nodejs/0.10.28/lib/node_modules/jspm/node_modules/systemjs-builder/node_modules/6to5/node_modules/kexec/.node-gyp"
+gyp http GET http://nodejs.org/dist/v0.10.28/node-v0.10.28.tar.gz
+gyp http 200 http://nodejs.org/dist/v0.10.28/node-v0.10.28.tar.gz
+gyp http GET http://nodejs.org/dist/v0.10.28/SHASUMS.txt
+gyp http GET http://nodejs.org/dist/v0.10.28/SHASUMS.txt
+gyp http 200 http://nodejs.org/dist/v0.10.28/SHASUMS.txt
+gyp http 200 http://nodejs.org/dist/v0.10.28/SHASUMS.txt
+make: Entering directory `/opt/local/nodejs/0.10.28/lib/node_modules/jspm/node_modules/systemjs-builder/node_modules/6to5/node_modules/kexec/build'
+  CXX(target) Release/obj.target/kexec/src/kexec.o
+  SOLINK_MODULE(target) Release/obj.target/kexec.node
+  SOLINK_MODULE(target) Release/obj.target/kexec.node: Finished
+  COPY Release/kexec.node
+make: Leaving directory `/opt/local/nodejs/0.10.28/lib/node_modules/jspm/node_modules/systemjs-builder/node_modules/6to5/node_modules/kexec/build'
+npm http 200 https://registry.npmjs.org/async-each
+npm http 200 https://registry.npmjs.org/fsevents
+npm http 200 https://registry.npmjs.org/ms
+npm http 200 https://registry.npmjs.org/xtend/-/xtend-4.0.0.tgz
+npm http 200 https://registry.npmjs.org/readdirp
+npm http GET https://registry.npmjs.org/async-each/-/async-each-0.1.6.tgz
+npm http GET https://registry.npmjs.org/fsevents/-/fsevents-0.3.5.tgz
+npm http GET https://registry.npmjs.org/ms/-/ms-0.6.2.tgz
+npm http GET https://registry.npmjs.org/readdirp/-/readdirp-1.3.0.tgz
+npm http 200 https://registry.npmjs.org/regenerate
+npm http 200 https://registry.npmjs.org/regjsgen
+npm http 200 https://registry.npmjs.org/regjsparser
+npm http 200 https://registry.npmjs.org/recast
+npm http 200 https://registry.npmjs.org/async-each/-/async-each-0.1.6.tgz
+npm http GET https://registry.npmjs.org/regenerate/-/regenerate-1.2.1.tgz
+npm http GET https://registry.npmjs.org/regjsgen/-/regjsgen-0.2.0.tgz
+npm http GET https://registry.npmjs.org/regjsparser/-/regjsparser-0.1.3.tgz
+npm http 200 https://registry.npmjs.org/ms/-/ms-0.6.2.tgz
+npm http 200 https://registry.npmjs.org/fsevents/-/fsevents-0.3.5.tgz
+npm http 200 https://registry.npmjs.org/readdirp/-/readdirp-1.3.0.tgz
+npm http 200 https://registry.npmjs.org/regjsparser/-/regjsparser-0.1.3.tgz
+npm http GET https://registry.npmjs.org/recast/-/recast-0.9.15.tgz
+npm http 200 https://registry.npmjs.org/regenerate/-/regenerate-1.2.1.tgz
+npm http 200 https://registry.npmjs.org/regjsgen/-/regjsgen-0.2.0.tgz
+npm http 200 https://registry.npmjs.org/recast/-/recast-0.9.15.tgz
+npm http GET https://registry.npmjs.org/is-finite
+npm http GET https://registry.npmjs.org/meow
+npm http GET https://registry.npmjs.org/commoner
+npm http GET https://registry.npmjs.org/through
+npm http 200 https://registry.npmjs.org/meow
+npm http 200 https://registry.npmjs.org/is-finite
+npm http GET https://registry.npmjs.org/meow/-/meow-2.1.0.tgz
+npm http GET https://registry.npmjs.org/is-finite/-/is-finite-1.0.0.tgz
+npm http 200 https://registry.npmjs.org/through
+npm http GET https://registry.npmjs.org/through/-/through-2.3.6.tgz
+npm http 200 https://registry.npmjs.org/commoner
+npm http GET https://registry.npmjs.org/commoner/-/commoner-0.10.1.tgz
+npm http 200 https://registry.npmjs.org/meow/-/meow-2.1.0.tgz
+npm http 200 https://registry.npmjs.org/is-finite/-/is-finite-1.0.0.tgz
+npm http 200 https://registry.npmjs.org/through/-/through-2.3.6.tgz
+npm http GET https://registry.npmjs.org/source-map
+npm http 200 https://registry.npmjs.org/commoner/-/commoner-0.10.1.tgz
+npm WARN optional dep failed, continuing fsevents@0.3.5
+npm WARN optional dep failed, continuing fsevents@0.3.5
+npm http 304 https://registry.npmjs.org/source-map
+npm http GET https://registry.npmjs.org/camelcase-keys
+npm http GET https://registry.npmjs.org/indent-string
+npm http GET https://registry.npmjs.org/object-assign
+npm http 200 https://registry.npmjs.org/camelcase-keys
+npm http 200 https://registry.npmjs.org/indent-string
+npm http GET https://registry.npmjs.org/camelcase-keys/-/camelcase-keys-1.0.0.tgz
+npm http GET https://registry.npmjs.org/indent-string/-/indent-string-1.2.0.tgz
+npm http 200 https://registry.npmjs.org/object-assign
+npm http GET https://registry.npmjs.org/object-assign/-/object-assign-2.0.0.tgz
+npm http 200 https://registry.npmjs.org/camelcase-keys/-/camelcase-keys-1.0.0.tgz
+npm http 200 https://registry.npmjs.org/indent-string/-/indent-string-1.2.0.tgz
+npm http 200 https://registry.npmjs.org/object-assign/-/object-assign-2.0.0.tgz
+npm http GET https://registry.npmjs.org/graceful-fs
+npm http GET https://registry.npmjs.org/readable-stream
+npm http GET https://registry.npmjs.org/jsesc
+npm http GET https://registry.npmjs.org/camelcase
+npm http GET https://registry.npmjs.org/map-obj
+npm http 304 https://registry.npmjs.org/graceful-fs
+npm http 304 https://registry.npmjs.org/readable-stream
+npm http GET https://registry.npmjs.org/graceful-fs/-/graceful-fs-2.0.3.tgz
+npm http 200 https://registry.npmjs.org/camelcase
+npm http 200 https://registry.npmjs.org/map-obj
+npm http 200 https://registry.npmjs.org/jsesc
+npm http GET https://registry.npmjs.org/camelcase/-/camelcase-1.0.2.tgz
+npm http GET https://registry.npmjs.org/map-obj/-/map-obj-1.0.0.tgz
+npm http GET https://registry.npmjs.org/jsesc/-/jsesc-0.5.0.tgz
+npm http 200 https://registry.npmjs.org/graceful-fs/-/graceful-fs-2.0.3.tgz
+npm http GET https://registry.npmjs.org/esprima-fb
+npm http 200 https://registry.npmjs.org/camelcase/-/camelcase-1.0.2.tgz
+npm http 200 https://registry.npmjs.org/map-obj/-/map-obj-1.0.0.tgz
+npm http 200 https://registry.npmjs.org/jsesc/-/jsesc-0.5.0.tgz
+npm http 200 https://registry.npmjs.org/esprima-fb
+npm http GET https://registry.npmjs.org/esprima-fb/-/esprima-fb-10001.1.0-dev-harmony-fb.tgz
+npm http GET https://registry.npmjs.org/inherits
+npm http 200 https://registry.npmjs.org/esprima-fb/-/esprima-fb-10001.1.0-dev-harmony-fb.tgz
+npm http GET https://registry.npmjs.org/install
+npm http GET https://registry.npmjs.org/iconv-lite
+npm http GET https://registry.npmjs.org/glob
+npm http GET https://registry.npmjs.org/q
+npm http GET https://registry.npmjs.org/commander/-/commander-2.5.1.tgz
+npm http 304 https://registry.npmjs.org/inherits
+npm http 304 https://registry.npmjs.org/glob
+npm http 200 https://registry.npmjs.org/install
+npm http GET https://registry.npmjs.org/glob/-/glob-4.2.2.tgz
+npm http 304 https://registry.npmjs.org/q
+npm http 200 https://registry.npmjs.org/commander/-/commander-2.5.1.tgz
+npm http GET https://registry.npmjs.org/install/-/install-0.1.8.tgz
+npm http 200 https://registry.npmjs.org/iconv-lite
+npm http GET https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.4.6.tgz
+npm http 200 https://registry.npmjs.org/glob/-/glob-4.2.2.tgz
+npm http 200 https://registry.npmjs.org/install/-/install-0.1.8.tgz
+npm http 200 https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.4.6.tgz
+npm http GET https://registry.npmjs.org/minimatch
+npm http GET https://registry.npmjs.org/once
+npm http GET https://registry.npmjs.org/inflight
+npm http 304 https://registry.npmjs.org/minimatch
+npm http 304 https://registry.npmjs.org/once
+npm http 304 https://registry.npmjs.org/inflight
+npm http GET https://registry.npmjs.org/minimatch/-/minimatch-1.0.0.tgz
+npm http 200 https://registry.npmjs.org/minimatch/-/minimatch-1.0.0.tgz
+npm http GET https://registry.npmjs.org/wrappy
+npm http GET https://registry.npmjs.org/sigmund
+npm http GET https://registry.npmjs.org/lru-cache
+npm http 304 https://registry.npmjs.org/wrappy
+npm http 304 https://registry.npmjs.org/lru-cache
+npm http 304 https://registry.npmjs.org/sigmund
+npm http GET https://registry.npmjs.org/lru-cache/-/lru-cache-2.2.4.tgz
+npm http 200 https://registry.npmjs.org/lru-cache/-/lru-cache-2.2.4.tgz
+npm http GET https://registry.npmjs.org/grunt
+
+> kexec@1.0.0 install /opt/local/nodejs/0.10.28/lib/node_modules/jspm/node_modules/systemjs/node_modules/es6-module-loader/node_modules/6to5/node_modules/kexec
+> node-gyp configure build
+
+gyp WARN EACCES user "root" does not have permission to access the dev dir "/root/.node-gyp/0.10.28"
+gyp WARN EACCES attempting to reinstall using temporary dev dir "/opt/local/nodejs/0.10.28/lib/node_modules/jspm/node_modules/systemjs/node_modules/es6-module-loader/node_modules/6to5/node_modules/kexec/.node-gyp"
+gyp http GET http://nodejs.org/dist/v0.10.28/node-v0.10.28.tar.gz
+gyp http 200 http://nodejs.org/dist/v0.10.28/node-v0.10.28.tar.gz
+gyp http GET http://nodejs.org/dist/v0.10.28/SHASUMS.txt
+gyp http GET http://nodejs.org/dist/v0.10.28/SHASUMS.txt
+gyp http 200 http://nodejs.org/dist/v0.10.28/SHASUMS.txt
+gyp http 200 http://nodejs.org/dist/v0.10.28/SHASUMS.txt
+make: Entering directory `/opt/local/nodejs/0.10.28/lib/node_modules/jspm/node_modules/systemjs/node_modules/es6-module-loader/node_modules/6to5/node_modules/kexec/build'
+  CXX(target) Release/obj.target/kexec/src/kexec.o
+  SOLINK_MODULE(target) Release/obj.target/kexec.node
+  SOLINK_MODULE(target) Release/obj.target/kexec.node: Finished
+  COPY Release/kexec.node
+make: Leaving directory `/opt/local/nodejs/0.10.28/lib/node_modules/jspm/node_modules/systemjs/node_modules/es6-module-loader/node_modules/6to5/node_modules/kexec/build'
+npm http 200 https://registry.npmjs.org/grunt
+npm http GET https://registry.npmjs.org/grunt/-/grunt-0.4.5.tgz
+npm http 200 https://registry.npmjs.org/grunt/-/grunt-0.4.5.tgz
+npm http GET https://registry.npmjs.org/colors
+npm http GET https://registry.npmjs.org/eventemitter2
+npm http GET https://registry.npmjs.org/dateformat
+npm http GET https://registry.npmjs.org/hooker
+npm http GET https://registry.npmjs.org/underscore.string
+npm http GET https://registry.npmjs.org/js-yaml
+npm http GET https://registry.npmjs.org/exit
+npm http GET https://registry.npmjs.org/getobject
+npm http GET https://registry.npmjs.org/grunt-legacy-util
+npm http GET https://registry.npmjs.org/grunt-legacy-log
+npm http GET https://registry.npmjs.org/coffee-script
+npm http GET https://registry.npmjs.org/findup-sync
+npm http GET https://registry.npmjs.org/nopt
+npm http GET https://registry.npmjs.org/lodash
+npm http GET https://registry.npmjs.org/which
+npm http GET https://registry.npmjs.org/async
+npm http GET https://registry.npmjs.org/glob/-/glob-3.1.21.tgz
+npm http GET https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.2.11.tgz
+npm http 200 https://registry.npmjs.org/hooker
+npm http GET https://registry.npmjs.org/hooker/-/hooker-0.2.3.tgz
+npm http 200 https://registry.npmjs.org/colors
+npm http GET https://registry.npmjs.org/colors/-/colors-0.6.2.tgz
+npm http 200 https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.2.11.tgz
+npm http 200 https://registry.npmjs.org/dateformat
+npm http 200 https://registry.npmjs.org/glob/-/glob-3.1.21.tgz
+npm http 200 https://registry.npmjs.org/exit
+npm http GET https://registry.npmjs.org/dateformat/-/dateformat-1.0.2-1.2.3.tgz
+npm http GET https://registry.npmjs.org/exit/-/exit-0.1.2.tgz
+npm http 200 https://registry.npmjs.org/getobject
+npm http GET https://registry.npmjs.org/getobject/-/getobject-0.1.0.tgz
+npm http 200 https://registry.npmjs.org/grunt-legacy-util
+npm http GET https://registry.npmjs.org/grunt-legacy-util/-/grunt-legacy-util-0.2.0.tgz
+npm http 200 https://registry.npmjs.org/eventemitter2
+npm http GET https://registry.npmjs.org/eventemitter2/-/eventemitter2-0.4.14.tgz
+npm http 200 https://registry.npmjs.org/grunt-legacy-log
+npm http 200 https://registry.npmjs.org/js-yaml
+npm http GET https://registry.npmjs.org/grunt-legacy-log/-/grunt-legacy-log-0.1.1.tgz
+npm http GET https://registry.npmjs.org/js-yaml/-/js-yaml-2.0.5.tgz
+npm http 304 https://registry.npmjs.org/findup-sync
+npm http 200 https://registry.npmjs.org/hooker/-/hooker-0.2.3.tgz
+npm http 304 https://registry.npmjs.org/nopt
+npm http 304 https://registry.npmjs.org/lodash
+npm http 200 https://registry.npmjs.org/coffee-script
+npm http GET https://registry.npmjs.org/lodash/-/lodash-0.9.2.tgz
+npm http 200 https://registry.npmjs.org/colors/-/colors-0.6.2.tgz
+npm http 304 https://registry.npmjs.org/which
+npm http GET https://registry.npmjs.org/coffee-script/-/coffee-script-1.3.3.tgz
+npm http 200 https://registry.npmjs.org/getobject/-/getobject-0.1.0.tgz
+npm http 304 https://registry.npmjs.org/async
+npm http GET https://registry.npmjs.org/async/-/async-0.1.22.tgz
+npm http 200 https://registry.npmjs.org/grunt-legacy-util/-/grunt-legacy-util-0.2.0.tgz
+npm http 200 https://registry.npmjs.org/exit/-/exit-0.1.2.tgz
+npm http 200 https://registry.npmjs.org/eventemitter2/-/eventemitter2-0.4.14.tgz
+npm http 200 https://registry.npmjs.org/dateformat/-/dateformat-1.0.2-1.2.3.tgz
+npm http 200 https://registry.npmjs.org/grunt-legacy-log/-/grunt-legacy-log-0.1.1.tgz
+npm http 200 https://registry.npmjs.org/js-yaml/-/js-yaml-2.0.5.tgz
+npm http 200 https://registry.npmjs.org/lodash/-/lodash-0.9.2.tgz
+npm http 200 https://registry.npmjs.org/coffee-script/-/coffee-script-1.3.3.tgz
+npm http 200 https://registry.npmjs.org/underscore.string
+npm http 200 https://registry.npmjs.org/async/-/async-0.1.22.tgz
+npm http GET https://registry.npmjs.org/underscore.string/-/underscore.string-2.2.1.tgz
+npm http 200 https://registry.npmjs.org/underscore.string/-/underscore.string-2.2.1.tgz
+npm http GET https://registry.npmjs.org/abbrev
+npm http GET https://registry.npmjs.org/underscore.string/-/underscore.string-2.3.3.tgz
+npm http 304 https://registry.npmjs.org/abbrev
+npm http 200 https://registry.npmjs.org/underscore.string/-/underscore.string-2.3.3.tgz
+npm http GET https://registry.npmjs.org/graceful-fs/-/graceful-fs-1.2.3.tgz
+npm http GET https://registry.npmjs.org/inherits/-/inherits-1.0.0.tgz
+npm http GET https://registry.npmjs.org/argparse
+npm http GET https://registry.npmjs.org/esprima
+npm http 200 https://registry.npmjs.org/inherits/-/inherits-1.0.0.tgz
+npm http 200 https://registry.npmjs.org/graceful-fs/-/graceful-fs-1.2.3.tgz
+npm http 200 https://registry.npmjs.org/argparse
+npm http GET https://registry.npmjs.org/argparse/-/argparse-0.1.16.tgz
+npm http 200 https://registry.npmjs.org/esprima
+npm http GET https://registry.npmjs.org/esprima/-/esprima-1.0.4.tgz
+npm http 200 https://registry.npmjs.org/argparse/-/argparse-0.1.16.tgz
+npm http 200 https://registry.npmjs.org/esprima/-/esprima-1.0.4.tgz
+npm http GET https://registry.npmjs.org/underscore
+npm http GET https://registry.npmjs.org/underscore.string/-/underscore.string-2.4.0.tgz
+npm http 200 https://registry.npmjs.org/underscore.string/-/underscore.string-2.4.0.tgz
+npm http 200 https://registry.npmjs.org/underscore
+npm http GET https://registry.npmjs.org/underscore/-/underscore-1.7.0.tgz
+npm http 200 https://registry.npmjs.org/underscore/-/underscore-1.7.0.tgz
+/opt/local/nodejs/0.10.28/bin/jspm -> /opt/local/nodejs/0.10.28/lib/node_modules/jspm/jspm.js
+jspm@0.11.0 /opt/local/nodejs/0.10.28/lib/node_modules/jspm
+├── jspm-registry@0.3.2
+├── rimraf@2.2.8
+├── graceful-fs@3.0.5
+├── ncp@0.6.0
+├── semver@4.0.3
+├── minimatch@0.2.14 (sigmund@1.0.0, lru-cache@2.5.0)
+├── mkdirp@0.5.0 (minimist@0.0.8)
+├── rsvp@3.0.16
+├── glob@4.3.5 (inherits@2.0.1, inflight@1.0.4, once@1.3.1, minimatch@2.0.1)
+├── jspm-npm@0.17.0 (resolve@1.1.0, tar@0.1.20, rmdir@1.0.4)
+├── uglify-js@2.4.16 (uglify-to-browserify@1.0.2, async@0.2.10, optimist@0.3.7, source-map@0.1.34)
+├── request@2.51.0 (caseless@0.8.0, json-stringify-safe@5.0.0, forever-agent@0.5.2, aws-sign2@0.5.0, stringstream@0.0.4, oauth-sign@0.5.0, tunnel-agent@0.4.0, node-uuid@1.4.2, qs@2.3.3, mime-types@1.0.2, combined-stream@0.0.7, bl@0.9.4, tough-cookie@0.12.1, http-signature@0.10.1, form-data@0.2.0, hawk@1.1.1)
+├── jspm-github@0.10.0 (which@1.0.8, tar@0.1.20, decompress-zip@0.1.0)
+├── liftoff@0.13.6 (extend@1.3.0, flagged-respawn@0.3.1, minimist@1.1.0, resolve@1.0.0, findup-sync@0.1.3)
+├── traceur@0.0.82 (commander@2.6.0, semver@2.3.2, source-map-support@0.2.9)
+├── systemjs-builder@0.6.0 (source-map@0.2.0, 6to5@3.2.0)
+└── systemjs@0.12.1 (es6-module-loader@0.12.0)
+Command [32msudo npm install -g jspm[0m exited successfully with status 0. Took 28.67 seconds.
+
+$ [32msudo npm install -g mimosa[0m
+npm http GET https://registry.npmjs.org/mimosa
+npm http 200 https://registry.npmjs.org/mimosa
+npm http GET https://registry.npmjs.org/mimosa/-/mimosa-2.3.30.tgz
+npm http 200 https://registry.npmjs.org/mimosa/-/mimosa-2.3.30.tgz
+npm http GET https://registry.npmjs.org/ansi-color
+npm http GET https://registry.npmjs.org/wrench
+npm http GET https://registry.npmjs.org/logmimosa
+npm http GET https://registry.npmjs.org/skelmimosa
+npm http GET https://registry.npmjs.org/newmimosa
+npm http GET https://registry.npmjs.org/validatemimosa
+npm http GET https://registry.npmjs.org/mimosa-minify-js
+npm http GET https://registry.npmjs.org/mimosa-minify-css
+npm http GET https://registry.npmjs.org/mimosa-jshint
+npm http GET https://registry.npmjs.org/mimosa-csslint
+npm http GET https://registry.npmjs.org/mimosa-bower
+npm http GET https://registry.npmjs.org/mimosa-copy
+npm http GET https://registry.npmjs.org/mimosa-server
+npm http GET https://registry.npmjs.org/mimosa-live-reload
+npm http GET https://registry.npmjs.org/mimosa-require
+npm http GET https://registry.npmjs.org/commander
+npm http GET https://registry.npmjs.org/chokidar
+npm http GET https://registry.npmjs.org/request
+npm http GET https://registry.npmjs.org/coffee-script/-/coffee-script-1.7.1.tgz
+npm http 200 https://registry.npmjs.org/coffee-script/-/coffee-script-1.7.1.tgz
+npm http 200 https://registry.npmjs.org/wrench
+npm http GET https://registry.npmjs.org/wrench/-/wrench-1.5.8.tgz
+npm http 200 https://registry.npmjs.org/newmimosa
+npm http GET https://registry.npmjs.org/newmimosa/-/newmimosa-2.0.0.tgz
+npm http 200 https://registry.npmjs.org/skelmimosa
+npm http 200 https://registry.npmjs.org/logmimosa
+npm http GET https://registry.npmjs.org/skelmimosa/-/skelmimosa-1.3.0.tgz
+npm http GET https://registry.npmjs.org/logmimosa/-/logmimosa-1.0.4.tgz
+npm http 200 https://registry.npmjs.org/validatemimosa
+npm http 200 https://registry.npmjs.org/ansi-color
+npm http GET https://registry.npmjs.org/validatemimosa/-/validatemimosa-1.3.5.tgz
+npm http GET https://registry.npmjs.org/ansi-color/-/ansi-color-0.2.1.tgz
+npm http 200 https://registry.npmjs.org/wrench/-/wrench-1.5.8.tgz
+npm http 200 https://registry.npmjs.org/newmimosa/-/newmimosa-2.0.0.tgz
+npm http 200 https://registry.npmjs.org/skelmimosa/-/skelmimosa-1.3.0.tgz
+npm http 200 https://registry.npmjs.org/logmimosa/-/logmimosa-1.0.4.tgz
+npm http 200 https://registry.npmjs.org/ansi-color/-/ansi-color-0.2.1.tgz
+npm http 200 https://registry.npmjs.org/mimosa-csslint
+npm http 200 https://registry.npmjs.org/mimosa-minify-css
+npm http 200 https://registry.npmjs.org/mimosa-jshint
+npm http GET https://registry.npmjs.org/mimosa-csslint/-/mimosa-csslint-1.2.0.tgz
+npm http GET https://registry.npmjs.org/mimosa-minify-css/-/mimosa-minify-css-1.3.2.tgz
+npm http GET https://registry.npmjs.org/mimosa-jshint/-/mimosa-jshint-1.1.6.tgz
+npm http 200 https://registry.npmjs.org/validatemimosa/-/validatemimosa-1.3.5.tgz
+npm http 200 https://registry.npmjs.org/mimosa-copy
+npm http GET https://registry.npmjs.org/mimosa-copy/-/mimosa-copy-1.2.0.tgz
+npm http 200 https://registry.npmjs.org/mimosa-minify-js
+npm http GET https://registry.npmjs.org/mimosa-minify-js/-/mimosa-minify-js-1.1.5.tgz
+npm http 200 https://registry.npmjs.org/mimosa-minify-css/-/mimosa-minify-css-1.3.2.tgz
+npm http 200 https://registry.npmjs.org/mimosa-csslint/-/mimosa-csslint-1.2.0.tgz
+npm http 200 https://registry.npmjs.org/mimosa-jshint/-/mimosa-jshint-1.1.6.tgz
+npm http 304 https://registry.npmjs.org/commander
+npm http 200 https://registry.npmjs.org/mimosa-server
+npm http GET https://registry.npmjs.org/commander/-/commander-1.3.2.tgz
+npm http GET https://registry.npmjs.org/mimosa-server/-/mimosa-server-1.6.1.tgz
+npm http 304 https://registry.npmjs.org/chokidar
+npm http 304 https://registry.npmjs.org/request
+npm http 200 https://registry.npmjs.org/mimosa-copy/-/mimosa-copy-1.2.0.tgz
+npm http GET https://registry.npmjs.org/request/-/request-2.33.0.tgz
+npm http 200 https://registry.npmjs.org/mimosa-live-reload
+npm http GET https://registry.npmjs.org/mimosa-live-reload/-/mimosa-live-reload-1.4.0.tgz
+npm http 200 https://registry.npmjs.org/mimosa-require
+npm http GET https://registry.npmjs.org/mimosa-require/-/mimosa-require-2.3.2.tgz
+npm http 200 https://registry.npmjs.org/mimosa-minify-js/-/mimosa-minify-js-1.1.5.tgz
+npm http 200 https://registry.npmjs.org/mimosa-bower
+npm http GET https://registry.npmjs.org/mimosa-bower/-/mimosa-bower-1.6.2.tgz
+npm http 200 https://registry.npmjs.org/mimosa-require/-/mimosa-require-2.3.2.tgz
+npm http 200 https://registry.npmjs.org/commander/-/commander-1.3.2.tgz
+npm http 200 https://registry.npmjs.org/mimosa-server/-/mimosa-server-1.6.1.tgz
+npm http 200 https://registry.npmjs.org/mimosa-bower/-/mimosa-bower-1.6.2.tgz
+npm http 200 https://registry.npmjs.org/request/-/request-2.33.0.tgz
+npm http 200 https://registry.npmjs.org/mimosa-live-reload/-/mimosa-live-reload-1.4.0.tgz
+npm http GET https://registry.npmjs.org/csslint
+npm http GET https://registry.npmjs.org/jshint
+npm http GET https://registry.npmjs.org/strip-json-comments
+npm http GET https://registry.npmjs.org/clean-css
+npm http GET https://registry.npmjs.org/uglify-js
+npm http GET https://registry.npmjs.org/socket.io
+npm http GET https://registry.npmjs.org/chokidar/-/chokidar-0.6.3.tgz
+npm http GET https://registry.npmjs.org/growl
+npm http GET https://registry.npmjs.org/date-utils
+npm http GET https://registry.npmjs.org/hogan.js
+npm http GET https://registry.npmjs.org/ejs
+npm http GET https://registry.npmjs.org/dustjs-linkedin
+npm http GET https://registry.npmjs.org/handlebars
+npm http GET https://registry.npmjs.org/express
+npm http GET https://registry.npmjs.org/consolidate
+npm http GET https://registry.npmjs.org/jade
+npm http GET https://registry.npmjs.org/keypress
+npm http GET https://registry.npmjs.org/fsevents
+npm http GET https://registry.npmjs.org/readdirp
+npm http GET https://registry.npmjs.org/async-each
+npm http GET https://registry.npmjs.org/rimraf
+npm http 304 https://registry.npmjs.org/uglify-js
+npm http GET https://registry.npmjs.org/request/-/request-2.34.0.tgz
+npm http GET https://registry.npmjs.org/uglify-js/-/uglify-js-2.4.15.tgz
+npm http GET https://registry.npmjs.org/bower
+npm http 200 https://registry.npmjs.org/chokidar/-/chokidar-0.6.3.tgz
+npm http GET https://registry.npmjs.org/chokidar/-/chokidar-0.7.0.tgz
+npm http 200 https://registry.npmjs.org/csslint
+npm http GET https://registry.npmjs.org/wrench/-/wrench-1.5.6.tgz
+npm http GET https://registry.npmjs.org/csslint/-/csslint-0.9.10.tgz
+npm http 200 https://registry.npmjs.org/jshint
+npm http 200 https://registry.npmjs.org/growl
+npm http GET https://registry.npmjs.org/jshint/-/jshint-2.5.2.tgz
+npm http GET https://registry.npmjs.org/growl/-/growl-1.7.0.tgz
+npm http GET https://registry.npmjs.org/mime
+npm http GET https://registry.npmjs.org/forever-agent
+npm http GET https://registry.npmjs.org/node-uuid
+npm http GET https://registry.npmjs.org/tough-cookie
+npm http GET https://registry.npmjs.org/form-data
+npm http 200 https://registry.npmjs.org/clean-css
+npm http GET https://registry.npmjs.org/tunnel-agent
+npm http GET https://registry.npmjs.org/http-signature
+npm http GET https://registry.npmjs.org/oauth-sign
+npm http GET https://registry.npmjs.org/aws-sign2
+npm http GET https://registry.npmjs.org/hawk
+npm http GET https://registry.npmjs.org/qs
+npm http GET https://registry.npmjs.org/json-stringify-safe
+npm http 200 https://registry.npmjs.org/request/-/request-2.34.0.tgz
+npm http 200 https://registry.npmjs.org/uglify-js/-/uglify-js-2.4.15.tgz
+npm http GET https://registry.npmjs.org/clean-css/-/clean-css-2.2.16.tgz
+npm http 200 https://registry.npmjs.org/socket.io
+npm http GET https://registry.npmjs.org/socket.io/-/socket.io-1.2.1.tgz
+npm http 200 https://registry.npmjs.org/chokidar/-/chokidar-0.7.0.tgz
+npm http 200 https://registry.npmjs.org/wrench/-/wrench-1.5.6.tgz
+npm http 200 https://registry.npmjs.org/csslint/-/csslint-0.9.10.tgz
+npm http 200 https://registry.npmjs.org/ejs
+npm http 200 https://registry.npmjs.org/jshint/-/jshint-2.5.2.tgz
+npm http GET https://registry.npmjs.org/ejs/-/ejs-1.0.0.tgz
+npm http GET https://registry.npmjs.org/requirejs
+npm http 200 https://registry.npmjs.org/clean-css/-/clean-css-2.2.16.tgz
+npm http 200 https://registry.npmjs.org/growl/-/growl-1.7.0.tgz
+npm http GET https://registry.npmjs.org/esprima/-/esprima-1.2.2.tgz
+npm http 200 https://registry.npmjs.org/dustjs-linkedin
+npm http 200 https://registry.npmjs.org/strip-json-comments
+npm http 200 https://registry.npmjs.org/socket.io/-/socket.io-1.2.1.tgz
+npm http GET https://registry.npmjs.org/dustjs-linkedin/-/dustjs-linkedin-2.4.0.tgz
+npm http GET https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-0.1.3.tgz
+npm http 200 https://registry.npmjs.org/handlebars
+npm http 200 https://registry.npmjs.org/ejs/-/ejs-1.0.0.tgz
+npm http GET https://registry.npmjs.org/handlebars/-/handlebars-1.3.0.tgz
+npm http 200 https://registry.npmjs.org/consolidate
+npm http 200 https://registry.npmjs.org/esprima/-/esprima-1.2.2.tgz
+npm http 200 https://registry.npmjs.org/dustjs-linkedin/-/dustjs-linkedin-2.4.0.tgz
+npm http 200 https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-0.1.3.tgz
+npm http 200 https://registry.npmjs.org/handlebars/-/handlebars-1.3.0.tgz
+npm http GET https://registry.npmjs.org/consolidate/-/consolidate-0.10.0.tgz
+npm http 200 https://registry.npmjs.org/jade
+npm http GET https://registry.npmjs.org/jade/-/jade-1.5.0.tgz
+npm http 304 https://registry.npmjs.org/fsevents
+npm http 200 https://registry.npmjs.org/hogan.js
+npm http 200 https://registry.npmjs.org/date-utils
+npm http GET https://registry.npmjs.org/hogan.js/-/hogan.js-3.0.2.tgz
+npm http 304 https://registry.npmjs.org/readdirp
+npm http 304 https://registry.npmjs.org/async-each
+npm http GET https://registry.npmjs.org/date-utils/-/date-utils-1.2.15.tgz
+npm http 304 https://registry.npmjs.org/rimraf
+npm http 200 https://registry.npmjs.org/mime
+npm http 200 https://registry.npmjs.org/consolidate/-/consolidate-0.10.0.tgz
+npm http 304 https://registry.npmjs.org/forever-agent
+npm http 304 https://registry.npmjs.org/node-uuid
+npm WARN optional dep failed, continuing fsevents@0.3.5
+npm http 200 https://registry.npmjs.org/express
+npm http GET https://registry.npmjs.org/rimraf/-/rimraf-2.2.6.tgz
+npm http 304 https://registry.npmjs.org/tough-cookie
+npm http 200 https://registry.npmjs.org/jade/-/jade-1.5.0.tgz
+npm http GET https://registry.npmjs.org/mime/-/mime-1.2.11.tgz
+npm http 304 https://registry.npmjs.org/tunnel-agent
+npm http GET https://registry.npmjs.org/express/-/express-3.4.7.tgz
+npm http 304 https://registry.npmjs.org/form-data
+npm http 200 https://registry.npmjs.org/bower
+npm http 304 https://registry.npmjs.org/http-signature
+npm http 200 https://registry.npmjs.org/hogan.js/-/hogan.js-3.0.2.tgz
+npm http 304 https://registry.npmjs.org/oauth-sign
+npm http GET https://registry.npmjs.org/tunnel-agent/-/tunnel-agent-0.3.0.tgz
+npm http 304 https://registry.npmjs.org/aws-sign2
+npm http 304 https://registry.npmjs.org/hawk
+npm http 304 https://registry.npmjs.org/qs
+npm http 200 https://registry.npmjs.org/date-utils/-/date-utils-1.2.15.tgz
+npm http GET https://registry.npmjs.org/bower/-/bower-1.3.8.tgz
+npm http 304 https://registry.npmjs.org/json-stringify-safe
+npm http GET https://registry.npmjs.org/form-data/-/form-data-0.1.4.tgz
+npm http GET https://registry.npmjs.org/oauth-sign/-/oauth-sign-0.3.0.tgz
+npm http 200 https://registry.npmjs.org/keypress
+npm http GET https://registry.npmjs.org/hawk/-/hawk-1.0.0.tgz
+npm http GET https://registry.npmjs.org/qs/-/qs-0.6.6.tgz
+npm http 200 https://registry.npmjs.org/requirejs
+npm http 200 https://registry.npmjs.org/rimraf/-/rimraf-2.2.6.tgz
+npm http 200 https://registry.npmjs.org/mime/-/mime-1.2.11.tgz
+npm http GET https://registry.npmjs.org/keypress/-/keypress-0.1.0.tgz
+npm http GET https://registry.npmjs.org/requirejs/-/requirejs-2.1.6.tgz
+npm http 200 https://registry.npmjs.org/express/-/express-3.4.7.tgz
+npm http 200 https://registry.npmjs.org/tunnel-agent/-/tunnel-agent-0.3.0.tgz
+npm http 200 https://registry.npmjs.org/bower/-/bower-1.3.8.tgz
+npm http 200 https://registry.npmjs.org/form-data/-/form-data-0.1.4.tgz
+npm http 200 https://registry.npmjs.org/oauth-sign/-/oauth-sign-0.3.0.tgz
+npm http 200 https://registry.npmjs.org/hawk/-/hawk-1.0.0.tgz
+npm http 200 https://registry.npmjs.org/keypress/-/keypress-0.1.0.tgz
+npm http 200 https://registry.npmjs.org/qs/-/qs-0.6.6.tgz
+npm http 200 https://registry.npmjs.org/requirejs/-/requirejs-2.1.6.tgz
+npm http GET https://registry.npmjs.org/graceful-fs
+npm http GET https://registry.npmjs.org/minimatch
+npm http GET https://registry.npmjs.org/readable-stream
+npm http GET https://registry.npmjs.org/socket.io-adapter
+npm http GET https://registry.npmjs.org/has-binary-data
+npm http GET https://registry.npmjs.org/engine.io
+npm http GET https://registry.npmjs.org/socket.io-parser
+npm http GET https://registry.npmjs.org/socket.io-client
+npm http GET https://registry.npmjs.org/debug
+npm http GET https://registry.npmjs.org/mkdirp
+npm http 304 https://registry.npmjs.org/graceful-fs
+npm http 304 https://registry.npmjs.org/minimatch
+npm http 304 https://registry.npmjs.org/readable-stream
+npm http 200 https://registry.npmjs.org/socket.io-adapter
+npm http 200 https://registry.npmjs.org/has-binary-data
+npm http 200 https://registry.npmjs.org/socket.io-parser
+npm http GET https://registry.npmjs.org/socket.io-adapter/-/socket.io-adapter-0.3.1.tgz
+npm http 304 https://registry.npmjs.org/debug
+npm http 304 https://registry.npmjs.org/mkdirp
+npm http GET https://registry.npmjs.org/has-binary-data/-/has-binary-data-0.1.3.tgz
+npm http GET https://registry.npmjs.org/socket.io-parser/-/socket.io-parser-2.2.2.tgz
+npm http GET https://registry.npmjs.org/debug/-/debug-0.7.4.tgz
+npm http GET https://registry.npmjs.org/mkdirp/-/mkdirp-0.3.5.tgz
+npm http 200 https://registry.npmjs.org/engine.io
+npm http 200 https://registry.npmjs.org/socket.io-client
+npm http GET https://registry.npmjs.org/engine.io/-/engine.io-1.4.3.tgz
+npm http GET https://registry.npmjs.org/socket.io-client/-/socket.io-client-1.2.1.tgz
+npm http 200 https://registry.npmjs.org/socket.io-adapter/-/socket.io-adapter-0.3.1.tgz
+npm http 200 https://registry.npmjs.org/has-binary-data/-/has-binary-data-0.1.3.tgz
+npm http 200 https://registry.npmjs.org/socket.io-parser/-/socket.io-parser-2.2.2.tgz
+npm http 200 https://registry.npmjs.org/engine.io/-/engine.io-1.4.3.tgz
+npm http 200 https://registry.npmjs.org/socket.io-client/-/socket.io-client-1.2.1.tgz
+npm http 200 https://registry.npmjs.org/debug/-/debug-0.7.4.tgz
+npm http 200 https://registry.npmjs.org/mkdirp/-/mkdirp-0.3.5.tgz
+npm http GET https://registry.npmjs.org/lru-cache
+npm http GET https://registry.npmjs.org/sigmund
+npm http GET https://registry.npmjs.org/string_decoder
+npm http GET https://registry.npmjs.org/inherits
+npm http GET https://registry.npmjs.org/core-util-is
+npm http GET https://registry.npmjs.org/isarray
+npm http 304 https://registry.npmjs.org/lru-cache
+npm http 304 https://registry.npmjs.org/sigmund
+npm http 304 https://registry.npmjs.org/string_decoder
+npm http 304 https://registry.npmjs.org/isarray
+npm http 304 https://registry.npmjs.org/core-util-is
+npm http 304 https://registry.npmjs.org/inherits
+npm http GET https://registry.npmjs.org/combined-stream
+npm http GET https://registry.npmjs.org/async
+npm http 304 https://registry.npmjs.org/combined-stream
+npm http 304 https://registry.npmjs.org/async
+npm http GET https://registry.npmjs.org/assert-plus
+npm http GET https://registry.npmjs.org/asn1
+npm http GET https://registry.npmjs.org/ctype
+npm http GET https://registry.npmjs.org/commander/-/commander-2.2.0.tgz
+npm http 304 https://registry.npmjs.org/assert-plus
+npm http 304 https://registry.npmjs.org/ctype
+npm http 304 https://registry.npmjs.org/asn1
+npm http GET https://registry.npmjs.org/object-keys
+npm http GET https://registry.npmjs.org/debug/-/debug-1.0.2.tgz
+npm http GET https://registry.npmjs.org/delayed-stream
+npm http 200 https://registry.npmjs.org/commander/-/commander-2.2.0.tgz
+npm http GET https://registry.npmjs.org/benchmark
+npm http GET https://registry.npmjs.org/json3
+npm http GET https://registry.npmjs.org/component-emitter
+npm http 304 https://registry.npmjs.org/object-keys
+npm http 200 https://registry.npmjs.org/debug/-/debug-1.0.2.tgz
+npm http GET https://registry.npmjs.org/object-keys/-/object-keys-1.0.1.tgz
+npm http 304 https://registry.npmjs.org/delayed-stream
+npm http 200 https://registry.npmjs.org/component-emitter
+npm http GET https://registry.npmjs.org/component-emitter/-/component-emitter-1.1.2.tgz
+npm http 200 https://registry.npmjs.org/json3
+npm http 200 https://registry.npmjs.org/object-keys/-/object-keys-1.0.1.tgz
+npm http GET https://registry.npmjs.org/json3/-/json3-3.2.6.tgz
+npm http GET https://registry.npmjs.org/ws
+npm http GET https://registry.npmjs.org/engine.io-parser
+npm http GET https://registry.npmjs.org/base64id
+npm http 200 https://registry.npmjs.org/benchmark
+npm http GET https://registry.npmjs.org/debug/-/debug-1.0.3.tgz
+npm http GET https://registry.npmjs.org/benchmark/-/benchmark-1.0.0.tgz
+npm http 200 https://registry.npmjs.org/component-emitter/-/component-emitter-1.1.2.tgz
+npm http 200 https://registry.npmjs.org/json3/-/json3-3.2.6.tgz
+npm http 200 https://registry.npmjs.org/base64id
+npm http 200 https://registry.npmjs.org/debug/-/debug-1.0.3.tgz
+npm http 200 https://registry.npmjs.org/benchmark/-/benchmark-1.0.0.tgz
+npm http GET https://registry.npmjs.org/base64id/-/base64id-0.1.0.tgz
+npm http 200 https://registry.npmjs.org/engine.io-parser
+npm http GET https://registry.npmjs.org/engine.io-parser/-/engine.io-parser-1.1.0.tgz
+npm http 200 https://registry.npmjs.org/ws
+npm http GET https://registry.npmjs.org/ws/-/ws-0.5.0.tgz
+npm http GET https://registry.npmjs.org/punycode
+npm http 200 https://registry.npmjs.org/base64id/-/base64id-0.1.0.tgz
+npm http GET https://registry.npmjs.org/has-binary
+npm http GET https://registry.npmjs.org/object-component
+npm http GET https://registry.npmjs.org/indexof
+npm http GET https://registry.npmjs.org/parseuri
+npm http 200 https://registry.npmjs.org/engine.io-parser/-/engine.io-parser-1.1.0.tgz
+npm http GET https://registry.npmjs.org/to-array
+npm http GET https://registry.npmjs.org/engine.io-client
+npm http GET https://registry.npmjs.org/component-bind
+npm http 200 https://registry.npmjs.org/ws/-/ws-0.5.0.tgz
+npm http GET https://registry.npmjs.org/ms
+npm http 304 https://registry.npmjs.org/punycode
+npm http 200 https://registry.npmjs.org/to-array
+npm http GET https://registry.npmjs.org/to-array/-/to-array-0.1.3.tgz
+npm http 200 https://registry.npmjs.org/object-component
+npm http 200 https://registry.npmjs.org/parseuri
+npm http 200 https://registry.npmjs.org/indexof
+npm http GET https://registry.npmjs.org/object-component/-/object-component-0.0.3.tgz
+npm http GET https://registry.npmjs.org/parseuri/-/parseuri-0.0.2.tgz
+npm http GET https://registry.npmjs.org/indexof/-/indexof-0.0.1.tgz
+npm http GET https://registry.npmjs.org/hoek
+npm http GET https://registry.npmjs.org/boom
+npm http GET https://registry.npmjs.org/cryptiles
+npm http GET https://registry.npmjs.org/sntp
+npm http 200 https://registry.npmjs.org/has-binary
+npm http 200 https://registry.npmjs.org/to-array/-/to-array-0.1.3.tgz
+npm http GET https://registry.npmjs.org/has-binary/-/has-binary-0.1.5.tgz
+npm http 200 https://registry.npmjs.org/engine.io-client
+npm http 200 https://registry.npmjs.org/object-component/-/object-component-0.0.3.tgz
+npm http 304 https://registry.npmjs.org/boom
+npm http 200 https://registry.npmjs.org/indexof/-/indexof-0.0.1.tgz
+npm http 200 https://registry.npmjs.org/parseuri/-/parseuri-0.0.2.tgz
+npm http 304 https://registry.npmjs.org/hoek
+npm http GET https://registry.npmjs.org/engine.io-client/-/engine.io-client-1.4.3.tgz
+npm http 200 https://registry.npmjs.org/component-bind
+npm http 304 https://registry.npmjs.org/cryptiles
+npm http 304 https://registry.npmjs.org/sntp
+npm http GET https://registry.npmjs.org/component-bind/-/component-bind-1.0.0.tgz
+npm http 200 https://registry.npmjs.org/has-binary/-/has-binary-0.1.5.tgz
+npm http 304 https://registry.npmjs.org/ms
+npm http 200 https://registry.npmjs.org/engine.io-client/-/engine.io-client-1.4.3.tgz
+npm http 200 https://registry.npmjs.org/component-bind/-/component-bind-1.0.0.tgz
+npm http GET https://registry.npmjs.org/optimist
+npm http GET https://registry.npmjs.org/uglify-to-browserify
+npm http GET https://registry.npmjs.org/source-map
+npm http 304 https://registry.npmjs.org/optimist
+npm http 304 https://registry.npmjs.org/source-map
+npm http 304 https://registry.npmjs.org/uglify-to-browserify
+npm http GET https://registry.npmjs.org/base64-arraybuffer
+npm http GET https://registry.npmjs.org/after
+npm http GET https://registry.npmjs.org/arraybuffer.slice
+npm http GET https://registry.npmjs.org/blob
+npm http GET https://registry.npmjs.org/utf8
+npm http 200 https://registry.npmjs.org/utf8
+npm http GET https://registry.npmjs.org/utf8/-/utf8-2.0.0.tgz
+npm http 200 https://registry.npmjs.org/after
+npm http GET https://registry.npmjs.org/after/-/after-0.8.1.tgz
+npm http 200 https://registry.npmjs.org/base64-arraybuffer
+npm http GET https://registry.npmjs.org/base64-arraybuffer/-/base64-arraybuffer-0.1.2.tgz
+npm http 200 https://registry.npmjs.org/utf8/-/utf8-2.0.0.tgz
+npm http GET https://registry.npmjs.org/wordwrap
+npm http GET https://registry.npmjs.org/better-assert
+npm http 200 https://registry.npmjs.org/after/-/after-0.8.1.tgz
+npm http 200 https://registry.npmjs.org/arraybuffer.slice
+npm http GET https://registry.npmjs.org/arraybuffer.slice/-/arraybuffer.slice-0.0.6.tgz
+npm http GET https://registry.npmjs.org/nan
+npm http GET https://registry.npmjs.org/options
+npm http GET https://registry.npmjs.org/ultron
+npm http 200 https://registry.npmjs.org/blob
+npm http 200 https://registry.npmjs.org/base64-arraybuffer/-/base64-arraybuffer-0.1.2.tgz
+npm http GET https://registry.npmjs.org/blob/-/blob-0.0.2.tgz
+npm http 304 https://registry.npmjs.org/wordwrap
+
+> chokidar@0.7.0 postinstall /opt/local/nodejs/0.10.28/lib/node_modules/mimosa/node_modules/mimosa-bower/node_modules/chokidar
+> node setup.js postinstall
+
+npm http 200 https://registry.npmjs.org/ultron
+npm http GET https://registry.npmjs.org/ultron/-/ultron-1.0.1.tgz
+npm http 200 https://registry.npmjs.org/options
+npm http 200 https://registry.npmjs.org/arraybuffer.slice/-/arraybuffer.slice-0.0.6.tgz
+npm http GET https://registry.npmjs.org/options/-/options-0.0.6.tgz
+npm http 200 https://registry.npmjs.org/blob/-/blob-0.0.2.tgz
+npm http 200 https://registry.npmjs.org/nan
+npm http 200 https://registry.npmjs.org/ultron/-/ultron-1.0.1.tgz
+npm http GET https://registry.npmjs.org/nan/-/nan-1.4.3.tgz
+npm http 200 https://registry.npmjs.org/options/-/options-0.0.6.tgz
+npm http 200 https://registry.npmjs.org/better-assert
+npm http GET https://registry.npmjs.org/better-assert/-/better-assert-1.0.2.tgz
+npm http 200 https://registry.npmjs.org/nan/-/nan-1.4.3.tgz
+npm http GET https://registry.npmjs.org/amdefine
+npm http GET https://registry.npmjs.org/has-cors
+npm http 200 https://registry.npmjs.org/better-assert/-/better-assert-1.0.2.tgz
+npm http GET https://registry.npmjs.org/parsejson
+npm http GET https://registry.npmjs.org/parseqs
+npm http GET https://registry.npmjs.org/component-inherit
+npm http GET https://github.com/LearnBoost/node-XMLHttpRequest/archive/0f36d0b5ebc03d85f860d42a64ae9791e1daa433.tar.gz
+npm http GET https://registry.npmjs.org/ws/-/ws-0.4.31.tgz
+npm http GET https://registry.npmjs.org/debug/-/debug-1.0.4.tgz
+npm http GET https://registry.npmjs.org/parseuri/-/parseuri-0.0.4.tgz
+npm http 304 https://registry.npmjs.org/amdefine
+npm http 200 https://registry.npmjs.org/has-cors
+npm http 200 https://registry.npmjs.org/ws/-/ws-0.4.31.tgz
+npm http 200 https://registry.npmjs.org/debug/-/debug-1.0.4.tgz
+npm http 200 https://registry.npmjs.org/parseuri/-/parseuri-0.0.4.tgz
+npm http GET https://registry.npmjs.org/has-cors/-/has-cors-1.0.3.tgz
+npm http GET https://registry.npmjs.org/callsite
+npm http 200 https://registry.npmjs.org/parsejson
+npm http GET https://registry.npmjs.org/parsejson/-/parsejson-0.0.1.tgz
+npm http 200 https://registry.npmjs.org/has-cors/-/has-cors-1.0.3.tgz
+npm http 200 https://registry.npmjs.org/callsite
+npm http GET https://registry.npmjs.org/callsite/-/callsite-1.0.0.tgz
+npm http 200 https://registry.npmjs.org/component-inherit
+npm http 200 https://registry.npmjs.org/parseqs
+npm http GET https://registry.npmjs.org/component-inherit/-/component-inherit-0.0.3.tgz
+npm http GET https://registry.npmjs.org/parseqs/-/parseqs-0.0.2.tgz
+npm http 200 https://registry.npmjs.org/parsejson/-/parsejson-0.0.1.tgz
+
+> ws@0.5.0 install /opt/local/nodejs/0.10.28/lib/node_modules/mimosa/node_modules/mimosa-live-reload/node_modules/socket.io/node_modules/engine.io/node_modules/ws
+> (node-gyp rebuild 2> builderror.log) || (exit 0)
+
+make: Entering directory `/opt/local/nodejs/0.10.28/lib/node_modules/mimosa/node_modules/mimosa-live-reload/node_modules/socket.io/node_modules/engine.io/node_modules/ws/build'
+  CXX(target) Release/obj.target/bufferutil/src/bufferutil.o
+  SOLINK_MODULE(target) Release/obj.target/bufferutil.node
+  SOLINK_MODULE(target) Release/obj.target/bufferutil.node: Finished
+  COPY Release/bufferutil.node
+  CXX(target) Release/obj.target/validation/src/validation.o
+  SOLINK_MODULE(target) Release/obj.target/validation.node
+  SOLINK_MODULE(target) Release/obj.target/validation.node: Finished
+  COPY Release/validation.node
+make: Leaving directory `/opt/local/nodejs/0.10.28/lib/node_modules/mimosa/node_modules/mimosa-live-reload/node_modules/socket.io/node_modules/engine.io/node_modules/ws/build'
+npm http 200 https://registry.npmjs.org/callsite/-/callsite-1.0.0.tgz
+npm http 200 https://registry.npmjs.org/component-inherit/-/component-inherit-0.0.3.tgz
+npm http 200 https://github.com/LearnBoost/node-XMLHttpRequest/archive/0f36d0b5ebc03d85f860d42a64ae9791e1daa433.tar.gz
+npm http 200 https://registry.npmjs.org/parseqs/-/parseqs-0.0.2.tgz
+npm http GET https://registry.npmjs.org/cookie
+npm http GET https://registry.npmjs.org/fresh
+npm http GET https://registry.npmjs.org/buffer-crc32
+npm http GET https://registry.npmjs.org/methods
+npm http GET https://registry.npmjs.org/send
+npm http GET https://registry.npmjs.org/cookie-signature
+npm http GET https://registry.npmjs.org/merge-descriptors
+npm http GET https://registry.npmjs.org/connect
+npm http GET https://registry.npmjs.org/range-parser
+npm http GET https://registry.npmjs.org/debug/-/debug-0.8.1.tgz
+npm http GET https://github.com/component/global/archive/v2.0.1.tar.gz
+npm http 200 https://registry.npmjs.org/cookie
+npm http 200 https://registry.npmjs.org/buffer-crc32
+npm http 200 https://registry.npmjs.org/fresh
+npm http 200 https://registry.npmjs.org/methods
+npm http GET https://registry.npmjs.org/cookie/-/cookie-0.1.0.tgz
+npm http GET https://registry.npmjs.org/buffer-crc32/-/buffer-crc32-0.2.1.tgz
+npm http GET https://registry.npmjs.org/fresh/-/fresh-0.2.0.tgz
+npm http GET https://registry.npmjs.org/methods/-/methods-0.1.0.tgz
+npm http 200 https://registry.npmjs.org/cookie-signature
+npm http 200 https://registry.npmjs.org/debug/-/debug-0.8.1.tgz
+npm http 200 https://registry.npmjs.org/merge-descriptors
+npm http 200 https://registry.npmjs.org/range-parser
+npm http GET https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.1.tgz
+npm http GET https://registry.npmjs.org/merge-descriptors/-/merge-descriptors-0.0.1.tgz
+npm http GET https://registry.npmjs.org/range-parser/-/range-parser-0.0.4.tgz
+npm http 200 https://registry.npmjs.org/send
+npm http GET https://registry.npmjs.org/send/-/send-0.1.4.tgz
+npm http 200 https://registry.npmjs.org/cookie/-/cookie-0.1.0.tgz
+npm http 200 https://registry.npmjs.org/buffer-crc32/-/buffer-crc32-0.2.1.tgz
+npm http 200 https://registry.npmjs.org/fresh/-/fresh-0.2.0.tgz
+npm http 200 https://registry.npmjs.org/methods/-/methods-0.1.0.tgz
+npm http 200 https://registry.npmjs.org/merge-descriptors/-/merge-descriptors-0.0.1.tgz
+npm http 200 https://registry.npmjs.org/range-parser/-/range-parser-0.0.4.tgz
+npm http 200 https://registry.npmjs.org/send/-/send-0.1.4.tgz
+npm http 200 https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.1.tgz
+npm http 200 https://registry.npmjs.org/connect
+npm http GET https://registry.npmjs.org/connect/-/connect-2.12.0.tgz
+npm http 200 https://registry.npmjs.org/connect/-/connect-2.12.0.tgz
+npm http 200 https://github.com/component/global/archive/v2.0.1.tar.gz
+npm http GET https://registry.npmjs.org/archy
+npm http GET https://registry.npmjs.org/bower-endpoint-parser
+npm http GET https://registry.npmjs.org/bower-config
+npm http GET https://registry.npmjs.org/bower-json
+npm http GET https://registry.npmjs.org/bower-logger
+npm http GET https://registry.npmjs.org/bower-registry-client
+npm http GET https://registry.npmjs.org/cardinal
+npm http GET https://registry.npmjs.org/chmodr
+npm http GET https://registry.npmjs.org/fstream-ignore
+npm http GET https://registry.npmjs.org/inquirer
+npm http GET https://registry.npmjs.org/insight
+npm http GET https://registry.npmjs.org/is-root
+npm http GET https://registry.npmjs.org/abbrev
+npm http GET https://registry.npmjs.org/junk
+npm http GET https://registry.npmjs.org/lockfile
+npm http GET https://registry.npmjs.org/mout
+npm http GET https://registry.npmjs.org/opn
+npm http GET https://registry.npmjs.org/osenv
+npm http GET https://registry.npmjs.org/p-throttler
+npm http GET https://registry.npmjs.org/promptly
+npm http GET https://registry.npmjs.org/request-progress
+npm http GET https://registry.npmjs.org/retry
+npm http GET https://registry.npmjs.org/shell-quote
+npm http GET https://registry.npmjs.org/stringify-object
+npm http GET https://registry.npmjs.org/tmp
+npm http GET https://registry.npmjs.org/update-notifier
+npm http GET https://registry.npmjs.org/chalk
+npm http GET https://registry.npmjs.org/decompress-zip
+npm http GET https://registry.npmjs.org/fstream
+npm http GET https://registry.npmjs.org/glob
+npm http GET https://registry.npmjs.org/nopt
+npm http GET https://registry.npmjs.org/q
+npm http GET https://registry.npmjs.org/semver
+npm http GET https://registry.npmjs.org/which
+npm http GET https://registry.npmjs.org/tar
+npm http GET https://registry.npmjs.org/request/-/request-2.36.0.tgz
+npm http 200 https://registry.npmjs.org/bower-logger
+npm http 200 https://registry.npmjs.org/bower-json
+npm http 200 https://registry.npmjs.org/bower-endpoint-parser
+npm http GET https://registry.npmjs.org/bower-logger/-/bower-logger-0.2.2.tgz
+npm http GET https://registry.npmjs.org/bower-json/-/bower-json-0.4.0.tgz
+npm http GET https://registry.npmjs.org/bower-endpoint-parser/-/bower-endpoint-parser-0.2.2.tgz
+npm http 200 https://registry.npmjs.org/bower-config
+npm http GET https://registry.npmjs.org/bower-config/-/bower-config-0.5.2.tgz
+npm http 200 https://registry.npmjs.org/fstream-ignore
+npm http 200 https://registry.npmjs.org/bower-registry-client
+npm http 200 https://registry.npmjs.org/request/-/request-2.36.0.tgz
+npm http GET https://registry.npmjs.org/fstream-ignore/-/fstream-ignore-0.0.10.tgz
+npm http GET https://registry.npmjs.org/bower-registry-client/-/bower-registry-client-0.2.3.tgz
+npm http 200 https://registry.npmjs.org/chmodr
+npm http GET https://registry.npmjs.org/chmodr/-/chmodr-0.1.0.tgz
+npm http 200 https://registry.npmjs.org/is-root
+npm http 200 https://registry.npmjs.org/insight
+npm http GET https://registry.npmjs.org/is-root/-/is-root-0.1.0.tgz
+npm http 200 https://registry.npmjs.org/fstream-ignore/-/fstream-ignore-0.0.10.tgz
+npm http GET https://registry.npmjs.org/insight/-/insight-0.3.1.tgz
+npm http 200 https://registry.npmjs.org/bower-logger/-/bower-logger-0.2.2.tgz
+npm http 304 https://registry.npmjs.org/abbrev
+npm http 200 https://registry.npmjs.org/inquirer
+npm http 200 https://registry.npmjs.org/archy
+npm http 200 https://registry.npmjs.org/junk
+npm http 200 https://registry.npmjs.org/bower-endpoint-parser/-/bower-endpoint-parser-0.2.2.tgz
+npm http 200 https://registry.npmjs.org/bower-registry-client/-/bower-registry-client-0.2.3.tgz
+npm http 200 https://registry.npmjs.org/bower-json/-/bower-json-0.4.0.tgz
+npm http 200 https://registry.npmjs.org/bower-config/-/bower-config-0.5.2.tgz
+npm http 200 https://registry.npmjs.org/chmodr/-/chmodr-0.1.0.tgz
+npm http GET https://registry.npmjs.org/inquirer/-/inquirer-0.5.1.tgz
+npm http GET https://registry.npmjs.org/archy/-/archy-0.0.2.tgz
+npm http GET https://registry.npmjs.org/junk/-/junk-0.3.0.tgz
+npm http 200 https://registry.npmjs.org/opn
+npm http 200 https://registry.npmjs.org/osenv
+npm http 200 https://registry.npmjs.org/is-root/-/is-root-0.1.0.tgz
+npm http 200 https://registry.npmjs.org/insight/-/insight-0.3.1.tgz
+npm http 200 https://registry.npmjs.org/cardinal
+npm http 200 https://registry.npmjs.org/mout
+npm http 200 https://registry.npmjs.org/lockfile
+npm http GET https://registry.npmjs.org/opn/-/opn-0.1.2.tgz
+npm http GET https://registry.npmjs.org/osenv/-/osenv-0.1.0.tgz
+npm http GET https://registry.npmjs.org/cardinal/-/cardinal-0.4.4.tgz
+npm http 200 https://registry.npmjs.org/request-progress
+npm http GET https://registry.npmjs.org/mout/-/mout-0.9.1.tgz
+npm http GET https://registry.npmjs.org/lockfile/-/lockfile-0.4.3.tgz
+npm http GET https://registry.npmjs.org/request-progress/-/request-progress-0.3.1.tgz
+npm http 200 https://registry.npmjs.org/promptly
+npm http 200 https://registry.npmjs.org/stringify-object
+npm http 200 https://registry.npmjs.org/shell-quote
+npm http GET https://registry.npmjs.org/promptly/-/promptly-0.2.1.tgz
+npm http GET https://registry.npmjs.org/stringify-object/-/stringify-object-0.2.1.tgz
+npm http 200 https://registry.npmjs.org/update-notifier
+npm http 304 https://registry.npmjs.org/chalk
+npm http GET https://registry.npmjs.org/shell-quote/-/shell-quote-1.4.2.tgz
+npm http 200 https://registry.npmjs.org/tmp
+npm http GET https://registry.npmjs.org/update-notifier/-/update-notifier-0.2.2.tgz
+npm http 200 https://registry.npmjs.org/archy/-/archy-0.0.2.tgz
+npm http 200 https://registry.npmjs.org/inquirer/-/inquirer-0.5.1.tgz
+npm http 200 https://registry.npmjs.org/junk/-/junk-0.3.0.tgz
+npm http 304 https://registry.npmjs.org/decompress-zip
+npm http GET https://registry.npmjs.org/chalk/-/chalk-0.4.0.tgz
+npm http GET https://registry.npmjs.org/tmp/-/tmp-0.0.23.tgz
+npm http 304 https://registry.npmjs.org/fstream
+npm http GET https://registry.npmjs.org/decompress-zip/-/decompress-zip-0.0.8.tgz
+npm http 200 https://registry.npmjs.org/cardinal/-/cardinal-0.4.4.tgz
+npm http 200 https://registry.npmjs.org/opn/-/opn-0.1.2.tgz
+npm http 200 https://registry.npmjs.org/mout/-/mout-0.9.1.tgz
+npm http 200 https://registry.npmjs.org/osenv/-/osenv-0.1.0.tgz
+npm http 304 https://registry.npmjs.org/nopt
+npm http 304 https://registry.npmjs.org/q
+npm http 200 https://registry.npmjs.org/lockfile/-/lockfile-0.4.3.tgz
+npm http 200 https://registry.npmjs.org/request-progress/-/request-progress-0.3.1.tgz
+npm http 200 https://registry.npmjs.org/promptly/-/promptly-0.2.1.tgz
+npm http 200 https://registry.npmjs.org/stringify-object/-/stringify-object-0.2.1.tgz
+npm http 304 https://registry.npmjs.org/semver
+npm http 304 https://registry.npmjs.org/which
+npm http 200 https://registry.npmjs.org/shell-quote/-/shell-quote-1.4.2.tgz
+npm http 200 https://registry.npmjs.org/update-notifier/-/update-notifier-0.2.2.tgz
+npm http GET https://registry.npmjs.org/q/-/q-1.0.1.tgz
+npm http 200 https://registry.npmjs.org/chalk/-/chalk-0.4.0.tgz
+npm http 200 https://registry.npmjs.org/tmp/-/tmp-0.0.23.tgz
+npm http 304 https://registry.npmjs.org/tar
+npm http 200 https://registry.npmjs.org/decompress-zip/-/decompress-zip-0.0.8.tgz
+npm http 200 https://registry.npmjs.org/p-throttler
+npm http 200 https://registry.npmjs.org/retry
+npm http GET https://registry.npmjs.org/p-throttler/-/p-throttler-0.0.1.tgz
+npm http GET https://registry.npmjs.org/retry/-/retry-0.6.1.tgz
+npm http 200 https://registry.npmjs.org/q/-/q-1.0.1.tgz
+npm http 304 https://registry.npmjs.org/glob
+npm http GET https://registry.npmjs.org/glob/-/glob-4.0.6.tgz
+npm http 200 https://registry.npmjs.org/p-throttler/-/p-throttler-0.0.1.tgz
+npm http 200 https://registry.npmjs.org/retry/-/retry-0.6.1.tgz
+npm http GET https://registry.npmjs.org/tinycolor
+npm http GET https://registry.npmjs.org/commander
+npm http GET https://registry.npmjs.org/nan/-/nan-0.3.2.tgz
+npm http 200 https://registry.npmjs.org/glob/-/glob-4.0.6.tgz
+npm http 200 https://registry.npmjs.org/tinycolor
+npm http GET https://registry.npmjs.org/tinycolor/-/tinycolor-0.0.1.tgz
+npm http 304 https://registry.npmjs.org/commander
+npm http GET https://registry.npmjs.org/commander/-/commander-0.6.1.tgz
+npm http 200 https://registry.npmjs.org/nan/-/nan-0.3.2.tgz
+npm http GET https://registry.npmjs.org/transformers
+npm http GET https://registry.npmjs.org/character-parser
+npm http GET https://registry.npmjs.org/monocle
+npm http GET https://registry.npmjs.org/with
+npm http GET https://registry.npmjs.org/constantinople
+npm http GET https://registry.npmjs.org/commander/-/commander-2.1.0.tgz
+npm http 200 https://registry.npmjs.org/tinycolor/-/tinycolor-0.0.1.tgz
+npm http GET https://registry.npmjs.org/uglify-js/-/uglify-js-2.3.6.tgz
+npm http 200 https://registry.npmjs.org/commander/-/commander-0.6.1.tgz
+npm http 200 https://registry.npmjs.org/with
+npm http 200 https://registry.npmjs.org/constantinople
+npm http 200 https://registry.npmjs.org/commander/-/commander-2.1.0.tgz
+npm http GET https://registry.npmjs.org/with/-/with-3.0.1.tgz
+npm http GET https://registry.npmjs.org/constantinople/-/constantinople-2.0.1.tgz
+npm http 200 https://registry.npmjs.org/character-parser
+npm http GET https://registry.npmjs.org/character-parser/-/character-parser-1.2.0.tgz
+npm http 200 https://registry.npmjs.org/uglify-js/-/uglify-js-2.3.6.tgz
+npm http 200 https://registry.npmjs.org/transformers
+npm http GET https://registry.npmjs.org/transformers/-/transformers-2.1.0.tgz
+npm http 200 https://registry.npmjs.org/with/-/with-3.0.1.tgz
+npm http 200 https://registry.npmjs.org/character-parser/-/character-parser-1.2.0.tgz
+npm http 200 https://registry.npmjs.org/transformers/-/transformers-2.1.0.tgz
+npm http 200 https://registry.npmjs.org/constantinople/-/constantinople-2.0.1.tgz
+npm http 200 https://registry.npmjs.org/monocle
+npm http GET https://registry.npmjs.org/monocle/-/monocle-1.1.51.tgz
+npm http 200 https://registry.npmjs.org/monocle/-/monocle-1.1.51.tgz
+npm http GET https://registry.npmjs.org/readdirp/-/readdirp-0.2.5.tgz
+npm http GET https://registry.npmjs.org/uglify-js
+npm http GET https://registry.npmjs.org/uglify-js
+npm http GET https://registry.npmjs.org/promise
+npm http GET https://registry.npmjs.org/css
+npm http GET https://registry.npmjs.org/uglify-js
+npm http GET https://registry.npmjs.org/minimist
+npm http 200 https://registry.npmjs.org/readdirp/-/readdirp-0.2.5.tgz
+npm http 304 https://registry.npmjs.org/uglify-js
+npm http 304 https://registry.npmjs.org/uglify-js
+npm http 304 https://registry.npmjs.org/minimist
+npm http 304 https://registry.npmjs.org/uglify-js
+npm http GET https://registry.npmjs.org/uglify-js/-/uglify-js-2.2.5.tgz
+npm http 200 https://registry.npmjs.org/promise
+npm http 200 https://registry.npmjs.org/css
+npm http GET https://registry.npmjs.org/promise/-/promise-2.0.0.tgz
+npm http GET https://registry.npmjs.org/css/-/css-1.0.8.tgz
+npm http 200 https://registry.npmjs.org/uglify-js/-/uglify-js-2.2.5.tgz
+npm http 200 https://registry.npmjs.org/css/-/css-1.0.8.tgz
+npm http 200 https://registry.npmjs.org/promise/-/promise-2.0.0.tgz
+npm http GET https://registry.npmjs.org/shelljs
+npm http GET https://registry.npmjs.org/cli
+npm http GET https://registry.npmjs.org/htmlparser2
+npm http GET https://registry.npmjs.org/console-browserify
+npm http GET https://registry.npmjs.org/underscore
+npm http GET https://registry.npmjs.org/exit
+npm http GET https://registry.npmjs.org/minimatch/-/minimatch-0.4.0.tgz
+npm http GET https://registry.npmjs.org/batch
+npm http GET https://registry.npmjs.org/bytes
+npm http GET https://registry.npmjs.org/pause
+npm http GET https://registry.npmjs.org/uid2
+npm http GET https://registry.npmjs.org/raw-body
+npm http GET https://registry.npmjs.org/negotiator
+npm http GET https://registry.npmjs.org/multiparty
+npm http GET https://registry.npmjs.org/qs
+npm http 200 https://registry.npmjs.org/minimatch/-/minimatch-0.4.0.tgz
+npm http 200 https://registry.npmjs.org/console-browserify
+npm http 304 https://registry.npmjs.org/underscore
+npm http GET https://registry.npmjs.org/console-browserify/-/console-browserify-1.1.0.tgz
+npm http GET https://registry.npmjs.org/underscore/-/underscore-1.6.0.tgz
+npm http 200 https://registry.npmjs.org/shelljs
+npm http 304 https://registry.npmjs.org/exit
+npm http 200 https://registry.npmjs.org/batch
+npm http GET https://registry.npmjs.org/shelljs/-/shelljs-0.3.0.tgz
+npm http GET https://registry.npmjs.org/batch/-/batch-0.5.0.tgz
+npm http 200 https://registry.npmjs.org/bytes
+npm http 200 https://registry.npmjs.org/cli
+npm http 200 https://registry.npmjs.org/pause
+npm http 200 https://registry.npmjs.org/uid2
+npm http 200 https://registry.npmjs.org/htmlparser2
+npm http GET https://registry.npmjs.org/bytes/-/bytes-0.2.1.tgz
+npm http GET https://registry.npmjs.org/pause/-/pause-0.0.1.tgz
+npm http GET https://registry.npmjs.org/uid2/-/uid2-0.0.3.tgz
+npm http GET https://registry.npmjs.org/cli/-/cli-0.6.5.tgz
+npm http 304 https://registry.npmjs.org/qs
+npm http GET https://registry.npmjs.org/htmlparser2/-/htmlparser2-3.7.3.tgz
+npm http 200 https://registry.npmjs.org/negotiator
+npm http GET https://registry.npmjs.org/negotiator/-/negotiator-0.3.0.tgz
+npm http 200 https://registry.npmjs.org/multiparty
+npm http 200 https://registry.npmjs.org/raw-body
+npm http 200 https://registry.npmjs.org/console-browserify/-/console-browserify-1.1.0.tgz
+npm http 200 https://registry.npmjs.org/underscore/-/underscore-1.6.0.tgz
+npm http GET https://registry.npmjs.org/multiparty/-/multiparty-2.2.0.tgz
+npm http GET https://registry.npmjs.org/raw-body/-/raw-body-1.1.2.tgz
+npm http 200 https://registry.npmjs.org/shelljs/-/shelljs-0.3.0.tgz
+npm http 200 https://registry.npmjs.org/pause/-/pause-0.0.1.tgz
+npm http 200 https://registry.npmjs.org/batch/-/batch-0.5.0.tgz
+npm http 200 https://registry.npmjs.org/uid2/-/uid2-0.0.3.tgz
+npm http 200 https://registry.npmjs.org/cli/-/cli-0.6.5.tgz
+npm http 200 https://registry.npmjs.org/htmlparser2/-/htmlparser2-3.7.3.tgz
+npm http 200 https://registry.npmjs.org/bytes/-/bytes-0.2.1.tgz
+npm http 200 https://registry.npmjs.org/negotiator/-/negotiator-0.3.0.tgz
+npm http 200 https://registry.npmjs.org/raw-body/-/raw-body-1.1.2.tgz
+npm http GET https://registry.npmjs.org/mkdirp/-/mkdirp-0.3.0.tgz
+npm http 200 https://registry.npmjs.org/multiparty/-/multiparty-2.2.0.tgz
+npm http 200 https://registry.npmjs.org/mkdirp/-/mkdirp-0.3.0.tgz
+npm http GET https://registry.npmjs.org/is-promise
+npm http GET https://registry.npmjs.org/css-parse
+npm http GET https://registry.npmjs.org/css-stringify
+npm http 200 https://registry.npmjs.org/is-promise
+npm http GET https://registry.npmjs.org/is-promise/-/is-promise-1.0.1.tgz
+npm http 200 https://registry.npmjs.org/css-stringify
+npm http GET https://registry.npmjs.org/css-stringify/-/css-stringify-1.0.5.tgz
+npm http 200 https://registry.npmjs.org/is-promise/-/is-promise-1.0.1.tgz
+npm http 200 https://registry.npmjs.org/css-stringify/-/css-stringify-1.0.5.tgz
+npm http 200 https://registry.npmjs.org/css-parse
+npm http GET https://registry.npmjs.org/css-parse/-/css-parse-1.0.4.tgz
+npm http 200 https://registry.npmjs.org/css-parse/-/css-parse-1.0.4.tgz
+npm http GET https://registry.npmjs.org/date-now
+npm http GET https://registry.npmjs.org/lru-cache
+npm http GET https://registry.npmjs.org/sigmund
+
+> ws@0.4.31 install /opt/local/nodejs/0.10.28/lib/node_modules/mimosa/node_modules/mimosa-live-reload/node_modules/socket.io/node_modules/socket.io-client/node_modules/engine.io-client/node_modules/ws
+> (node-gyp rebuild 2> builderror.log) || (exit 0)
+
+make: Entering directory `/opt/local/nodejs/0.10.28/lib/node_modules/mimosa/node_modules/mimosa-live-reload/node_modules/socket.io/node_modules/socket.io-client/node_modules/engine.io-client/node_modules/ws/build'
+  CXX(target) Release/obj.target/bufferutil/src/bufferutil.o
+  SOLINK_MODULE(target) Release/obj.target/bufferutil.node
+  SOLINK_MODULE(target) Release/obj.target/bufferutil.node: Finished
+  COPY Release/bufferutil.node
+  CXX(target) Release/obj.target/validation/src/validation.o
+  SOLINK_MODULE(target) Release/obj.target/validation.node
+  SOLINK_MODULE(target) Release/obj.target/validation.node: Finished
+  COPY Release/validation.node
+make: Leaving directory `/opt/local/nodejs/0.10.28/lib/node_modules/mimosa/node_modules/mimosa-live-reload/node_modules/socket.io/node_modules/socket.io-client/node_modules/engine.io-client/node_modules/ws/build'
+npm http 304 https://registry.npmjs.org/sigmund
+npm http 304 https://registry.npmjs.org/lru-cache
+npm http 200 https://registry.npmjs.org/date-now
+npm http GET https://registry.npmjs.org/date-now/-/date-now-0.1.4.tgz
+npm http 200 https://registry.npmjs.org/date-now/-/date-now-0.1.4.tgz
+npm http GET https://registry.npmjs.org/async
+npm http GET https://registry.npmjs.org/inherits
+npm http GET https://registry.npmjs.org/minimatch
+npm http 304 https://registry.npmjs.org/async
+npm http GET https://registry.npmjs.org/domhandler
+npm http GET https://registry.npmjs.org/domutils
+npm http GET https://registry.npmjs.org/domelementtype
+npm http GET https://registry.npmjs.org/entities
+npm http GET https://registry.npmjs.org/readable-stream
+npm http 304 https://registry.npmjs.org/minimatch
+npm http 304 https://registry.npmjs.org/inherits
+npm http 200 https://registry.npmjs.org/entities
+npm http 304 https://registry.npmjs.org/readable-stream
+npm http GET https://registry.npmjs.org/entities/-/entities-1.0.0.tgz
+npm http 200 https://registry.npmjs.org/domutils
+npm http GET https://registry.npmjs.org/domutils/-/domutils-1.5.0.tgz
+npm http 200 https://registry.npmjs.org/entities/-/entities-1.0.0.tgz
+npm http 200 https://registry.npmjs.org/domutils/-/domutils-1.5.0.tgz
+npm http 200 https://registry.npmjs.org/domelementtype
+npm http GET https://registry.npmjs.org/domelementtype/-/domelementtype-1.1.3.tgz
+npm http 200 https://registry.npmjs.org/domhandler
+npm http GET https://registry.npmjs.org/domhandler/-/domhandler-2.2.1.tgz
+npm http 200 https://registry.npmjs.org/domelementtype/-/domelementtype-1.1.3.tgz
+npm http 200 https://registry.npmjs.org/domhandler/-/domhandler-2.2.1.tgz
+npm http GET https://registry.npmjs.org/has-color
+npm http GET https://registry.npmjs.org/ansi-styles
+npm http GET https://registry.npmjs.org/strip-ansi
+npm http GET https://registry.npmjs.org/configstore
+npm http GET https://registry.npmjs.org/is-npm
+npm http GET https://registry.npmjs.org/latest-version
+npm http GET https://registry.npmjs.org/semver-diff
+npm http GET https://registry.npmjs.org/string-length
+npm http 200 https://registry.npmjs.org/has-color
+npm http 304 https://registry.npmjs.org/ansi-styles
+npm http 200 https://registry.npmjs.org/latest-version
+npm http 304 https://registry.npmjs.org/strip-ansi
+npm http 200 https://registry.npmjs.org/semver-diff
+npm http GET https://registry.npmjs.org/configstore
+npm http GET https://registry.npmjs.org/lodash.debounce
+npm http 200 https://registry.npmjs.org/string-length
+npm http GET https://registry.npmjs.org/request
+npm http GET https://registry.npmjs.org/object-assign
+npm http GET https://registry.npmjs.org/has-color/-/has-color-0.1.7.tgz
+npm http GET https://registry.npmjs.org/ansi-styles/-/ansi-styles-1.0.0.tgz
+npm http 200 https://registry.npmjs.org/configstore
+npm http 200 https://registry.npmjs.org/is-npm
+npm http GET https://registry.npmjs.org/strip-ansi/-/strip-ansi-0.1.1.tgz
+npm http GET https://registry.npmjs.org/inquirer/-/inquirer-0.4.1.tgz
+npm http GET https://registry.npmjs.org/latest-version/-/latest-version-1.0.0.tgz
+npm http 304 https://registry.npmjs.org/object-assign
+npm http GET https://registry.npmjs.org/semver-diff/-/semver-diff-2.0.0.tgz
+npm http GET https://registry.npmjs.org/string-length/-/string-length-1.0.0.tgz
+npm http GET https://registry.npmjs.org/throttleit
+npm http GET https://registry.npmjs.org/configstore/-/configstore-0.3.2.tgz
+npm http GET https://registry.npmjs.org/is-npm/-/is-npm-1.0.0.tgz
+npm http GET https://registry.npmjs.org/object-assign/-/object-assign-0.1.2.tgz
+npm http 304 https://registry.npmjs.org/request
+npm http 200 https://registry.npmjs.org/lodash.debounce
+npm http 200 https://registry.npmjs.org/configstore
+npm http 200 https://registry.npmjs.org/ansi-styles/-/ansi-styles-1.0.0.tgz
+npm http 200 https://registry.npmjs.org/has-color/-/has-color-0.1.7.tgz
+npm http 200 https://registry.npmjs.org/semver-diff/-/semver-diff-2.0.0.tgz
+npm http 200 https://registry.npmjs.org/string-length/-/string-length-1.0.0.tgz
+npm http 200 https://registry.npmjs.org/latest-version/-/latest-version-1.0.0.tgz
+npm http 200 https://registry.npmjs.org/strip-ansi/-/strip-ansi-0.1.1.tgz
+npm http 200 https://registry.npmjs.org/inquirer/-/inquirer-0.4.1.tgz
+npm http 200 https://registry.npmjs.org/configstore/-/configstore-0.3.2.tgz
+npm http 200 https://registry.npmjs.org/throttleit
+npm http 200 https://registry.npmjs.org/object-assign/-/object-assign-0.1.2.tgz
+npm http 200 https://registry.npmjs.org/is-npm/-/is-npm-1.0.0.tgz
+npm http GET https://registry.npmjs.org/request/-/request-2.27.0.tgz
+npm http GET https://registry.npmjs.org/configstore/-/configstore-0.2.3.tgz
+npm http GET https://registry.npmjs.org/read
+npm http GET https://registry.npmjs.org/lodash.debounce/-/lodash.debounce-2.4.1.tgz
+npm http GET https://registry.npmjs.org/q/-/q-0.9.7.tgz
+npm http GET https://registry.npmjs.org/throttleit/-/throttleit-0.0.2.tgz
+npm http GET https://registry.npmjs.org/graceful-fs
+npm http GET https://registry.npmjs.org/optimist
+npm http 200 https://registry.npmjs.org/request/-/request-2.27.0.tgz
+npm http GET https://registry.npmjs.org/osenv/-/osenv-0.0.3.tgz
+npm http 200 https://registry.npmjs.org/lodash.debounce/-/lodash.debounce-2.4.1.tgz
+npm http 200 https://registry.npmjs.org/read
+npm http 200 https://registry.npmjs.org/osenv/-/osenv-0.0.3.tgz
+npm http GET https://registry.npmjs.org/jsonify
+npm http GET https://registry.npmjs.org/array-filter
+npm http GET https://registry.npmjs.org/array-reduce
+npm http GET https://registry.npmjs.org/array-map
+npm http 200 https://registry.npmjs.org/q/-/q-0.9.7.tgz
+npm http 200 https://registry.npmjs.org/throttleit/-/throttleit-0.0.2.tgz
+npm http 304 https://registry.npmjs.org/graceful-fs
+npm http GET https://registry.npmjs.org/read/-/read-1.0.5.tgz
+npm http 200 https://registry.npmjs.org/array-map
+npm http 200 https://registry.npmjs.org/array-reduce
+npm http GET https://registry.npmjs.org/array-map/-/array-map-0.0.0.tgz
+npm http GET https://registry.npmjs.org/deep-extend
+npm http GET https://registry.npmjs.org/intersect
+npm http 200 https://registry.npmjs.org/array-filter
+npm http GET https://registry.npmjs.org/mkpath
+npm http GET https://registry.npmjs.org/binary
+npm http GET https://registry.npmjs.org/touch
+npm http 200 https://registry.npmjs.org/configstore/-/configstore-0.2.3.tgz
+npm http GET https://registry.npmjs.org/array-reduce/-/array-reduce-0.0.0.tgz
+npm http 200 https://registry.npmjs.org/jsonify
+npm http 304 https://registry.npmjs.org/optimist
+npm http 200 https://registry.npmjs.org/read/-/read-1.0.5.tgz
+npm http GET https://registry.npmjs.org/nopt/-/nopt-2.2.1.tgz
+npm http GET https://registry.npmjs.org/array-filter/-/array-filter-0.0.1.tgz
+npm http 304 https://registry.npmjs.org/binary
+npm http GET https://registry.npmjs.org/optimist/-/optimist-0.6.1.tgz
+npm http GET https://registry.npmjs.org/jsonify/-/jsonify-0.0.0.tgz
+npm http 200 https://registry.npmjs.org/array-map/-/array-map-0.0.0.tgz
+npm http 200 https://registry.npmjs.org/intersect
+npm http 200 https://registry.npmjs.org/deep-extend
+npm http 304 https://registry.npmjs.org/mkpath
+npm http 200 https://registry.npmjs.org/jsonify/-/jsonify-0.0.0.tgz
+npm http 200 https://registry.npmjs.org/array-reduce/-/array-reduce-0.0.0.tgz
+npm http 200 https://registry.npmjs.org/nopt/-/nopt-2.2.1.tgz
+npm http 200 https://registry.npmjs.org/array-filter/-/array-filter-0.0.1.tgz
+npm http 304 https://registry.npmjs.org/touch
+npm http 200 https://registry.npmjs.org/optimist/-/optimist-0.6.1.tgz
+npm http GET https://registry.npmjs.org/intersect/-/intersect-0.0.3.tgz
+npm http GET https://registry.npmjs.org/deep-extend/-/deep-extend-0.2.11.tgz
+npm http GET https://registry.npmjs.org/user-home
+npm http GET https://registry.npmjs.org/uuid
+npm http GET https://registry.npmjs.org/xdg-basedir
+npm http GET https://registry.npmjs.org/package-json
+npm http GET https://registry.npmjs.org/js-yaml
+npm http GET https://registry.npmjs.org/semver/-/semver-4.2.0.tgz
+npm http GET https://registry.npmjs.org/strip-ansi/-/strip-ansi-2.0.1.tgz
+npm http GET https://registry.npmjs.org/touch/-/touch-0.0.2.tgz
+npm http GET https://registry.npmjs.org/escape-string-regexp
+npm http GET https://registry.npmjs.org/has-ansi
+npm http GET https://registry.npmjs.org/supports-color
+npm http 200 https://registry.npmjs.org/intersect/-/intersect-0.0.3.tgz
+npm http GET https://registry.npmjs.org/cli-color
+npm http GET https://registry.npmjs.org/mute-stream
+npm http GET https://registry.npmjs.org/readline2
+npm http 200 https://registry.npmjs.org/deep-extend/-/deep-extend-0.2.11.tgz
+npm http 200 https://registry.npmjs.org/user-home
+npm http GET https://registry.npmjs.org/through
+npm http 200 https://registry.npmjs.org/xdg-basedir
+npm http 200 https://registry.npmjs.org/uuid
+npm http 304 https://registry.npmjs.org/js-yaml
+npm http 200 https://registry.npmjs.org/package-json
+npm http GET https://registry.npmjs.org/async/-/async-0.8.0.tgz
+npm http 304 https://registry.npmjs.org/has-ansi
+npm http 200 https://registry.npmjs.org/semver/-/semver-4.2.0.tgz
+npm http 200 https://registry.npmjs.org/touch/-/touch-0.0.2.tgz
+npm http 200 https://registry.npmjs.org/strip-ansi/-/strip-ansi-2.0.1.tgz
+npm http 304 https://registry.npmjs.org/supports-color
+npm http GET https://registry.npmjs.org/node-uuid
+npm http GET https://registry.npmjs.org/tough-cookie
+npm http GET https://registry.npmjs.org/form-data
+npm http 200 https://registry.npmjs.org/mute-stream
+npm http GET https://registry.npmjs.org/tunnel-agent
+npm http GET https://registry.npmjs.org/http-signature
+npm http GET https://registry.npmjs.org/oauth-sign
+npm http GET https://registry.npmjs.org/hawk
+npm http GET https://registry.npmjs.org/aws-sign2
+npm http 200 https://registry.npmjs.org/readline2
+npm http GET https://registry.npmjs.org/user-home/-/user-home-1.1.1.tgz
+npm http GET https://registry.npmjs.org/json-stringify-safe
+npm http GET https://registry.npmjs.org/mime
+npm http GET https://registry.npmjs.org/forever-agent
+npm http 304 https://registry.npmjs.org/through
+npm http GET https://registry.npmjs.org/js-yaml/-/js-yaml-3.2.5.tgz
+npm http GET https://registry.npmjs.org/xdg-basedir/-/xdg-basedir-1.0.1.tgz
+npm http GET https://registry.npmjs.org/uuid/-/uuid-2.0.1.tgz
+npm http 304 https://registry.npmjs.org/node-uuid
+npm http 304 https://registry.npmjs.org/tough-cookie
+npm http 304 https://registry.npmjs.org/form-data
+npm http GET https://registry.npmjs.org/package-json/-/package-json-1.0.1.tgz
+npm http 304 https://registry.npmjs.org/escape-string-regexp
+npm http 304 https://registry.npmjs.org/tunnel-agent
+npm http GET https://registry.npmjs.org/mute-stream/-/mute-stream-0.0.4.tgz
+npm http 200 https://registry.npmjs.org/cli-color
+npm http 304 https://registry.npmjs.org/http-signature
+npm http 200 https://registry.npmjs.org/uuid/-/uuid-2.0.1.tgz
+npm http 304 https://registry.npmjs.org/oauth-sign
+npm http GET https://registry.npmjs.org/readline2/-/readline2-0.1.1.tgz
+npm http 304 https://registry.npmjs.org/hawk
+npm http 304 https://registry.npmjs.org/aws-sign2
+npm http 200 https://registry.npmjs.org/async/-/async-0.8.0.tgz
+npm http 304 https://registry.npmjs.org/json-stringify-safe
+npm http 304 https://registry.npmjs.org/mime
+npm http 200 https://registry.npmjs.org/package-json/-/package-json-1.0.1.tgz
+npm http 304 https://registry.npmjs.org/forever-agent
+npm http 200 https://registry.npmjs.org/mute-stream/-/mute-stream-0.0.4.tgz
+npm http 200 https://registry.npmjs.org/js-yaml/-/js-yaml-3.2.5.tgz
+npm http 200 https://registry.npmjs.org/readline2/-/readline2-0.1.1.tgz
+npm http 200 https://registry.npmjs.org/user-home/-/user-home-1.1.1.tgz
+npm http GET https://registry.npmjs.org/cli-color/-/cli-color-0.3.2.tgz
+npm http 200 https://registry.npmjs.org/xdg-basedir/-/xdg-basedir-1.0.1.tgz
+npm http 200 https://registry.npmjs.org/cli-color/-/cli-color-0.3.2.tgz
+npm http GET https://registry.npmjs.org/ansi-regex
+npm http GET https://registry.npmjs.org/ansi-regex
+npm http GET https://registry.npmjs.org/request-replay
+npm http GET https://registry.npmjs.org/mkdirp
+npm http GET https://registry.npmjs.org/lru-cache/-/lru-cache-2.3.1.tgz
+npm http 304 https://registry.npmjs.org/ansi-regex
+npm http 304 https://registry.npmjs.org/ansi-regex
+npm http GET https://registry.npmjs.org/combined-stream
+npm http 304 https://registry.npmjs.org/mkdirp
+npm http 200 https://registry.npmjs.org/request-replay
+npm http GET https://registry.npmjs.org/redeyed
+npm http GET https://registry.npmjs.org/ansicolors
+npm http GET https://registry.npmjs.org/got
+npm http GET https://registry.npmjs.org/registry-url
+npm http 200 https://registry.npmjs.org/lru-cache/-/lru-cache-2.3.1.tgz
+npm http GET https://registry.npmjs.org/ansi-regex/-/ansi-regex-1.1.0.tgz
+npm http GET https://registry.npmjs.org/request-replay/-/request-replay-0.2.0.tgz
+npm http 304 https://registry.npmjs.org/combined-stream
+npm http 200 https://registry.npmjs.org/ansicolors
+npm http 200 https://registry.npmjs.org/redeyed
+npm http 200 https://registry.npmjs.org/got
+npm http GET https://registry.npmjs.org/block-stream
+npm http 200 https://registry.npmjs.org/ansi-regex/-/ansi-regex-1.1.0.tgz
+npm http 200 https://registry.npmjs.org/request-replay/-/request-replay-0.2.0.tgz
+npm http GET https://registry.npmjs.org/ansicolors/-/ansicolors-0.2.1.tgz
+npm http GET https://registry.npmjs.org/redeyed/-/redeyed-0.4.4.tgz
+npm http GET https://registry.npmjs.org/got/-/got-1.2.2.tgz
+npm http GET https://registry.npmjs.org/ctype
+npm http GET https://registry.npmjs.org/assert-plus
+npm http GET https://registry.npmjs.org/asn1
+npm http 304 https://registry.npmjs.org/block-stream
+npm http 200 https://registry.npmjs.org/ansicolors/-/ansicolors-0.2.1.tgz
+npm http 200 https://registry.npmjs.org/redeyed/-/redeyed-0.4.4.tgz
+npm http 200 https://registry.npmjs.org/got/-/got-1.2.2.tgz
+npm http 200 https://registry.npmjs.org/registry-url
+npm http 304 https://registry.npmjs.org/asn1
+npm http 304 https://registry.npmjs.org/assert-plus
+npm http GET https://registry.npmjs.org/delayed-stream
+npm http GET https://registry.npmjs.org/registry-url/-/registry-url-2.1.0.tgz
+npm http 304 https://registry.npmjs.org/ctype
+npm http GET https://registry.npmjs.org/string_decoder
+npm http GET https://registry.npmjs.org/core-util-is
+npm http GET https://registry.npmjs.org/isarray
+npm http 304 https://registry.npmjs.org/delayed-stream
+npm http 200 https://registry.npmjs.org/registry-url/-/registry-url-2.1.0.tgz
+npm http GET https://registry.npmjs.org/brace-expansion
+npm http 304 https://registry.npmjs.org/string_decoder
+npm http 304 https://registry.npmjs.org/isarray
+npm http 304 https://registry.npmjs.org/core-util-is
+npm http 304 https://registry.npmjs.org/brace-expansion
+npm http GET https://registry.npmjs.org/rc
+npm http GET https://registry.npmjs.org/object-assign/-/object-assign-1.0.0.tgz
+npm http 200 https://registry.npmjs.org/rc
+npm http GET https://registry.npmjs.org/chainsaw
+npm http GET https://registry.npmjs.org/buffers
+npm http 200 https://registry.npmjs.org/object-assign/-/object-assign-1.0.0.tgz
+npm http GET https://registry.npmjs.org/rc/-/rc-0.5.5.tgz
+npm http 304 https://registry.npmjs.org/chainsaw
+npm http 304 https://registry.npmjs.org/buffers
+npm http GET https://registry.npmjs.org/d
+npm http GET https://registry.npmjs.org/es5-ext
+npm http GET https://registry.npmjs.org/memoizee
+npm http GET https://registry.npmjs.org/timers-ext
+npm http 200 https://registry.npmjs.org/rc/-/rc-0.5.5.tgz
+npm http GET https://registry.npmjs.org/balanced-match
+npm http GET https://registry.npmjs.org/concat-map
+npm http GET https://registry.npmjs.org/wordwrap
+npm http GET https://registry.npmjs.org/minimist/-/minimist-0.0.10.tgz
+npm http GET https://registry.npmjs.org/punycode
+npm http 304 https://registry.npmjs.org/balanced-match
+npm http 200 https://registry.npmjs.org/d
+npm http 304 https://registry.npmjs.org/concat-map
+npm http 200 https://registry.npmjs.org/memoizee
+npm http 200 https://registry.npmjs.org/minimist/-/minimist-0.0.10.tgz
+npm http 304 https://registry.npmjs.org/wordwrap
+npm http 200 https://registry.npmjs.org/es5-ext
+npm http GET https://registry.npmjs.org/d/-/d-0.1.1.tgz
+npm http 304 https://registry.npmjs.org/punycode
+npm http GET https://registry.npmjs.org/memoizee/-/memoizee-0.3.8.tgz
+npm http GET https://registry.npmjs.org/es5-ext/-/es5-ext-0.10.5.tgz
+npm http 200 https://registry.npmjs.org/timers-ext
+npm http GET https://registry.npmjs.org/timers-ext/-/timers-ext-0.1.0.tgz
+npm http GET https://registry.npmjs.org/mime-types
+npm http GET https://registry.npmjs.org/bl
+npm http GET https://registry.npmjs.org/caseless
+npm http 200 https://registry.npmjs.org/d/-/d-0.1.1.tgz
+npm http GET https://registry.npmjs.org/stringstream
+npm http 200 https://registry.npmjs.org/memoizee/-/memoizee-0.3.8.tgz
+npm http 200 https://registry.npmjs.org/es5-ext/-/es5-ext-0.10.5.tgz
+npm http GET https://registry.npmjs.org/traverse
+npm http GET https://registry.npmjs.org/cryptiles
+npm http GET https://registry.npmjs.org/sntp
+npm http GET https://registry.npmjs.org/hoek
+npm http GET https://registry.npmjs.org/boom
+npm http 200 https://registry.npmjs.org/timers-ext/-/timers-ext-0.1.0.tgz
+npm http 304 https://registry.npmjs.org/mime-types
+npm http 304 https://registry.npmjs.org/bl
+npm http 304 https://registry.npmjs.org/caseless
+npm http 304 https://registry.npmjs.org/stringstream
+npm http 304 https://registry.npmjs.org/sntp
+npm http 304 https://registry.npmjs.org/hoek
+npm http GET https://registry.npmjs.org/osenv
+npm http 304 https://registry.npmjs.org/boom
+npm http GET https://registry.npmjs.org/uuid/-/uuid-1.4.2.tgz
+npm http GET https://registry.npmjs.org/lodash.isfunction
+npm http GET https://registry.npmjs.org/js-yaml/-/js-yaml-3.0.2.tgz
+npm http GET https://registry.npmjs.org/lodash.isobject
+npm http GET https://registry.npmjs.org/lodash.now
+npm http 304 https://registry.npmjs.org/traverse
+npm http 200 https://registry.npmjs.org/lodash.now
+npm http 304 https://registry.npmjs.org/cryptiles
+npm http GET https://registry.npmjs.org/lodash.now/-/lodash.now-2.4.1.tgz
+npm http 304 https://registry.npmjs.org/osenv
+npm http 200 https://registry.npmjs.org/uuid/-/uuid-1.4.2.tgz
+npm http 200 https://registry.npmjs.org/js-yaml/-/js-yaml-3.0.2.tgz
+npm http 200 https://registry.npmjs.org/lodash.isfunction
+npm http 200 https://registry.npmjs.org/lodash.isobject
+npm http GET https://registry.npmjs.org/lodash.isfunction/-/lodash.isfunction-2.4.1.tgz
+npm http GET https://registry.npmjs.org/lodash.isobject/-/lodash.isobject-2.4.1.tgz
+npm http 200 https://registry.npmjs.org/lodash.now/-/lodash.now-2.4.1.tgz
+npm http 200 https://registry.npmjs.org/lodash.isfunction/-/lodash.isfunction-2.4.1.tgz
+npm http 200 https://registry.npmjs.org/lodash.isobject/-/lodash.isobject-2.4.1.tgz
+npm http GET https://registry.npmjs.org/ini
+npm http GET https://registry.npmjs.org/minimist
+npm http GET https://registry.npmjs.org/strip-json-comments
+npm http GET https://registry.npmjs.org/esprima
+npm http 304 https://registry.npmjs.org/minimist
+npm http 304 https://registry.npmjs.org/strip-json-comments
+npm http 200 https://registry.npmjs.org/ini
+npm http 304 https://registry.npmjs.org/esprima
+npm http GET https://registry.npmjs.org/ini/-/ini-1.3.2.tgz
+npm http GET https://registry.npmjs.org/once
+npm http GET https://registry.npmjs.org/mime-db
+npm http 200 https://registry.npmjs.org/ini/-/ini-1.3.2.tgz
+npm http GET https://registry.npmjs.org/cli-color/-/cli-color-0.2.3.tgz
+npm http GET https://registry.npmjs.org/lodash._isnative
+npm http GET https://registry.npmjs.org/lodash._objecttypes
+npm http 304 https://registry.npmjs.org/once
+npm http 304 https://registry.npmjs.org/mime-db
+npm http 200 https://registry.npmjs.org/cli-color/-/cli-color-0.2.3.tgz
+npm http 200 https://registry.npmjs.org/lodash._isnative
+npm http 200 https://registry.npmjs.org/lodash._objecttypes
+npm http GET https://registry.npmjs.org/lodash._isnative/-/lodash._isnative-2.4.1.tgz
+npm http GET https://registry.npmjs.org/lodash._objecttypes/-/lodash._objecttypes-2.4.1.tgz
+npm http GET https://registry.npmjs.org/wrappy
+npm http 200 https://registry.npmjs.org/lodash._isnative/-/lodash._isnative-2.4.1.tgz
+npm http 200 https://registry.npmjs.org/lodash._objecttypes/-/lodash._objecttypes-2.4.1.tgz
+npm http 304 https://registry.npmjs.org/wrappy
+npm http GET https://registry.npmjs.org/uglify-js
+npm http 304 https://registry.npmjs.org/uglify-js
+npm http GET https://registry.npmjs.org/aws-sign
+npm http GET https://registry.npmjs.org/cookie-jar
+npm http GET https://registry.npmjs.org/qs
+npm http 200 https://registry.npmjs.org/cookie-jar
+npm http 200 https://registry.npmjs.org/aws-sign
+npm http GET https://registry.npmjs.org/cookie-jar/-/cookie-jar-0.3.0.tgz
+npm http 304 https://registry.npmjs.org/qs
+npm http GET https://registry.npmjs.org/aws-sign/-/aws-sign-0.3.0.tgz
+npm http GET https://registry.npmjs.org/es5-ext/-/es5-ext-0.9.2.tgz
+npm http GET https://registry.npmjs.org/memoizee/-/memoizee-0.2.6.tgz
+npm http GET https://registry.npmjs.org/argparse
+npm http 200 https://registry.npmjs.org/cookie-jar/-/cookie-jar-0.3.0.tgz
+npm http 200 https://registry.npmjs.org/aws-sign/-/aws-sign-0.3.0.tgz
+npm http 200 https://registry.npmjs.org/memoizee/-/memoizee-0.2.6.tgz
+npm http 200 https://registry.npmjs.org/es5-ext/-/es5-ext-0.9.2.tgz
+npm http 304 https://registry.npmjs.org/argparse
+npm http GET https://registry.npmjs.org/async
+npm http 304 https://registry.npmjs.org/async
+npm http GET https://registry.npmjs.org/source-map
+npm http 304 https://registry.npmjs.org/source-map
+npm http GET https://registry.npmjs.org/underscore
+npm http GET https://registry.npmjs.org/underscore.string
+npm http 304 https://registry.npmjs.org/underscore
+npm http 304 https://registry.npmjs.org/underscore.string
+npm http GET https://registry.npmjs.org/amdefine
+npm http 304 https://registry.npmjs.org/amdefine
+npm http GET https://registry.npmjs.org/event-emitter
+npm http GET https://registry.npmjs.org/next-tick
+npm http 200 https://registry.npmjs.org/next-tick
+npm http GET https://registry.npmjs.org/next-tick/-/next-tick-0.1.0.tgz
+npm http 200 https://registry.npmjs.org/event-emitter
+npm http GET https://registry.npmjs.org/event-emitter/-/event-emitter-0.2.2.tgz
+npm http 200 https://registry.npmjs.org/next-tick/-/next-tick-0.1.0.tgz
+npm http 200 https://registry.npmjs.org/event-emitter/-/event-emitter-0.2.2.tgz
+npm http GET https://registry.npmjs.org/next-tick/-/next-tick-0.2.2.tgz
+npm http GET https://registry.npmjs.org/es6-weak-map
+npm http GET https://registry.npmjs.org/lru-queue
+npm http GET https://registry.npmjs.org/event-emitter/-/event-emitter-0.3.3.tgz
+npm http 200 https://registry.npmjs.org/next-tick/-/next-tick-0.2.2.tgz
+npm http 200 https://registry.npmjs.org/event-emitter/-/event-emitter-0.3.3.tgz
+npm http 200 https://registry.npmjs.org/lru-queue
+npm http GET https://registry.npmjs.org/lru-queue/-/lru-queue-0.1.0.tgz
+npm http 200 https://registry.npmjs.org/es6-weak-map
+npm http GET https://registry.npmjs.org/es6-weak-map/-/es6-weak-map-0.1.2.tgz
+npm http 200 https://registry.npmjs.org/lru-queue/-/lru-queue-0.1.0.tgz
+npm http 200 https://registry.npmjs.org/es6-weak-map/-/es6-weak-map-0.1.2.tgz
+npm http GET https://registry.npmjs.org/es6-iterator
+npm http GET https://registry.npmjs.org/es6-symbol
+npm http 200 https://registry.npmjs.org/es6-iterator
+npm http GET https://registry.npmjs.org/es6-iterator/-/es6-iterator-0.1.2.tgz
+npm http 200 https://registry.npmjs.org/es6-symbol
+npm http GET https://registry.npmjs.org/es6-symbol/-/es6-symbol-0.1.1.tgz
+npm http GET https://registry.npmjs.org/stream-counter
+npm http GET https://registry.npmjs.org/readable-stream
+npm http 200 https://registry.npmjs.org/es6-iterator/-/es6-iterator-0.1.2.tgz
+npm http 200 https://registry.npmjs.org/es6-symbol/-/es6-symbol-0.1.1.tgz
+npm http 304 https://registry.npmjs.org/readable-stream
+npm http 200 https://registry.npmjs.org/stream-counter
+npm http GET https://registry.npmjs.org/stream-counter/-/stream-counter-0.2.0.tgz
+npm http 200 https://registry.npmjs.org/stream-counter/-/stream-counter-0.2.0.tgz
+npm http GET https://registry.npmjs.org/inherits
+npm http 304 https://registry.npmjs.org/inherits
+/opt/local/nodejs/0.10.28/bin/mimosa -> /opt/local/nodejs/0.10.28/lib/node_modules/mimosa/bin/_mimosa
+mimosa@2.3.30 /opt/local/nodejs/0.10.28/lib/node_modules/mimosa
+├── validatemimosa@1.3.5
+├── mimosa-copy@1.2.0
+├── ansi-color@0.2.1
+├── wrench@1.5.8
+├── commander@1.3.2 (keypress@0.1.0)
+├── logmimosa@1.0.4 (growl@1.7.0, date-utils@1.2.15)
+├── newmimosa@2.0.0
+├── chokidar@0.12.6 (async-each@0.1.6, readdirp@1.3.0)
+├── coffee-script@1.7.1 (mkdirp@0.3.5)
+├── mimosa-csslint@1.2.0 (csslint@0.9.10)
+├── lodash@2.4.1
+├── mimosa-minify-css@1.3.2 (clean-css@2.2.16)
+├── request@2.33.0 (json-stringify-safe@5.0.0, aws-sign2@0.5.0, forever-agent@0.5.2, qs@0.6.6, tunnel-agent@0.3.0, oauth-sign@0.3.0, mime@1.2.11, node-uuid@1.4.2, form-data@0.1.4, http-signature@0.10.1, tough-cookie@0.12.1, hawk@1.0.0)
+├── skelmimosa@1.3.0 (rimraf@2.2.6, request@2.34.0)
+├── mimosa-minify-js@1.1.5 (uglify-js@2.4.15)
+├── mimosa-require@2.3.2 (requirejs@2.1.6, esprima@1.2.2)
+├── mimosa-jshint@1.1.6 (strip-json-comments@0.1.3, jshint@2.5.2)
+├── mimosa-live-reload@1.4.0 (chokidar@0.6.3, socket.io@1.2.1)
+├── mimosa-bower@1.6.2 (chokidar@0.7.0, wrench@1.5.6, bower@1.3.8)
+└── mimosa-server@1.6.1 (consolidate@0.10.0, ejs@1.0.0, dustjs-linkedin@2.4.0, hogan.js@3.0.2, handlebars@1.3.0, jade@1.5.0, express@3.4.7)
+Command [32msudo npm install -g mimosa[0m exited successfully with status 0. Took 33.29 seconds.
+
+$ [32mnpm install[0m
+
+> @ postinstall /var/snap-ci/repo
+> jspm install
+
+     [0mUpdating registry cache...[0m
+     [0mLooking up [36mgithub:Alxandr/chai[0m[0m[0m
+     [0mLooking up [36mgithub:aurelia/history-browser[0m[0m[0m
+     [0mLooking up [36mgithub:aurelia/bootstrapper[0m[0m[0m
+     [0mLooking up [36mgithub:aurelia/event-aggregator[0m[0m[0m
+     [0mLooking up [36mgithub:aurelia/framework[0m[0m[0m
+     [0mLooking up [36mgithub:aurelia/history[0m[0m[0m
+     [0mLooking up [36mgithub:aurelia/loader-default[0m[0m[0m
+     [0mLooking up [36mgithub:aurelia/logging[0m[0m[0m
+     [0mLooking up [36mgithub:aurelia/logging-console[0m[0m[0m
+     [0mLooking up [36mgithub:aurelia/path[0m[0m[0m
+     [0mLooking up [36mgithub:aurelia/metadata[0m[0m[0m
+[32m[1mok   [0m[0mInstalled [0m[1mchai[0m[0m as [36mgithub:Alxandr/chai@^1.10.1[0m[0m (1.10.1)[0m
+     [0mLooking up [36mgithub:aurelia/router[0m[0m[0m
+     [0mLooking up [36mnpm:core-js[0m[0m[0m
+     [0mLooking up [36mgithub:aurelia/templating[0m[0m[0m
+     [0mLooking up [36mgithub:aurelia/templating-binding[0m[0m[0m
+     [0mLooking up [36mgithub:aurelia/templating-resources[0m[0m[0m
+     [0mLooking up [36mgithub:aurelia/templating-router[0m[0m[0m
+[32m[1mok   [0m[0mInstalled [36mgithub:aurelia/history-browser@^0.2.3[0m[0m (0.2.3)[0m
+     [0mLooking up [36mgithub:twbs/bootstrap[0m[0m[0m
+     [0mLooking up [36mgithub:systemjs/plugin-css[0m[0m[0m
+     [0mLooking up [36mgithub:showdownjs/showdown[0m[0m[0m
+     [0mLooking up [36mgithub:moment/moment[0m[0m[0m
+[32m[1mok   [0m[0mInstalled [36mgithub:aurelia/event-aggregator@^0.2.2[0m[0m (0.2.2)[0m
+[32m[1mok   [0m[0mInstalled [36mgithub:aurelia/history@^0.2.2[0m[0m (0.2.2)[0m
+[32m[1mok   [0m[0mInstalled [36mgithub:aurelia/framework@^0.8.2[0m[0m (0.8.5)[0m
+[32m[1mok   [0m[0mInstalled [36mgithub:aurelia/loader-default@^0.4.1[0m[0m (0.4.1)[0m
+[32m[1mok   [0m[0mInstalled [0m[1maurelia-logging[0m[0m as [36mgithub:aurelia/logging@^0.2.2[0m[0m (0.2.2)[0m
+[32m[1mok   [0m[0mInstalled [36mnpm:core-js@^0.4.1[0m[0m (0.4.10)[0m
+[32m[1mok   [0m[0mInstalled [36mgithub:aurelia/logging-console@^0.2.2[0m[0m (0.2.2)[0m
+[32m[1mok   [0m[0mInstalled [36mgithub:aurelia/path@^0.4.1[0m[0m (0.4.2)[0m
+[32m[1mok   [0m[0mInstalled [36mgithub:aurelia/metadata@^0.3.0[0m[0m (0.3.1)[0m
+[32m[1mok   [0m[0mInstalled [0m[1maurelia-path[0m[0m as [36mgithub:aurelia/path@^0.4.2[0m[0m (0.4.2)[0m
+[32m[1mok   [0m[0mInstalled [0m[1maurelia-metadata[0m[0m as [36mgithub:aurelia/metadata@^0.3.1[0m[0m (0.3.1)[0m
+[32m[1mok   [0m[0mInstalled [36mgithub:aurelia/templating@^0.8.4[0m[0m (0.8.7)[0m
+[32m[1mok   [0m[0mInstalled [36mgithub:aurelia/router@^0.5.1[0m[0m (0.5.3)[0m
+[32m[1mok   [0m[0mInstalled [36mgithub:aurelia/templating-router@^0.9.2[0m[0m (0.9.2)[0m
+[32m[1mok   [0m[0mInstalled [36mgithub:aurelia/templating-resources@^0.8.3[0m[0m (0.8.4)[0m
+[32m[1mok   [0m[0mInstalled [0m[1mcss[0m[0m as [36mgithub:systemjs/plugin-css@^0.1.0[0m[0m (0.1.0)[0m
+[32m[1mok   [0m[0mInstalled [36mgithub:aurelia/templating-binding@^0.8.2[0m[0m (0.8.4)[0m
+     [0mLooking up [36mgithub:aurelia/loader[0m[0m[0m
+     [0mLooking up [36mgithub:jspm/nodelibs-process[0m[0m[0m
+     [0mLooking up [36mgithub:aurelia/dependency-injection[0m[0m[0m
+     [0mLooking up [36mgithub:aurelia/task-queue[0m[0m[0m
+     [0mLooking up [36mgithub:aurelia/binding[0m[0m[0m
+[32m[1mok   [0m[0mInstalled [0m[1mshowdown[0m[0m as [36mgithub:showdownjs/showdown@^0.3.4[0m[0m (0.3.4)[0m
+     [0mLooking up [36mgithub:aurelia/html-template-element[0m[0m[0m
+     [0mLooking up [36mgithub:aurelia/route-recognizer[0m[0m[0m
+[32m[1mok   [0m[0mInstalled [0m[1mmoment[0m[0m as [36mgithub:moment/moment@^2.9.0[0m[0m (2.9.0)[0m
+[32m[1mok   [0m[0mInstalled [36mgithub:aurelia/loader@^0.3.3[0m[0m (0.3.3)[0m
+[32m[1mok   [0m[0mInstalled [36mgithub:jspm/nodelibs-process@^0.1.0[0m[0m (0.1.0)[0m
+     [0mLooking up [36mnpm:process[0m[0m[0m
+[32m[1mok   [0m[0mInstalled [36mgithub:aurelia/dependency-injection@^0.4.1[0m[0m (0.4.1)[0m
+[32m[1mok   [0m[0mInstalled [36mgithub:aurelia/task-queue@^0.2.2[0m[0m (0.2.2)[0m
+[32m[1mok   [0m[0mInstalled [36mgithub:systemjs/plugin-css[0m[0m (0.1.0)[0m
+[32m[1mok   [0m[0mInstalled [36mgithub:aurelia/binding@^0.3.2[0m[0m (0.3.2)[0m
+[32m[1mok   [0m[0mInstalled [36mgithub:aurelia/html-template-element@^0.1.2[0m[0m (0.1.2)[0m
+     [0mLooking up [36mgithub:webcomponents/webcomponentsjs[0m[0m[0m
+[32m[1mok   [0m[0mInstalled [36mgithub:aurelia/route-recognizer@^0.2.2[0m[0m (0.2.2)[0m
+[32m[1mok   [0m[0mInstalled [36mnpm:process@^0.10.0[0m[0m (0.10.0)[0m
+[32m[1mok   [0m[0mInstalled [0m[1maurelia-router[0m[0m as [36mgithub:aurelia/router@^0.5.2[0m[0m (0.5.3)[0m
+     [0mLooking up [36mgithub:components/jquery[0m[0m[0m
+
+[33m[1mwarn [0m[0mNo main entry point detected for [36mgithub:webcomponents/webcomponentsjs@0.5.4[0m[0m.
+     Try adding an override, or set the package.json [0m[1m"main": false[0m[0m if this is the intention.
+[0m
+[32m[1mok   [0m[0mInstalled [36mgithub:webcomponents/webcomponentsjs@^0.5.2[0m[0m (0.5.4)[0m
+[32m[1mok   [0m[0mInstalled [0m[1maurelia-framework[0m[0m as [36mgithub:aurelia/framework@^0.8.5[0m[0m (0.8.5)[0m
+[32m[1mok   [0m[0mInstalled [0m[1maurelia-templating[0m[0m as [36mgithub:aurelia/templating@^0.8.7[0m[0m (0.8.7)[0m
+[32m[1mok   [0m[0mInstalled [0m[1maurelia-bootstrapper[0m[0m as [36mgithub:aurelia/bootstrapper@^0.9.3[0m[0m (0.9.3)[0m
+[32m[1mok   [0m[0mInstalled [0m[1maurelia-templating-resources[0m[0m as [36mgithub:aurelia/templating-resources@^0.8.4[0m[0m (0.8.4)[0m
+[32m[1mok   [0m[0mInstalled [0m[1maurelia-templating-binding[0m[0m as [36mgithub:aurelia/templating-binding@^0.8.4[0m[0m (0.8.4)[0m
+[32m[1mok   [0m[0mInstalled [36mgithub:components/jquery[0m[0m (2.1.3)[0m
+[32m[1mok   [0m[0mInstalled [0m[1mbootstrap[0m[0m as [36mgithub:twbs/bootstrap@^3.3.2[0m[0m (3.3.2)[0m
+[32m[1mok   [0m[0mInstall tree has no forks.[0m
+     [0mLooking up loader files...[0m
+     [0m  [36mtraceur-runtime.js[0m[0m[0m
+     [0m  [36mtraceur-runtime.src.js[0m[0m[0m
+     [0m  [36mtraceur-runtime.js.map[0m[0m[0m
+     [0m  [36mtraceur.js[0m[0m[0m
+     [0m  [36mtraceur.src.js[0m[0m[0m
+     [0m  [36mtraceur.js.map[0m[0m[0m
+     [0m  [36mes6-module-loader.js[0m[0m[0m
+     [0m  [36mes6-module-loader.src.js[0m[0m[0m
+     [0m  [36mes6-module-loader.js.map[0m[0m[0m
+     [0m  [36msystem.js[0m[0m[0m
+     [0m  [36msystem.src.js[0m[0m[0m
+     [0m  [36msystem.js.map[0m[0m[0m
+     [0m
+     Using loader versions:[0m
+     [0m  [36mes6-module-loader@0.12.0[0m[0m[0m
+     [0m  [36msystemjs@0.12.1[0m[0m[0m
+     [0m  [36mtraceur@0.0.82[0m[0m[0m
+[32m[1mok   [0m[0mLoader files downloaded successfully[0m
+
+[32m[1mok   [0m[0mInstall complete.[0m
+Command [32mnpm install[0m exited successfully with status 0. Took 6.41 seconds.
+
+$ [32mmimosa build[0m
+02:17:51 - Info - Beginning build
+02:17:51 - Info - Did not find compiled directory [36mlib[0m, so making it for you
+02:17:52 - [33m[1mWARN[0m - JavaScript Lint Error: The '__proto__' property is deprecated., in file [36msrc/html/generate.js[0m, at line number [36m45[0m
+02:17:52 - [33m[1mWARN[0m - JavaScript Lint Error: Unnecessary semicolon., in file [36msrc/html/html.js[0m, at line number [36m563[0m
+02:17:52 - [33m[1mWARN[0m - JavaScript Lint Error: It's not necessary to initialize 'sut' to 'undefined'., in file [36msrc/test/app.spec.js[0m, at line number [36m14[0m
+02:17:52 - [32mSuccess[0m - Wrote file [36mlib/app/main.js[0m
+02:17:52 - [32mSuccess[0m - Wrote file [36mlib/html/generate.js[0m
+02:17:52 - [32mSuccess[0m - Wrote file [36mlib/test/app.spec.js[0m
+02:17:52 - [32mSuccess[0m - Wrote file [36mlib/html/html.js[0m
+02:17:52 - [32mSuccess[0m - Wrote file [36mlib/test/utils.js[0m
+02:17:52 - [32mSuccess[0m - Wrote file [36mlib/app/bundle.js[0m
+02:17:52 - [32mSuccess[0m - Wrote file [36mlib/app/routes/app.html[0m
+02:17:52 - [33m[1mWARN[0m - JavaScript Lint Error: Did you mean to return a conditional instead of an assignment?, in file [36msrc/app/services/blog.js[0m, at line number [36m12[0m
+02:17:52 - [32mSuccess[0m - Wrote file [36mlib/app/behaviors/markdown.js[0m
+02:17:52 - [32mSuccess[0m - Wrote file [36mlib/app/routes/app.js[0m
+02:17:52 - [32mSuccess[0m - Wrote file [36mlib/app/routes/redirect.js[0m
+02:17:52 - [32mSuccess[0m - Wrote file [36mlib/app/services/blog.js[0m
+02:17:52 - [32mSuccess[0m - Wrote file [36mlib/app/routes/blog/index.html[0m
+02:17:52 - [32mSuccess[0m - Wrote file [36mlib/app/routes/blog/list.html[0m
+02:17:52 - [32mSuccess[0m - Wrote file [36mlib/app/routes/blog/post.html[0m
+02:17:52 - [32mSuccess[0m - Wrote file [36mlib/app/routes/blog/tag.html[0m
+02:17:52 - [33m[1mWARN[0m - JavaScript Lint Error: The '__proto__' property is deprecated., in file [36msrc/app/routes/blog/tag.js[0m, at line number [36m18[0m
+02:17:52 - [32mSuccess[0m - Wrote file [36mlib/app/routes/blog/index.js[0m
+02:17:52 - [32mSuccess[0m - Wrote file [36mlib/app/routes/blog/list.js[0m
+02:17:52 - [32mSuccess[0m - Wrote file [36mlib/app/routes/blog/post.js[0m
+02:17:52 - [32mSuccess[0m - Wrote file [36mlib/app/routes/blog/tag.js[0m
+02:17:53 - [32mSuccess[0m - Wrote file [36mlib/style/site.css[0m
+02:17:53 - [32mSuccess[0m - Finished build
+Command [32mmimosa build[0m exited successfully with status 0. Took 2.19 seconds.
+
+$ [32msudo npm install -g karma-cli[0m
+npm http GET https://registry.npmjs.org/karma-cli
+npm http 200 https://registry.npmjs.org/karma-cli
+npm http GET https://registry.npmjs.org/karma-cli/-/karma-cli-0.0.4.tgz
+npm http 200 https://registry.npmjs.org/karma-cli/-/karma-cli-0.0.4.tgz
+npm http GET https://registry.npmjs.org/resolve
+npm http 304 https://registry.npmjs.org/resolve
+npm http GET https://registry.npmjs.org/resolve/-/resolve-0.5.1.tgz
+npm http 200 https://registry.npmjs.org/resolve/-/resolve-0.5.1.tgz
+/opt/local/nodejs/0.10.28/bin/karma -> /opt/local/nodejs/0.10.28/lib/node_modules/karma-cli/bin/karma
+karma-cli@0.0.4 /opt/local/nodejs/0.10.28/lib/node_modules/karma-cli
+└── resolve@0.5.1
+Command [32msudo npm install -g karma-cli[0m exited successfully with status 0. Took 4.52 seconds.
+
+$ [32mmake test[0m
+karma start --no-auto-watch --single-run
+[32mINFO [karma]: [39mKarma v0.12.31 server started at http://localhost:9876/
+[32mINFO [launcher]: [39mStarting browser Chrome
+[32mINFO [launcher]: [39mStarting browser Firefox
+[32mINFO [Firefox 31.0.0 (Linux)]: [39mConnected on socket q489BO4nPq6C1hsJx8hG with id 53255665
+[32mINFO [Chrome 40.0.2214 (Linux)]: [39mConnected on socket jqj38GTFbfoL313Jx8hF with id 72497189
+Chrome 40.0.2214 (Linux): Executed 0 of 2[32m SUCCESS[39m (0 secs / 0 secs)
+[1A[2KChrome 40.0.2214 (Linux): Executed 1 of 2[32m SUCCESS[39m (0 secs / 0.001 secs)
+[1A[2KChrome 40.0.2214 (Linux): Executed 2 of 2[32m SUCCESS[39m (0 secs / 0.001 secs)
+[1A[2KChrome 40.0.2214 (Linux): Executed 2 of 2[32m SUCCESS[39m (0.016 secs / 0.001 secs)
+
+[1A[2K[1A[2KChrome 40.0.2214 (Linux): Executed 2 of 2[32m SUCCESS[39m (0.016 secs / 0.001 secs)
+Firefox 31.0.0 (Linux): Executed 0 of 2[32m SUCCESS[39m (0 secs / 0 secs)
+[1A[2K[1A[2KChrome 40.0.2214 (Linux): Executed 2 of 2[32m SUCCESS[39m (0.016 secs / 0.001 secs)
+Firefox 31.0.0 (Linux): Executed 1 of 2[32m SUCCESS[39m (0 secs / 0.001 secs)
+[1A[2K[1A[2KChrome 40.0.2214 (Linux): Executed 2 of 2[32m SUCCESS[39m (0.016 secs / 0.001 secs)
+Firefox 31.0.0 (Linux): Executed 2 of 2[32m SUCCESS[39m (0 secs / 0.001 secs)
+[1A[2K[1A[2KChrome 40.0.2214 (Linux): Executed 2 of 2[32m SUCCESS[39m (0.016 secs / 0.001 secs)
+Firefox 31.0.0 (Linux): Executed 2 of 2[32m SUCCESS[39m (0.01 secs / 0.001 secs)
+[32mTOTAL: 4 SUCCESS[39m
+Command [32mmake test[0m exited successfully with status 0. Took 4.08 seconds.
+
+$ [32mmake deploy[0m
+#jspm bundle lib/app/main lib/app.min.js --minify --inject
+# minification is broken, run unminified for now
+jspm bundle lib/app/main lib/app.js --inject
+     [0mBuilding the bundle tree for [36mlib/app/main[0m[0m...[0m
+[32m[1mok   [0m[0m[36mlib/app[0m[0m added to config bundles.[0m
+[32m[1mok   [0m[0mBuilt into [36mlib/app.js[0m[0m with source maps, unminified.[0m
+Command [32mmake deploy[0m exited successfully with status 0. Took 4.58 seconds.
+
+$ [32mmake test[0m
+karma start --no-auto-watch --single-run
+[32mINFO [karma]: [39mKarma v0.12.31 server started at http://localhost:9876/
+[32mINFO [launcher]: [39mStarting browser Chrome
+[32mINFO [launcher]: [39mStarting browser Firefox
+[32mINFO [Firefox 31.0.0 (Linux)]: [39mConnected on socket YvHlwcB3c_2dKaTex-oN with id 4279160
+[32mINFO [Chrome 40.0.2214 (Linux)]: [39mConnected on socket --WbQRrgPfOG1TIrx-oM with id 69676701
+Chrome 40.0.2214 (Linux): Executed 0 of 2[32m SUCCESS[39m (0 secs / 0 secs)
+[1A[2KChrome 40.0.2214 (Linux): Executed 1 of 2[32m SUCCESS[39m (0 secs / 0.005 secs)
+[1A[2KChrome 40.0.2214 (Linux): Executed 2 of 2[32m SUCCESS[39m (0 secs / 0.005 secs)
+[1A[2KChrome 40.0.2214 (Linux): Executed 2 of 2[32m SUCCESS[39m (0.012 secs / 0.005 secs)
+
+[1A[2K[1A[2KChrome 40.0.2214 (Linux): Executed 2 of 2[32m SUCCESS[39m (0.012 secs / 0.005 secs)
+Firefox 31.0.0 (Linux): Executed 0 of 2[32m SUCCESS[39m (0 secs / 0 secs)
+[1A[2K[1A[2KChrome 40.0.2214 (Linux): Executed 2 of 2[32m SUCCESS[39m (0.012 secs / 0.005 secs)
+Firefox 31.0.0 (Linux): Executed 1 of 2[32m SUCCESS[39m (0 secs / 0.001 secs)
+[1A[2K[1A[2KChrome 40.0.2214 (Linux): Executed 2 of 2[32m SUCCESS[39m (0.012 secs / 0.005 secs)
+Firefox 31.0.0 (Linux): Executed 2 of 2[32m SUCCESS[39m (0 secs / 0.002 secs)
+[1A[2K[1A[2KChrome 40.0.2214 (Linux): Executed 2 of 2[32m SUCCESS[39m (0.012 secs / 0.005 secs)
+Firefox 31.0.0 (Linux): Executed 2 of 2[32m SUCCESS[39m (0.013 secs / 0.002 secs)
+[32mTOTAL: 4 SUCCESS[39m
+Command [32mmake test[0m exited successfully with status 0. Took 3.54 seconds.
+
+Removed file [32m$HOME/.jspm/config[0m
+Saving console log for later
