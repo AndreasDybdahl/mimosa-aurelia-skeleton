@@ -9,6 +9,12 @@ System.config({
   },
   "bundles": {
     "lib/app": [
+      "npm:process@0.10.0/browser",
+      "npm:process@0.10.0",
+      "github:jspm/nodelibs-process@0.1.0/index",
+      "github:jspm/nodelibs-process@0.1.0",
+      "npm:core-js@0.4.10/index",
+      "npm:core-js@0.4.10",
       "github:aurelia/metadata@0.3.1/system/origin",
       "github:aurelia/metadata@0.3.1/system/resource-type",
       "github:aurelia/metadata@0.3.1/system/metadata",
@@ -165,6 +171,7 @@ System.config({
     "aurelia-templating-router": "github:aurelia/templating-router@0.9.2",
     "bootstrap": "github:twbs/bootstrap@3.3.2",
     "chai": "github:Alxandr/chai@1.10.1",
+    "core-js": "npm:core-js@0.4.10",
     "css": "github:systemjs/plugin-css@0.1.0",
     "html": "plugin-html/html",
     "html/generate": "plugin-html/generate",
