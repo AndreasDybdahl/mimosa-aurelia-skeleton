@@ -44,12 +44,14 @@ exports.config = {
         var child_process = require('child_process');
         sauceConnect = child_process.spawn(process.env.SAUCE_BIN, ['-u', process.env.SAUCE_USERNAME, '-k', process.env.SAUCE_ACCESS_KEY, '-i', exports.config.capabilities.build]);
         sauceConnect.stdout.on('data', function(data) {
+          data = data.toString();
           console.log(data);
           if(data.indexOf('you may start your tests') > -1) {
             resolve();
           }
         });
         sauceConnect.stderr.on('data', function(data) {
+          data = data.toString();
           reject();
           console.err(data);
         });
