@@ -66,7 +66,7 @@ function paginate(list, page, pageSize) {
 
 function returnData(fn) {
   if (SIMULATE_LATENCY) {
-    return new Promise(resolve => setTimeout(resolve, 500))
+    return new Promise(resolve => setTimeout(() => resolve(), 500))
       .then(() => new Promise(fn));
   } else {
     return new Promise(fn);
