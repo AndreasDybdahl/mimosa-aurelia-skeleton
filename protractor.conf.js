@@ -39,15 +39,24 @@ exports.config = {
     global.expect = require('chai').expect;
     var serverStart = require('./server').startServer;
 
-    return new Promise(function(resolve) {
+    return new Promise(function(resolve, reject) {
       if(process.env.SAUCE_BIN) {
         var child_process = require('child_process');
-        sauceConnect = child_process.spawn(process.env.SAUCE_BIN, ['-u', process.env.SAUCE_USERNAME, '-k', process.env.SAUCE_ACCESS_KEY, '-i', exports.config.capabilities.build], { stdio: 'inherit' });
+        sauceConnect = child_process.spawn(process.env.SAUCE_BIN, ['-u', process.env.SAUCE_USERNAME, '-k', process.env.SAUCE_ACCESS_KEY, '-i', exports.config.capabilities.build]);
         sauceConnect.stdout.on('data', function(data) {
-          console.log('received data: ' + data);
+          console.log(data);
+          if(data.indexOf('you may start your tests') > -1) {
+            resolve();
+          }
+        });
+        sauceConnect.stderr.on('data', function(data) {
+          reject();
+          console.err(data);
         });
         console.log('Waiting 1 minute for sauce connect');
-        setTimeout(resolve, 60000);
+        setTimeout(function() {
+          reject(new Error('sauce connect didn\'t start within allocated time'));
+        }, 60000);
       } else {
         resolve();
       }
@@ -105,6 +114,6 @@ exports.config = {
 
 if (process.env.SNAP_CI) {
   exports.config.chromeDriver = '/usr/local/bin/chromedriver';
-  exports.config.capabilities.build = 'Build #' + process.env.SNAP_PIPELINE_COUNTER;
-  exports.config.capabilities.testName = 'Mimosa Aurelia Skeleton Tests';
+  exports.config.capabilities.build = process.env.SNAP_PIPELINE_COUNTER;
+  exports.config.capabilities.name = 'Mimosa Aurelia Skeleton Tests';
 }
