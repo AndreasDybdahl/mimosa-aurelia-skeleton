@@ -17,5 +17,12 @@ deploy:
 start:
 	mimosa watch -s
 
-test:
-	karma start --no-auto-watch --single-run
+test: test-unit
+
+test-e2e:
+	node_modules/.bin/webdriver-manager update
+	node_modules/.bin/protractor
+
+test-unit:
+	node_modules/karma/bin/karma start --no-auto-watch --single-run
+
