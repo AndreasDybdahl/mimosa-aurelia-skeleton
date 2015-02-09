@@ -17,7 +17,7 @@ deploy:
 start:
 	mimosa watch -s
 
-test: test-unit test-e2e
+test: test-unit
 
 test-e2e:
 	node_modules/.bin/webdriver-manager update
