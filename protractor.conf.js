@@ -43,8 +43,8 @@ exports.config = {
       if(process.env.SAUCE_BIN) {
         var child_process = require('child_process');
         sauceConnect = child_process.spawn(process.env.SAUCE_BIN, ['-u', process.env.SAUCE_USERNAME, '-k', process.env.SAUCE_ACCESS_KEY, '-i', exports.config.capabilities.build], { stdio: 'inherit' });
-        console.log('Waiting 2 seconds for sauce connect');
-        setTimeout(resolve, 2000);
+        console.log('Waiting 20 seconds for sauce connect');
+        setTimeout(resolve, 20000);
       } else {
         resolve();
       }
