@@ -11,7 +11,7 @@ System.config({
 
 System.config({
   "map": {
-    "BootFunk": "github:YoloDev/BootFunk@1.0.0-build.26",
+    "BootFunk": "github:YoloDev/BootFunk@1.0.0-build.28",
     "aurelia-bootstrapper": "github:aurelia/bootstrapper@0.9.3",
     "aurelia-event-aggregator": "github:aurelia/event-aggregator@0.2.2",
     "aurelia-framework": "github:aurelia/framework@0.8.6",
@@ -35,7 +35,7 @@ System.config({
     "html/generate": "plugin-html/generate",
     "moment": "github:moment/moment@2.9.0",
     "showdown": "github:showdownjs/showdown@0.3.4",
-    "github:YoloDev/BootFunk@1.0.0-build.26": {
+    "github:YoloDev/BootFunk@1.0.0-build.28": {
       "css": "github:systemjs/plugin-css@0.1.0"
     },
     "github:aurelia/binding@0.3.4": {
