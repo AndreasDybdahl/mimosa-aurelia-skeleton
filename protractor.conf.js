@@ -25,6 +25,8 @@ var server, serverStarted;
 
 exports.config = {
   //directConnect: true,
+  sauceUser: process.env.SAUCE_USERNAME,
+  sauceKey: process.env.SAUCE_ACCESS_KEY,
 
   // Capabilities to be passed to the webdriver instance.
   capabilities: {
