@@ -10,7 +10,25 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jspm', 'mocha'],
+    frameworks: ['detectBrowsers', 'jspm', 'mocha'],
+
+    // browser detection configuration 
+    detectBrowsers: {
+        // enable/disable, default is true 
+        enabled: true,
+
+        // enable/disable phantomjs support, default is true
+        usePhantomJS: false,
+
+        // post processing of browsers list
+        // here you can edit the list of browsers used by karma
+        postDetection: function(availableBrowser) {
+            console.log('using browsers: ' + availableBrowser);
+            return availableBrowser.filter(function(browser) {
+                return browser != 'IE';
+            });
+        }
+    },
 
 
     // list of files / patterns to load in the browser
