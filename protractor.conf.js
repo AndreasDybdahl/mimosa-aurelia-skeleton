@@ -42,7 +42,7 @@ exports.config = {
     return new Promise(function(resolve) {
       if(process.env.SAUCE_BIN) {
         var child_process = require('child_process');
-        sauceConnect = child_process.spawn(process.env.SAUCE_BIN, ['-u', process.env.SAUCE_USERNAME, '-k', process.env.SAUCE_ACCESS_KEY], { stdio: 'inherit' });
+        sauceConnect = child_process.spawn(process.env.SAUCE_BIN, ['-u', process.env.SAUCE_USERNAME, '-k', process.env.SAUCE_ACCESS_KEY, '-i', exports.config.capabilities.build], { stdio: 'inherit' });
         console.log('Waiting 2 seconds for sauce connect');
         setTimeout(resolve, 2000);
       } else {
@@ -67,7 +67,7 @@ exports.config = {
       sauceConnect.kill();
     }
 
-    s.close();
+    server.close();
   },
 
   onPrepare: function() {
