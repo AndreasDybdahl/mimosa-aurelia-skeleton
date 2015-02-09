@@ -1,6 +1,8 @@
 // Protractor configuration
 // Generated on Tue Jan 27 2015 23:37:28 GMT+0100 (W. Europe Standard Time)
 
+var Promise = require('bluebird');
+
 function exchange(obj, newProps) {
   var proto = Object.getPrototypeOf(obj);
   for (var key in newProps) {
@@ -21,7 +23,7 @@ function remix(name) {
   };
 }
 
-var server, serverStarted;
+var server, serverStarted, sauceConnect;
 
 exports.config = {
   //directConnect: true,
@@ -37,22 +39,34 @@ exports.config = {
     global.expect = require('chai').expect;
     var serverStart = require('./server').startServer;
 
-    return {
-      then: function(cb) {
-        console.log(arguments.length);
+    return new Promise(function(resolve) {
+      if(process.env.SAUCE_BIN) {
+        var child_process = require('child_process');
+        sauceConnect = child_process.spawn(process.env.SAUCE_BIN, ['-u', process.env.SAUCE_USERNAME, '-k', process.env.SAUCE_ACCESS_KEY], { stdio: 'inherit' });
+        console.log('Waiting 2 seconds for sauce connect');
+        setTimeout(resolve, 2000);
+      } else {
+        resolve();
+      }
+    }).then(function() {
+      return new Promise(function(resolve) {
         serverStart({
           server: {
             port: 9000
           }
         }, function(s) {
           server = s;
-          cb();
+          resolve();
         });
-      }
-    };
+      });
+    });
   },
 
   afterLaunch: function() {
+    if(sauceConnect) {
+      sauceConnect.kill();
+    }
+
     s.close();
   },
 
@@ -88,4 +102,6 @@ exports.config = {
 
 if (process.env.SNAP_CI) {
   exports.config.chromeDriver = '/usr/local/bin/chromedriver';
+  exports.config.capabilities.build = 'Build #' + process.env.SNAP_PIPELINE_COUNTER;
+  exports.config.capabilities.testName = 'Mimosa Aurelia Skeleton Tests';
 }
