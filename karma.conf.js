@@ -15,7 +15,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     jspm: {
-      loadFiles: ['lib/test/**/*.spec.js'],
+      loadFiles: ['lib/test/unit/**/*.spec.js'],
       serveFiles: ['lib/**/*', 'jspm_packages/**/*', 'config.js']
     },
 
@@ -56,7 +56,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome', 'Firefox'],
+    browsers: ['Chrome'/*, 'Firefox'*/],
 
 
     // Continuous Integration mode

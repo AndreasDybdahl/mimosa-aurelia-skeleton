@@ -46,5 +46,10 @@ Temporary Items
 jspm_packages
 node_modules
 
+#NPM
+npm-debug.log
+
 # Built
 lib
+
+log.txt

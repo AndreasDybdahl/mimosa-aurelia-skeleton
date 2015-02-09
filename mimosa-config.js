@@ -33,6 +33,14 @@ exports.config = {
   to5: {
     options: {
       modules: 'system'
+    },
+
+    overrides: {
+      'src[\\/\\\\]test[\\/\\\\]e2e': {
+        options: {
+          modules: 'common'
+        }
+      }
     }
   }
 };
