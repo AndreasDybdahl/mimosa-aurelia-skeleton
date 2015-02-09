@@ -3923,6 +3923,10 @@ tbody.collapse.in {
   margin-bottom: 20px;
   border: 1px solid transparent;
 }
+.navbar.navbar-fixed-top,
+.navbar.navbar-fixed-bottom {
+  height: 50px;
+}
 @media (min-width: 768px) {
   .navbar {
     -webkit-border-radius: 4px;
@@ -4034,7 +4038,7 @@ tbody.collapse.in {
 .navbar-fixed-top,
 .navbar-fixed-top > .container,
 .navbar-fixed-top > .navbar-collapse {
-  height: 100%;
+  height: 50px;
 }
 @media (min-width: 768px) {
   .navbar-fixed-top,
@@ -4054,7 +4058,18 @@ tbody.collapse.in {
   -o-transition: left 0.2s ease-out;
   -ms-transition: left 0.2s ease-out;
   transition: left 0.2s ease-out;
+  height: 100vh;
+  padding-bottom: 51px;
+}
+.navbar-fixed-top .navbar-collapse > ul {
+  margin-top: 0px;
+  overflow-y: auto;
   height: 100%;
+}
+@media (orientation: landscape) {
+  .navbar-fixed-top .navbar-collapse > ul {
+    overflow-y: inherit;
+  }
 }
 .navbar-fixed-top .navbar-collapse.collapse {
   left: -71%;

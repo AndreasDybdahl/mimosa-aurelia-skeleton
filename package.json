@@ -4,7 +4,7 @@
       "lib": "lib/app"
     },
     "dependencies": {
-      "BootFunk": "github:YoloDev/BootFunk@1.0.0-build.26",
+      "BootFunk": "github:YoloDev/BootFunk@1.0.0-build.28",
       "aurelia-bootstrapper": "^0.9.3",
       "aurelia-event-aggregator": "^0.2.2",
       "aurelia-framework": "^0.8.5",
