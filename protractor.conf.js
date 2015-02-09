@@ -60,7 +60,7 @@ exports.config = {
           sauceConnect.stdout.on('data', function(data) {
             data = data.toString();
             console.log(data);
-            if(data.indexOf('you may start your tests') > -1) {
+            if(data.indexOf('Sauce Connect is up, you may start your tests') > -1) {
               resolve();
             }
           });
