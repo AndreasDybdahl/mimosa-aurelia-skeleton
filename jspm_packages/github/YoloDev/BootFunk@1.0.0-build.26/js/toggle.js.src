@@ -1,0 +1,37 @@
+import { domready, matches, toggleClass } from './utils';
+
+let toggles = {};
+
+export function registerToggle(name, handler) {
+  toggles[name] = handler;
+}
+
+export function toggleClassHandler(className) {
+  return function doToggle(evt) {
+    let target = this.getAttribute('data-target');
+    if (target !== null) {
+      let elms = document.querySelectorAll(target);
+      for (let i = 0, l = elms.length; i < l; i++) {
+        toggleClass(elms[i], className);
+      }
+      evt.preventDefault();
+      if (this.blur) {
+        this.blur();
+      }
+    }
+  };
+}
+
+domready(() => {
+  document.addEventListener('click', (evt) => {
+    let match = matches(evt, '[data-toggle]');
+    if (match !== null) {
+      let value = match.getAttribute('data-toggle');
+      if (value !== null && toggles[value]) {
+        return toggles[value].apply(match, [evt]);
+      }
+    }
+  });
+});
+
+registerToggle('collapse', toggleClassHandler('collapse'));

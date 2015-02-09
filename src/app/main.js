@@ -1,4 +1,5 @@
-import 'bootstrap/css/bootstrap.css!';
+import 'BootFunk';
+import 'font-awesome/css/font-awesome.css!';
 import 'style/site.css!'
 
 import {LogManager} from 'aurelia-framework';

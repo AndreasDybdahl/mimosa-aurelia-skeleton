@@ -4,3 +4,41 @@
 small.date {
   float: right;
 }
+div.container {
+  position: relative;
+}
+div.app-bar-upper-right {
+  position: absolute !important;
+  top: -7px;
+  right: 0px;
+  border: none !important;
+  left: auto !important;
+  background-color: transparent !important;
+  height: auto !important;
+  width: auto !important;
+}
+@media (min-width: 768px) {
+  div.app-bar-upper-right {
+    top: -3px;
+  }
+}
+.fade-visible {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+  -webkit-transition: opacity 0.2s ease-in;
+  -moz-transition: opacity 0.2s ease-in;
+  -o-transition: opacity 0.2s ease-in;
+  -ms-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
+}
+.fade-hidden {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.2s ease-out;
+  -moz-transition: opacity 0.2s ease-out;
+  -o-transition: opacity 0.2s ease-out;
+  -ms-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
+}

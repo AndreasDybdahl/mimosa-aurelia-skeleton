@@ -1,0 +1,133 @@
+/*!
+ * contentloaded.js
+ *
+ * Author: Diego Perini (diego.perini at gmail.com)
+ * Summary: cross-browser wrapper for DOMContentLoaded
+ * Updated: 20101020
+ * License: MIT
+ * Version: 1.2
+ *
+ * URL:
+ * http://javascript.nwbox.com/ContentLoaded/
+ * http://javascript.nwbox.com/ContentLoaded/MIT-LICENSE
+ *
+ */
+
+// @win window reference
+// @fn function reference
+function contentLoaded(win, fn) {
+
+  var done = false, top = true,
+
+  doc = win.document,
+  root = doc.documentElement,
+  modern = doc.addEventListener,
+
+  add = modern ? 'addEventListener' : 'attachEvent',
+  rem = modern ? 'removeEventListener' : 'detachEvent',
+  pre = modern ? '' : 'on',
+
+  init = function(e) {
+    if (e.type == 'readystatechange' && doc.readyState != 'complete') return;
+    (e.type == 'load' ? win : doc)[rem](pre + e.type, init, false);
+    if (!done && (done = true)) fn.call(win, e.type || e);
+  },
+
+  poll = function() {
+    try { root.doScroll('left'); } catch(e) { setTimeout(poll, 50); return; }
+    init('poll');
+  };
+
+  if (doc.readyState == 'complete') fn.call(win, 'lazy');
+  else {
+    if (!modern && root.doScroll) {
+      try { top = !win.frameElement; } catch(e) { }
+      if (top) poll();
+    }
+    doc[add](pre + 'DOMContentLoaded', init, false);
+    doc[add](pre + 'readystatechange', init, false);
+    win[add](pre + 'load', init, false);
+  }
+
+}
+
+export function domready(callback) {
+  contentLoaded(window, callback);
+}
+
+var elementMatches;
+if (Element.prototype.matches)
+  elementMatches = (el, str) => el.matches(str);
+else if (Element.prototype.webkitMatchesSelector)
+  elementMatches = (el, str) => el.webkitMatchesSelector(str);
+else if (Element.prototype.mozMatchesSelector)
+  elementMatches = (el, str) => el.mozMatchesSelector(str);
+else if (Element.prototype.msMatchesSelector)
+  elementMatches = (el, str) => el.msMatchesSelector(str);
+else
+  elementMatches = (el, str) => {
+    let matches = (el.document || el.ownerDocument).querySelectorAll(str);
+    let i = 0;
+
+    while (matches[i] && matches[i] !== el) {
+      i++;
+    }
+
+    return matches[i] ? true : false;
+  };
+
+export function matches(evt, selector) {
+  var el = evt.target;
+  while (el && el instanceof Element) {
+    if (elementMatches(el, selector)) {
+      return el;
+    }
+
+    el = el.parentNode;
+  }
+
+  return null;
+}
+
+export var hasClass;
+export var addClass;
+export var removeClass;
+export var toggleClass;
+
+if ("classList" in document.createElement("_") && false) {
+  hasClass = (el, n) => el.classList.contains(n);
+  addClass = (el, n) => el.classList.add(n);
+  removeClass = (el, n) => el.classList.remove(n);
+  toggleClass = (el, n) => el.classList.toggle(n);
+} else {
+  let getClassList = (el) => el.className.toString().split(' ');
+  let setClassList = (el, list) => el.className = list.join(' ');
+  let process = (p) => {
+    return (el, ...args) => {
+      let classes = getClassList(el);
+      let result = p(classes, ...args);
+      if (Array.isArray(result)) {
+        setClassList(el, result);
+      } else {
+        return result;
+      }
+    };
+  };
+  let union = (arr, itm) => {
+    if (arr.indexOf(itm) === -1) {
+      arr.push(itm);
+    }
+    return arr;
+  };
+  let remove = (arr, itm) => {
+    let index = arr.indexOf(itm);
+    if (index !== -1) {
+      arr.splice(index, 1);
+    }
+    return arr;
+  };
+  hasClass = process((classes, className) => classes.indexOf(className) > -1);
+  addClass = process((classes, className) => union(classes, className));
+  removeClass = process((classes, className) => remove(classes, className));
+  toggleClass = process((classes, className) => classes.indexOf(className) > -1 ? remove(classes, className) : union(classes, className));
+}

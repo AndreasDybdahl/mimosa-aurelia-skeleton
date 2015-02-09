@@ -3,6 +3,7 @@ import {Metadata} from 'aurelia-framework';
 import moment from 'moment';
 
 const PAGE_SIZE = 5;
+const SIMULATE_LATENCY = true;
 
 let posts = [
    {
@@ -63,17 +64,26 @@ function paginate(list, page, pageSize) {
   };
 }
 
+function returnData(fn) {
+  if (SIMULATE_LATENCY) {
+    return new Promise(resolve => setTimeout(() => resolve(), 500))
+      .then(() => new Promise(fn));
+  } else {
+    return new Promise(fn);
+  }
+}
+
 export class BlogService {
   static metadata(){ return Metadata.singleton(); }
 
   getLatest(page = 1) {
-    return new Promise(resolve => {
+    return returnData(resolve => {
       resolve(paginate(posts, page, PAGE_SIZE));
     });
   }
 
   getTags() {
-    return new Promise(resolve => {
+    return returnData(resolve => {
       let tags = Array.prototype.concat.apply([], posts.map(p => p.tags));
       tags = unique(tags);
       resolve(tags);
@@ -81,7 +91,7 @@ export class BlogService {
   }
 
   getPost(year, month, date, slug) {
-    return new Promise(resolve => {
+    return returnData(resolve => {
       let dateMatch = `${year}-${month}-${date}`;
       let post = posts.filter(p => {
         let date = moment(p.date).format('YYYY-MM-DD');
@@ -96,7 +106,7 @@ export class BlogService {
   }
 
   getPostsForTag(tag, page = 1) {
-    return new Promise(resolve => {
+    return returnData(resolve => {
       let tagPosts = posts.filter(p => p.tags.indexOf(tag) > -1);
       resolve(paginate(tagPosts, page, PAGE_SIZE));
     });
