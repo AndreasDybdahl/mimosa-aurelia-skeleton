@@ -83,3 +83,7 @@ exports.config = {
     timeout: 20000
   }
 };
+
+if (process.env.SNAP_CI) {
+  exports.config.chromeDriver = '/usr/local/bin/chromedriver';
+}
