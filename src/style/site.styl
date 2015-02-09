@@ -1,5 +1,32 @@
+grid-float-breakpoint := 768px
+
+
 .page-host
   margin-top: 60px
 
 small.date
   float: right
+
+div.container
+  position: relative
+
+div.app-bar-upper-right
+  position: absolute !important
+  top: -7px
+  right: 0px
+  border: none !important
+  left: auto !important
+  background-color: transparent !important
+  height: auto !important
+  width: auto !important
+  
+  @media (min-width: grid-float-breakpoint)
+    top: -3px
+
+.fade-visible
+  opacity: 1
+  transition: opacity .2s ease-in
+
+.fade-hidden
+  opacity: 0
+  transition: opacity .2s ease-out

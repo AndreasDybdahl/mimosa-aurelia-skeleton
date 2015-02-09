@@ -11,6 +11,7 @@ System.config({
 
 System.config({
   "map": {
+    "BootFunk": "github:YoloDev/BootFunk@1.0.0-build.26",
     "aurelia-bootstrapper": "github:aurelia/bootstrapper@0.9.3",
     "aurelia-event-aggregator": "github:aurelia/event-aggregator@0.2.2",
     "aurelia-framework": "github:aurelia/framework@0.8.6",
@@ -26,14 +27,17 @@ System.config({
     "aurelia-templating-binding": "github:aurelia/templating-binding@0.8.4",
     "aurelia-templating-resources": "github:aurelia/templating-resources@0.8.7",
     "aurelia-templating-router": "github:aurelia/templating-router@0.9.2",
-    "bootstrap": "github:twbs/bootstrap@3.3.2",
     "chai": "github:Alxandr/chai@1.10.1",
     "core-js": "npm:core-js@0.4.10",
     "css": "github:systemjs/plugin-css@0.1.0",
+    "font-awesome": "npm:font-awesome@4.3.0",
     "html": "plugin-html/html",
     "html/generate": "plugin-html/generate",
     "moment": "github:moment/moment@2.9.0",
     "showdown": "github:showdownjs/showdown@0.3.4",
+    "github:YoloDev/BootFunk@1.0.0-build.26": {
+      "css": "github:systemjs/plugin-css@0.1.0"
+    },
     "github:aurelia/binding@0.3.4": {
       "aurelia-dependency-injection": "github:aurelia/dependency-injection@0.4.2",
       "aurelia-metadata": "github:aurelia/metadata@0.3.1",
@@ -116,10 +120,6 @@ System.config({
     },
     "github:jspm/nodelibs-process@0.1.1": {
       "process": "npm:process@0.10.0"
-    },
-    "github:twbs/bootstrap@3.3.2": {
-      "css": "github:systemjs/plugin-css@0.1.0",
-      "jquery": "github:components/jquery@2.1.3"
     },
     "npm:core-js@0.4.10": {
       "process": "github:jspm/nodelibs-process@0.1.1"
