@@ -39,29 +39,8 @@ exports.config = {
     global.expect = require('chai').expect;
     var serverStart = require('./server').startServer;
 
-    return new Promise(function(resolve, reject) {
-      if(process.env.SAUCE_BIN) {
-        var child_process = require('child_process');
-        sauceConnect = child_process.spawn(process.env.SAUCE_BIN, ['-u', process.env.SAUCE_USERNAME, '-k', process.env.SAUCE_ACCESS_KEY, '-i', exports.config.capabilities.build]);
-        sauceConnect.stdout.on('data', function(data) {
-          data = data.toString();
-          console.log(data);
-          if(data.indexOf('you may start your tests') > -1) {
-            resolve();
-          }
-        });
-        sauceConnect.stderr.on('data', function(data) {
-          data = data.toString();
-          reject();
-          console.err(data);
-        });
-        console.log('Waiting 1 minute for sauce connect');
-        setTimeout(function() {
-          reject(new Error('sauce connect didn\'t start within allocated time'));
-        }, 60000);
-      } else {
-        resolve();
-      }
+    return new Promise(function(resolve) {
+      resolve();
     }).then(function() {
       return new Promise(function(resolve) {
         serverStart({
@@ -72,6 +51,31 @@ exports.config = {
           server = s;
           resolve();
         });
+      });
+    }).then(function() {
+      return new Promise(function(resolve, reject) {
+        if(process.env.SAUCE_BIN) {
+          var child_process = require('child_process');
+          sauceConnect = child_process.spawn(process.env.SAUCE_BIN, ['-u', process.env.SAUCE_USERNAME, '-k', process.env.SAUCE_ACCESS_KEY, '-i', exports.config.capabilities.build]);
+          sauceConnect.stdout.on('data', function(data) {
+            data = data.toString();
+            console.log(data);
+            if(data.indexOf('you may start your tests') > -1) {
+              resolve();
+            }
+          });
+          sauceConnect.stderr.on('data', function(data) {
+            data = data.toString();
+            reject();
+            console.err(data);
+          });
+          console.log('Waiting 1 minute for sauce connect');
+          setTimeout(function() {
+            reject(new Error('sauce connect didn\'t start within allocated time'));
+          }, 60000);
+        } else {
+          resolve();
+        }
       });
     });
   },
