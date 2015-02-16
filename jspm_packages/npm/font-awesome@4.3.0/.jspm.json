@@ -76,8 +76,5 @@
   "ignore": [
     "node_modules"
   ],
-  "map": {
-    "font-awesome": "./index"
-  },
   "dependencies": {}
 }
