@@ -1,6 +1,7 @@
 exports.config = {
   modules: [
-    '6to5',
+    'babel',
+    'jade',
     'copy',
     'server',
     'stylus',
@@ -30,7 +31,7 @@ exports.config = {
     additionalDirs: ['lib']
   },
 
-  to5: {
+  babel: {
     options: {
       modules: 'system'
     },

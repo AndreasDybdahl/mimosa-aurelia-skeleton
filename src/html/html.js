@@ -472,7 +472,7 @@ function escapeString(str, quotes) {
 }
 
 function escapeAllowedCharacter(code, next) {
-  var hex;
+  var hex, json = false;
 
   if (code === 0x08 /* \b */ ) {
     return '\\b';
