@@ -1,0 +1,1 @@
+module.exports = require("github:Alxandr/plugin-css@master/css");
