@@ -157,7 +157,8 @@ System.config({
       "github:YoloDev/BootFunk@1.0.0-build.28",
       "app/main"
     ]
-  }
+  },
+  "separateCSS": true
 });
 
 System.config({

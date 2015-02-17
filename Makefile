@@ -17,6 +17,10 @@ deploy:
 start:
 	mimosa watch -s
 
+update:
+	npm update
+	jspm update --save
+
 test: test-unit
 
 test-e2e:
