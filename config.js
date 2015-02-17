@@ -6,7 +6,8 @@ System.config({
     "plugin-html/*": "lib/html/*.js",
     "github:*": "jspm_packages/github/*.js",
     "npm:*": "jspm_packages/npm/*.js"
-  }
+  },
+  "separateCSS": true
 });
 
 System.config({
