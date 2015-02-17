@@ -1,8 +1,14 @@
 <template>
   <import from='app/markdown/behaviors/markdown'></import>
+  <import from="app/resource-pool/behaviors/resource-pooled"></import>
 
   <article>
     <h1><a href.bind="url(post)">${post.title}</a></h1>
     <div class="post-content" markdown.bind="post.content"></div>
   </article>
+
+  <resource-pooled>
+    <div>I am so testing pooling here...</div>
+    <div>Title (bound value): ${post.title}</div>
+  </resource-pooled>
 </template>
