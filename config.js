@@ -189,7 +189,8 @@ System.config({
     "showdown": "github:showdownjs/showdown@0.3.4",
     "github:Alxandr/plugin-css@master": {
       "clean-css": "npm:clean-css@3.0.10",
-      "fs": "github:jspm/nodelibs-fs@0.1.1"
+      "fs": "github:jspm/nodelibs-fs@0.1.1",
+      "path": "github:jspm/nodelibs-path@0.1.0"
     },
     "github:YoloDev/BootFunk@1.0.0-build.28": {
       "css": "github:Alxandr/plugin-css@master"
