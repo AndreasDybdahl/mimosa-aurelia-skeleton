@@ -147,7 +147,7 @@ System.config({
       "github:aurelia/bootstrapper@0.9.3/system/index",
       "github:aurelia/bootstrapper@0.9.3",
       "app/bundle",
-      "github:YoloDev/BootFunk@1.0.0-build.28/css/bootfunk.css!github:systemjs/plugin-css@0.1.5",
+      "github:YoloDev/BootFunk@1.0.0-build.28/css/bootfunk.css!github:Alxandr/plugin-css@master",
       "github:YoloDev/BootFunk@1.0.0-build.28/js/utils",
       "npm:font-awesome@4.3.0/css/font-awesome.css!github:Alxandr/plugin-css@master",
       "style/site.css!github:Alxandr/plugin-css@master",
@@ -192,7 +192,7 @@ System.config({
       "fs": "github:jspm/nodelibs-fs@0.1.1"
     },
     "github:YoloDev/BootFunk@1.0.0-build.28": {
-      "css": "github:systemjs/plugin-css@0.1.5"
+      "css": "github:Alxandr/plugin-css@master"
     },
     "github:aurelia/binding@0.3.4": {
       "aurelia-dependency-injection": "github:aurelia/dependency-injection@0.4.2",
@@ -314,10 +314,6 @@ System.config({
     },
     "github:jspm/nodelibs-util@0.1.0": {
       "util": "npm:util@0.10.3"
-    },
-    "github:systemjs/plugin-css@0.1.5": {
-      "clean-css": "npm:clean-css@3.0.10",
-      "fs": "github:jspm/nodelibs-fs@0.1.1"
     },
     "npm:amdefine@0.1.0": {
       "fs": "github:jspm/nodelibs-fs@0.1.1",
