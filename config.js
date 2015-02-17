@@ -6,8 +6,7 @@ System.config({
     "plugin-html/*": "lib/html/*.js",
     "github:*": "jspm_packages/github/*.js",
     "npm:*": "jspm_packages/npm/*.js"
-  },
-  "separateCSS": true
+  }
 });
 
 System.config({
@@ -30,12 +29,17 @@ System.config({
     "aurelia-templating-router": "github:aurelia/templating-router@0.9.2",
     "chai": "github:Alxandr/chai@1.10.1",
     "core-js": "npm:core-js@0.4.10",
-    "css": "github:systemjs/plugin-css@0.1.5",
+    "css": "github:Alxandr/plugin-css@master",
     "font-awesome": "npm:font-awesome@4.3.0",
     "html": "plugin-html/html",
     "html/generate": "plugin-html/generate",
     "moment": "github:moment/moment@2.9.0",
+    "plugin-css": "github:Alxandr/plugin-css@master",
     "showdown": "github:showdownjs/showdown@0.3.4",
+    "github:Alxandr/plugin-css@master": {
+      "clean-css": "npm:clean-css@3.0.10",
+      "fs": "github:jspm/nodelibs-fs@0.1.1"
+    },
     "github:YoloDev/BootFunk@1.0.0-build.28": {
       "css": "github:systemjs/plugin-css@0.1.5"
     },
