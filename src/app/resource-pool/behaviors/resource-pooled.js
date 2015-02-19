@@ -39,12 +39,14 @@ export class ResourcePooled {
       this.pool = this.viewResources.viewUrl;
     }
 
-    this.viewFactory = this.resourcePool.get(this.pool, 'viewFactory', () => this.viewCompiler.compile(this.template, this.viewResources));
-    this.resourcePool.free(this.pool, 'viewFactory');
-    
     this.view = this.resourcePool.get(this.pool, 'view', () => {
+      const viewFactory = this.resourcePool.get(this.pool, 'viewFactory', () => this.viewCompiler.compile(this.template, this.viewResources));    
       console.log(`Creating pooled view: ${this.pool}`);
-      return this.viewFactory.create(this.container, null, {suppressBind: true});
+      try {
+        return viewFactory.create(this.container, null, {suppressBind: true});
+      } finally {
+        this.resourcePool.free(this.pool, 'viewFactory', viewFactory);
+      }
     });
     this.view.bind(context);
     this.viewSlot.add(this.view);

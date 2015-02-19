@@ -30,7 +30,7 @@
       "url": "https://github.com/coreyti/showdown/raw/master/license.txt"
     }
   ],
-  "main": "./src/showdown",
+  "main": "src/showdown.js",
   "scripts": {
     "test": "mocha ./test/run.js"
   },
