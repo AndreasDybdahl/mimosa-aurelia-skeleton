@@ -11,9 +11,11 @@ export class Index {
 
     router.configure(config => {
       config.map([
-        { route: ['', 'page/:page'],          moduleId: './list', nav: true, title: 'Latest Posts' },
-        { route: ':year/:month/:date/:slug',  moduleId: './post' },
-        { route: 'tags/:tag',                 moduleId: './tag' }
+        { route: ['', ':page'],                      moduleId: './list', nav: true, title: 'Latest Posts' },
+        { route: ':year/:month/:date/:slug',         moduleId: './post', auth: true },
+        { route: ['tags/:tag', 'tags/:tag/:page'],   moduleId: './tag' },
+        { route: 'login',                            moduleId: './login', title: 'Login' },
+        { route: 'admin',                            moduleId: './admin', title: 'Admin', auth: 'admin' }
       ]);
     });
   }
