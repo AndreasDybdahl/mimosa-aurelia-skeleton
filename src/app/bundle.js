@@ -11,6 +11,7 @@ import 'aurelia-history-browser';
 // Extra libraries
 import 'moment';
 import 'showdown';
+import 'text';
 
 // Common
 import './app'
