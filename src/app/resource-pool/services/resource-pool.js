@@ -6,7 +6,7 @@ export class ResourcePool {
   }
 
   get(poolName, name, create) {
-    let resources = this._getResources(poolName, name);
+    const resources = this._getResources(poolName, name);
     if (resources.length === 0) {
       return create ? create() : null;
     } else {
@@ -14,8 +14,14 @@ export class ResourcePool {
     }
   }
 
+  getAndFree(poolName, name, create) {
+    const resource = this.get(poolName, name, create);
+    this.free(poolName, name, resource);
+    return resource;
+  }
+
   free(poolName, name, resource) {
-    let resources = this._getResources(poolName, name);
+    const resources = this._getResources(poolName, name);
     resources.push(resource);
   }
 

@@ -1,6 +1,10 @@
 import 'BootFunk';
 import 'font-awesome/css/font-awesome.css!';
+import 'prism/themes/prism-okaidia.css!';
 import 'style/site.css!'
+
+// Regenerator runtime
+import 'regenerator-babel/runtime';
 
 import {LogManager} from 'aurelia-framework';
 import {ConsoleAppender} from 'aurelia-logging-console';

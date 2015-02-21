@@ -12,6 +12,7 @@ export class App {
       config.addPipelineStep('authorize', AuthorizeStep);
       config.map([
         { route: 'blog',      moduleId: './blog/routes/index', nav: true, title: 'Blog' },
+        { route: 'docs',      moduleId: './docs/routes/index', nav: true, title: 'Docs' },
         { route: '',          moduleId: './redirect', redirect: '/blog' }
       ]);
     });

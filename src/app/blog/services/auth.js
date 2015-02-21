@@ -102,7 +102,7 @@ export class AuthorizeStep {
 
     // Check that the user is logged in.
     return this.auth.checkLogin().then(user => {
-      if (!user)
+      if (user === null)
         return false;
 
       if (groups.length === 0)
