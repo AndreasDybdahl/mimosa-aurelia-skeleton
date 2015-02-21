@@ -1,0 +1,1 @@
+{"version":3,"sources":["/var/snap-ci/repo/src/app/docs/samples/1/viewmodel.js"],"names":[],"mappings":";;;uBAAa,MAAM;;;;;;;AAAN,YAAM,qBACN,SADA,MAAM;8BAAN,MAAM;;AAEf,YAAI,CAAC,IAAI,GAAG,eAAe,CAAC;OAC7B","file":"/var/snap-ci/repo/src/app/docs/samples/1/viewmodel.js","sourcesContent":["export class Person {\n  constructor() {\n    this.name = 'Donald Draper';\n  }\n}"]}

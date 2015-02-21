@@ -1,0 +1,1 @@
+module.exports = require("github:LeaVerou/prism@gh-pages/prism");

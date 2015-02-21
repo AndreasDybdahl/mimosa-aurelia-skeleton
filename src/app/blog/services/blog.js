@@ -5,7 +5,7 @@ import moment from 'moment';
 const PAGE_SIZE = 5;
 const SIMULATE_LATENCY = true;
 
-let posts = [
+const posts = [
    {
     id: 2,
     title: 'This is another test post',

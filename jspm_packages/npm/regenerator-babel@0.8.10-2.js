@@ -1,0 +1,1 @@
+module.exports = require("npm:regenerator-babel@0.8.10-2/main");

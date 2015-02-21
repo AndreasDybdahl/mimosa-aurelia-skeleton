@@ -33,7 +33,8 @@ exports.config = {
 
   babel: {
     options: {
-      modules: 'system'
+      modules: 'system',
+      experimental: true
     },
 
     overrides: {

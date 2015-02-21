@@ -13,4 +13,9 @@ describe('the App module', () => {
   it('configures the routers title', () => {
     expect(sut.router.title).to.equal('Application Title');
   });
+
+  it('configures an authorize step', () => {
+    expect(sut.router.steps.length).to.equal(1);
+    expect(sut.router.steps[0].name).to.equal('authorize');
+  });
 });
