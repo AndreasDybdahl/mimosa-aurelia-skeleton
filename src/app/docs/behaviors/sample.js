@@ -68,7 +68,10 @@ export class SampleBehavior {
     const dir = this.dir ? (await System.normalize(this.dir + '/index', viewUrl)) : viewUrl;
     const factory = await this.resourcePool.getAndFree(dir, 'sample', () => {
       console.log('loading files');
-      return Promise.all(this.files.map(async ({id, ext, name}) => {
+      return Promise.all(this.files.map(async ({id, ext, name, model, view}) => {
+        model = !!model;
+        view  = !! view;
+
         const mod = await System.normalize(id, dir);
         const src = await System.import(`src:${mod}${ext}!text`);
         const url = resolvepath(`preview:${mod}${ext}`);
@@ -82,7 +85,7 @@ export class SampleBehavior {
 
         const highlight = Prism.highlight(src, lang);
 
-        return {name, mod, ext, src, highlight, url};
+        return {name, mod, ext, src, highlight, url, model, view};
       })).then(files => {
         // Create HTML string
         const html = files.map(file => {
