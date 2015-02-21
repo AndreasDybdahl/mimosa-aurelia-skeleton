@@ -70,9 +70,7 @@ export class SampleBehavior {
       console.log('loading files');
       return Promise.all(this.files.map(async ({id, ext, name}) => {
         const mod = await System.normalize(id, dir);
-        const qsrc = await System.import(`src:${mod}${ext}!text`);
-        // response comes in string form
-        const src = JSON.parse(qsrc);
+        const src = await System.import(`src:${mod}${ext}!text`);
         const url = resolvepath(`preview:${mod}${ext}`);
 
         let lang;

@@ -51,6 +51,7 @@ module.exports = {
     // gzip/deflate outgoing responses
     app.use(compression());
     app.use('/lib', static('lib'));
+    app.use('/src', static('src'));
     app.use('/jspm_packages', static('jspm_packages'));
     app.use(staticFile('config.js', 'text/javascript; charset=utf-8'));
     app.use(staticFile('srcref.json', 'text/json; charset=utf-8'));
