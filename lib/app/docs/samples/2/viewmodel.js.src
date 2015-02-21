@@ -1,7 +1,12 @@
 export class NetWorth {
-  constructor() {
+  activate() {
     this.update();
-    setInterval(() => this.update(), 1000);
+    this.timer = setInterval(() => this.update(), 1000);
+  }
+
+  deactivate() {
+    clearInterval(this.timer);
+    this.timer = 0;
   }
 
   update() {
