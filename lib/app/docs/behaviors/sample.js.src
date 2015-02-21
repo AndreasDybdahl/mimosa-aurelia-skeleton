@@ -52,8 +52,8 @@ export class SampleBehavior {
     this.viewSlot = viewSlot;
     this.container = container;
     this.files = [
-      { id: './viewmodel',    ext: '.js',    name: 'viewmodel' },
-      { id: './template',     ext: '.html',  name: 'template'  }
+      { id: './viewmodel',    ext: '.js',    name: 'viewmodel',  model: true },
+      { id: './template',     ext: '.html',  name: 'template',    view: true }
     ];
 
 
@@ -94,8 +94,8 @@ export class SampleBehavior {
           `;
         }).join('');
 
-        const viewmodel = files.filter(f => f.name === 'viewmodel')[0].mod;
-        const template  = resolvepath(files.filter(f => f.name === 'template')[0].mod);
+        const viewmodel = files.filter(f => f.model)[0].mod;
+        const template  = resolvepath(files.filter(f => f.view)[0].mod);
         const compose = document.createElement('compose');
         compose.setAttribute('view-model', viewmodel);
         compose.setAttribute('view', template + '.html');
