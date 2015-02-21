@@ -33,6 +33,7 @@ System.config({
     "font-awesome": "npm:font-awesome@4.3.0",
     "html": "plugin-html/html",
     "html/generate": "plugin-html/generate",
+    "json": "github:systemjs/plugin-json@0.1.0",
     "moment": "github:moment/moment@2.9.0",
     "prism": "github:LeaVerou/prism@gh-pages",
     "regenerator-babel": "npm:regenerator-babel@0.8.10-2",

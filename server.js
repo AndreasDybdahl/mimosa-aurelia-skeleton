@@ -53,6 +53,7 @@ module.exports = {
     app.use('/lib', static('lib'));
     app.use('/jspm_packages', static('jspm_packages'));
     app.use(staticFile('config.js', 'text/javascript; charset=utf-8'));
+    app.use(staticFile('srcref.json', 'text/json; charset=utf-8'));
     app.use(function(req, res, next) {
       if (req.url.indexOf('/lib') === 0 || req.url.indexOf('/jspm_packages') === 0) {
         res.writeHead(404, 'Not Found');

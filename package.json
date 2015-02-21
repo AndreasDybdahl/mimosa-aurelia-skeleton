@@ -24,6 +24,7 @@
       "core-js": "npm:core-js@^0.4.10",
       "css": "^0.1.6",
       "font-awesome": "^4.3.0",
+      "json": "^0.1.0",
       "moment": "^2.9.0",
       "prism": "gh-pages",
       "regenerator-babel": "npm:regenerator-babel@^0.8.10-2",
