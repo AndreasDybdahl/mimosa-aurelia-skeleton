@@ -1,5 +1,8 @@
 grid-float-breakpoint := 768px
 
+// Make sure all custom elements that are kept have a display
+doc, router-view, sample
+  display: block
 
 .page-host
   margin-top: 60px
@@ -65,7 +68,6 @@ div.app-bar-upper-right
       border-top-left-radius: 0
 
 sample
-  display: block
   border: 1px solid #ddd
   border-radius: 4px
   margin-top: 10px

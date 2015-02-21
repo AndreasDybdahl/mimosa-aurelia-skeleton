@@ -31,28 +31,8 @@ export class DocBehaviour {
     this.viewResources = viewResources;
     this.viewSlot = viewSlot;
     this.container = container;
+    this.textContent = this.element.innerHTML.replace(interpolationRegex, '$\u200B{$1}');
 
-    const markdown = this.element.innerHTML.replace(interpolationRegex, '$\u200B{$1}');
-    const html = this.converter.makeHtml(
-      markdown.split(/\r\n|\n/g).map(l => l.trim()).join('\n')
-    );
-
-    const template = document.createElement('template');
-    template.innerHTML = html;
-    if (!hasTemplateElement) {
-      template.content = document.createDocumentFragment();
-      while (template.firstChild) {
-        template.content.appendChild(template.firstChild);
-      }
-    }
-
-    for (let sample of template.content.querySelectorAll('p > sample:first-child:last-child')) {
-      const p = sample.parentNode;
-      const parent = p.parentNode;
-      parent.replaceChild(sample, p);
-    }
-
-    this.template = template;
     empty(this.element);
   }
 
@@ -64,8 +44,30 @@ export class DocBehaviour {
     const pool = this.pool = `${this.viewResources.viewUrl}#${this.title}`;
 
     this.view = this.resourcePool.get(pool, 'view', () => {
-      const viewFactory = this.resourcePool.get(pool, 'viewFactory', () => this.viewCompiler.compile(this.template, this.viewResources));    
-      console.log(`Creating pooled view: ${pool}`);
+      const viewFactory = this.resourcePool.get(pool, 'viewFactory', () => {
+        const markdown = this.textContent;
+        const html = this.converter.makeHtml(
+          markdown.split(/\r\n|\n/g).map(l => l.trim()).join('\n')
+        );
+
+        const template = document.createElement('template');
+        template.innerHTML = html;
+        if (!hasTemplateElement) {
+          template.content = document.createDocumentFragment();
+          while (template.firstChild) {
+            template.content.appendChild(template.firstChild);
+          }
+        }
+
+        for (let sample of template.content.querySelectorAll('p > sample:first-child:last-child')) {
+          const p = sample.parentNode;
+          const parent = p.parentNode;
+          parent.replaceChild(sample, p);
+        }
+
+        return this.viewCompiler.compile(template, this.viewResources)
+      });
+      
       try {
         return viewFactory.create(this.container, null, {suppressBind: true});
       } finally {
