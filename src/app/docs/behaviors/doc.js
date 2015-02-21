@@ -1,6 +1,7 @@
 import {Behavior, Container} from 'aurelia-framework';
 import {ViewCompiler, ViewResources, ViewSlot} from 'aurelia-templating';
 import {ResourcePool} from 'app/resource-pool/services/resource-pool';
+import Prism from 'prism';
 
 import Showdown from 'showdown';
 
@@ -31,7 +32,7 @@ export class DocBehaviour {
     this.viewResources = viewResources;
     this.viewSlot = viewSlot;
     this.container = container;
-    this.textContent = this.element.innerHTML.replace(interpolationRegex, '$\u200B{$1}');
+    this.textContent = this.element.innerHTML;
 
     empty(this.element);
   }
@@ -45,7 +46,10 @@ export class DocBehaviour {
 
     this.view = this.resourcePool.get(pool, 'view', () => {
       const viewFactory = this.resourcePool.get(pool, 'viewFactory', () => {
-        const markdown = this.textContent;
+        const markdown = this.textContent.replace(interpolationRegex, '$\u200B{$1}')
+          .replace(/(```|`(?!`))([^]*?)\1/g, (match, tics, content) => {
+            return `${tics}${content.replace(/&lt;/g, '<').replace(/&gt;/g, '>')}${tics}`;
+          });
         const html = this.converter.makeHtml(
           markdown.split(/\r\n|\n/g).map(l => l.trim()).join('\n')
         );
@@ -65,9 +69,17 @@ export class DocBehaviour {
           parent.replaceChild(sample, p);
         }
 
+        for (let code of template.content.querySelectorAll('pre > code')) {
+          code.className = 'language-' + code.className.trim();
+          Prism.highlightElement(code, false, () => {
+            console.log('highlighted');
+          });
+          console.log('should be highlighted');
+        }
+
         return this.viewCompiler.compile(template, this.viewResources)
       });
-      
+
       try {
         return viewFactory.create(this.container, null, {suppressBind: true});
       } finally {
