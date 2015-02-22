@@ -37,6 +37,7 @@ System.config({
     "html/generate": "plugin-html/generate",
     "json": "github:systemjs/plugin-json@0.1.0",
     "md": "plugin-md/md",
+    "md/rt": "plugin-md/rt",
     "moment": "github:moment/moment@2.9.0",
     "regenerator-babel": "npm:regenerator-babel@0.8.10-2",
     "showdown": "github:showdownjs/showdown@0.3.4",
