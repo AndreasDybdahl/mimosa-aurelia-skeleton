@@ -1,7 +1,7 @@
 import {Behavior, Container} from 'aurelia-framework';
 import {ViewCompiler, ViewResources, ViewSlot} from 'aurelia-templating';
 import {ResourcePool} from 'app/resource-pool/services/resource-pool';
-import Prism from 'prism';
+import hljs from 'highlightjs';
 import srcref from 'srcref.json!';
 
 System.config({
@@ -78,21 +78,21 @@ export class SampleBehavior {
 
         let lang;
         switch (ext) {
-          case '.js':   lang = Prism.languages.javascript; break;
-          case '.html': lang = Prism.languages.markup; break;
+          case '.js':   lang = 'js'; break;
+          case '.html': lang = 'html'; break;
           default: throw new Error(`Unknown extension: ${ext}`);
         }
 
-        const highlight = Prism.highlight(src, lang);
+        const highlight = hljs.highlight(lang, src, true).value;
 
-        return {name, mod, ext, src, highlight, url, model, view};
+        return {name, mod, ext, src, highlight, url, model, view, lang};
       })).then(files => {
         // Create HTML string
         const html = files.map(file => {
           return `
             <div class="col-md-12">
               <a href="${file.url}" target="_blank">${file.name}</a>:
-              <pre class="language-${file.ext.substring(1)}"><code>${file.highlight}</code></pre>
+              <pre class="highlight"><code class="${file.lang}">${file.highlight}</code></pre>
             </div>
           `;
         }).join('');

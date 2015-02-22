@@ -24,9 +24,9 @@
       "core-js": "npm:core-js@^0.4.10",
       "css": "github:systemjs/plugin-css@^0.1.6",
       "font-awesome": "npm:font-awesome@^4.3.0",
+      "highlightjs": "github:components/highlightjs@^8.4.0",
       "json": "github:systemjs/plugin-json@^0.1.0",
       "moment": "github:moment/moment@^2.9.0",
-      "prism": "github:LeaVerou/prism@gh-pages",
       "regenerator-babel": "npm:regenerator-babel@^0.8.10-2",
       "showdown": "github:showdownjs/showdown@^0.3.4",
       "text": "github:systemjs/plugin-text@^0.0.2"
@@ -54,7 +54,8 @@
     "karma-phantomjs-launcher": "^0.1.4",
     "karma-safari-launcher": "^0.1.1",
     "mocha": "^2.1.0",
-    "serve-static": "^1.8.1"
+    "serve-static": "^1.8.1",
+    "showdown": "^0.3.1"
   },
   "repository": {
     "type": "git",

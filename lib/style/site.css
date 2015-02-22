@@ -99,3 +99,145 @@ sample .well {
   -webkit-border-radius: 4px;
   border-radius: 4px;
 }
+pre.highlight {
+  background-color: #23241f;
+  color: #f8f8f2;
+  text-shadow: 0 1px rgba(0,0,0,0.3);
+  font-family: Consolas, Monaco, 'Andale Mono', monospace;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  line-height: 1.5;
+}
+pre.highlight > code {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  -webkit-text-size-adjust: none;
+}
+pre.highlight > code.css .hljs-rules,
+pre.highlight > code.css .hljs-value,
+pre.highlight > code.aspectj .hljs-function,
+pre.highlight > code.css .hljs-function,
+pre.highlight > code .hljs-tag,
+pre.highlight > code .hljs-preprocessor,
+pre.highlight > code .hljs-pragma {
+  color: #f8f8f2;
+}
+pre.highlight > code .hljs-strongemphasis,
+pre.highlight > code .hljs-strong,
+pre.highlight > code .hljs-emphasis {
+  color: #a8a8a2;
+}
+pre.highlight > code.alias .hljs-keyword,
+pre.highlight > code .hljs-bullet,
+pre.highlight > code .hljs-blockquote,
+pre.highlight > code .hljs-horizontal_rule,
+pre.highlight > code .hljs-number,
+pre.highlight > code .hljs-regexp,
+pre.highlight > code .hljs-literal,
+pre.highlight > code .hljs-hexcolor {
+  color: #ae81ff;
+}
+pre.highlight > code.css .hljs-class,
+pre.highlight > code .hljs-tag .hljs-value,
+pre.highlight > code .hljs-code,
+pre.highlight > code .hljs-title,
+pre.highlight > code .hljs-class .hljs-title:last-child {
+  color: #a6e22e;
+}
+pre.highlight > code .hljs-link_url {
+  font-size: 80%;
+}
+pre.highlight > code .hljs-strong,
+pre.highlight > code .hljs-strongemphasis {
+  font-weight: bold;
+}
+pre.highlight > code .hljs-emphasis,
+pre.highlight > code .hljs-strongemphasis,
+pre.highlight > code .hljs-class .hljs-title:last-child,
+pre.highlight > code .hljs-typename {
+  font-style: italic;
+}
+pre.highlight > code.ruby .hljs-class .hljs-keyword:first-child,
+pre.highlight > code.ruby .hljs-function .hljs-keyword,
+pre.highlight > code.nginx .hljs-title,
+pre.highlight > code.tex .hljs-special,
+pre.highlight > code.alias .hljs-keyword:first-child,
+pre.highlight > code.css .hljs-tag,
+pre.highlight > code.css .unit,
+pre.highlight > code.css .hljs-important,
+pre.highlight > code .hljs-keyword,
+pre.highlight > code .hljs-function,
+pre.highlight > code .hljs-change,
+pre.highlight > code .hljs-winutils,
+pre.highlight > code .hljs-flow,
+pre.highlight > code .hljs-header,
+pre.highlight > code .hljs-attribute,
+pre.highlight > code .hljs-symbol,
+pre.highlight > code .hljs-symbol .hljs-string,
+pre.highlight > code .hljs-value {
+  color: #66d9ef;
+}
+pre.highlight > code.css .hljs-attribute,
+pre.highlight > code .hljs-function .hljs-keyword,
+pre.highlight > code .hljs-class .hljs-keyword:first-child,
+pre.highlight > code .hljs-aspect .hljs-keyword:first-child,
+pre.highlight > code .hljs-constant,
+pre.highlight > code .hljs-typename {
+  color: #66d9ef;
+}
+pre.highlight > code .hljs-variable,
+pre.highlight > code .hljs-params,
+pre.highlight > code .hljs-class .hljs-title,
+pre.highlight > code .hljs-aspect .hljs-title {
+  color: #f8f8f2;
+}
+pre.highlight > code.css .hljs-id,
+pre.highlight > code.ruby .hljs-class .hljs-parent,
+pre.highlight > code.django .hljs-template_tag,
+pre.highlight > code.django .hljs-variable,
+pre.highlight > code.smalltalk .hljs-class,
+pre.highlight > code.django .hljs-filter .hljs-argument,
+pre.highlight > code.smalltalk .hljs-localvars,
+pre.highlight > code.smalltalk .hljs-array,
+pre.highlight > code.apache .hljs-tag,
+pre.highlight > code.apache .hljs-cbracket,
+pre.highlight > code.tex .hljs-command,
+pre.highlight > code .hljs-string,
+pre.highlight > code .hljs-subst,
+pre.highlight > code .hljs-type,
+pre.highlight > code .hljs-built_in,
+pre.highlight > code .hljs-attr_selector,
+pre.highlight > code .hljs-pseudo,
+pre.highlight > code .hljs-addition,
+pre.highlight > code .hljs-stream,
+pre.highlight > code .hljs-envvar,
+pre.highlight > code .hljs-prompt,
+pre.highlight > code .hljs-link_label,
+pre.highlight > code .hljs-link_url {
+  color: #e6db74;
+}
+pre.highlight > code .apache .hljs-sqbracket,
+pre.highlight > code .tex .hljs-formula,
+pre.highlight > code .hljs-comment,
+pre.highlight > code .hljs-javadoc,
+pre.highlight > code .hljs-annotation,
+pre.highlight > code .hljs-decorator,
+pre.highlight > code .hljs-pi,
+pre.highlight > code .hljs-doctype,
+pre.highlight > code .hljs-deletion,
+pre.highlight > code .hljs-shebang {
+  color: #75715e;
+}
+pre.highlight > code .hljs-tag .hljs-title {
+  color: #f92672;
+}
+pre.highlight > code .hljs-tag .hljs-attribute {
+  color: #a6e22e;
+}
+pre.highlight > code .hljs-tag .hljs-value {
+  color: #e6db74;
+}

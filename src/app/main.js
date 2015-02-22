@@ -1,6 +1,6 @@
 import 'BootFunk';
 import 'font-awesome/css/font-awesome.css!';
-import 'prism/themes/prism-okaidia.css!';
+//import 'highlightjs/styles/monokai_sublime.css!';
 import 'style/site.css!'
 
 // Regenerator runtime

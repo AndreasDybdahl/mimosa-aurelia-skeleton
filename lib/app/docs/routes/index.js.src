@@ -1,4 +1,4 @@
-import view from './index.html!';
+import view from './index.md!';
 
 export class Doc {
   getViewStrategy() {

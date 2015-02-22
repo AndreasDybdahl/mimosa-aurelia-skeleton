@@ -1,0 +1,151 @@
+code-color-bg         := #23241f
+code-color-text       := #f8f8f2
+code-color-emphasis   := #a8a8a2
+code-color-literal    := #ae81ff
+code-color-code       := #a6e22e
+code-color-keyword    := #66d9ef
+code-color-constant   := #66d9ef
+code-color-tag        := #f92672
+code-color-attribute  := #a6e22e
+
+pre.highlight
+  background-color: code-color-bg
+  color: code-color-text
+  text-shadow: 0 1px rgba(0,0,0,.3)
+  font-family: Consolas,Monaco,'Andale Mono',monospace
+  direction: ltr
+  text-align: left
+  white-space: pre
+  word-spacing: normal
+  word-break: normal
+  line-height: 1.5
+  
+  > code
+    display: block
+    overflow-x: auto
+    padding: 0.5em
+    -webkit-text-size-adjust: none
+    
+    &.css .hljs-rules,
+    &.css .hljs-value,
+    &.aspectj .hljs-function,
+    &.css .hljs-function
+    .hljs-tag,
+    .hljs-preprocessor,
+    .hljs-pragma
+      color: code-color-text
+    
+    .hljs-strongemphasis,
+    .hljs-strong,
+    .hljs-emphasis
+      color: code-color-emphasis
+    
+    &.alias .hljs-keyword,
+    .hljs-bullet,
+    .hljs-blockquote,
+    .hljs-horizontal_rule,
+    .hljs-number,
+    .hljs-regexp,
+    .hljs-literal,
+    .hljs-hexcolor
+      color: code-color-literal
+    
+    &.css .hljs-class,
+    .hljs-tag .hljs-value,
+    .hljs-code,
+    .hljs-title,
+    .hljs-class .hljs-title:last-child
+      color: code-color-code
+    
+    .hljs-link_url
+      font-size: 80%
+    
+    .hljs-strong,
+    .hljs-strongemphasis
+      font-weight: bold
+    
+    .hljs-emphasis,
+    .hljs-strongemphasis,
+    .hljs-class .hljs-title:last-child,
+    .hljs-typename
+      font-style: italic
+    
+    &.ruby .hljs-class .hljs-keyword:first-child,
+    &.ruby .hljs-function .hljs-keyword,
+    &.nginx .hljs-title,
+    &.tex .hljs-special,
+    &.alias .hljs-keyword:first-child,
+    &.css .hljs-tag,
+    &.css .unit,
+    &.css .hljs-important,
+    .hljs-keyword,
+    .hljs-function,
+    .hljs-change,
+    .hljs-winutils,
+    .hljs-flow,
+    .hljs-header,
+    .hljs-attribute,
+    .hljs-symbol,
+    .hljs-symbol .hljs-string,
+    .hljs-value
+      color: code-color-keyword
+    
+    &.css .hljs-attribute,
+    .hljs-function .hljs-keyword,
+    .hljs-class .hljs-keyword:first-child,
+    .hljs-aspect .hljs-keyword:first-child,
+    .hljs-constant,
+    .hljs-typename
+      color: code-color-constant
+    
+    .hljs-variable,
+    .hljs-params,
+    .hljs-class .hljs-title,
+    .hljs-aspect .hljs-title
+      color: #f8f8f2
+    
+    &.css .hljs-id,
+    &.ruby .hljs-class .hljs-parent,
+    &.django .hljs-template_tag,
+    &.django .hljs-variable,
+    &.smalltalk .hljs-class,
+    &.django .hljs-filter .hljs-argument,
+    &.smalltalk .hljs-localvars,
+    &.smalltalk .hljs-array,
+    &.apache .hljs-tag,
+    &.apache .hljs-cbracket,
+    &.tex .hljs-command,
+    .hljs-string,
+    .hljs-subst,
+    .hljs-type,
+    .hljs-built_in,
+    .hljs-attr_selector,
+    .hljs-pseudo,
+    .hljs-addition,
+    .hljs-stream,
+    .hljs-envvar,
+    .hljs-prompt,
+    .hljs-link_label,
+    .hljs-link_url
+      color: #e6db74
+    
+    .apache .hljs-sqbracket,
+    .tex .hljs-formula,
+    .hljs-comment,
+    .hljs-javadoc,
+    .hljs-annotation,
+    .hljs-decorator,
+    .hljs-pi,
+    .hljs-doctype,
+    .hljs-deletion,
+    .hljs-shebang
+      color: #75715e
+    
+    .hljs-tag .hljs-title
+      color: code-color-tag
+    
+    .hljs-tag .hljs-attribute
+      color: code-color-attribute
+    
+    .hljs-tag .hljs-value
+      color: #e6db74
