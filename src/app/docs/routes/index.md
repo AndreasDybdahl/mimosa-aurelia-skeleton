@@ -37,7 +37,7 @@ common scenarios:
 
 <sample dir="../samples/2"></sample>
 
-``` markup
+```html
 <import from="./date-format"></import>
 <import from="./currency-format"></import>
 ```

@@ -1,5 +1,6 @@
 import {translate as html} from 'html';
 import Showdown from 'showdown';
+import hljs from 'highlightjs';
 
 const interpolationRegex = /\${(.*?)}/g;
 const moveOutTags = ['import', 'sample'];
@@ -22,8 +23,9 @@ export function postfix(inlineViewStrategy) {
   const template = inlineViewStrategy.template;
   if (template !== null) {
     for (let code of template.content.querySelectorAll('pre > code')) {
-      code.className = 'language-' + code.className.trim();
-      Prism.highlightElement(code, false, () => {});
+      //code.className = 'language-' + code.className.trim();
+      hljs.highlightBlock(code);
+      code.parentNode.className = 'highlight';
     }
 
     for (let tag of moveOutTags) {
