@@ -4,6 +4,7 @@ System.config({
     "app/*": "lib/app/*.js",
     "style/*": "lib/style/*.js",
     "plugin-html/*": "lib/html/*.js",
+    "plugin-md/*": "lib/markdown/*.js",
     "github:*": "jspm_packages/github/*.js",
     "npm:*": "jspm_packages/npm/*.js"
   }
@@ -31,6 +32,7 @@ System.config({
     "core-js": "npm:core-js@0.4.10",
     "css": "github:systemjs/plugin-css@0.1.6",
     "font-awesome": "npm:font-awesome@4.3.0",
+    "md": "plugin-md/md",
     "html": "plugin-html/html",
     "html/generate": "plugin-html/generate",
     "json": "github:systemjs/plugin-json@0.1.0",
