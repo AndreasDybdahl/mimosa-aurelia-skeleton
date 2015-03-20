@@ -5,7 +5,7 @@ var addClass;
 var removeClass;
 var toggleClass;
 
-if ("classList" in document.createElement("_") && false) {
+if ("classList" in document.createElement("_")) {
   hasClass = (el, n) => el.classList.contains(n);
   addClass = (el, n) => el.classList.add(n);
   removeClass = (el, n) => el.classList.remove(n);
