@@ -23,6 +23,10 @@ export class List {
     let date = moment(post.date);
     return `#/blog/${date.format('YYYY/MM/DD')}/${post.slug}/`
   }
+  
+  clearTag() {
+    return '#/blog/'
+  }
 
   tagUrl(tag) {
     return `#/blog/tags/${tag}/`;
